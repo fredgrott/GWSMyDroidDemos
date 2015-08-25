@@ -1,1 +1,1 @@
-include ':app', ':gwskenburnsview'
+include ':app', ':gwskenburnsview', ':gwsrippledecoview'
