@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/gwsfrag" />
             <option value="$PROJECT_DIR$/gwskenburnsview" />
             <option value="$PROJECT_DIR$/gwsobservablescroll" />
             <option value="$PROJECT_DIR$/gwsrippledecoview" />
