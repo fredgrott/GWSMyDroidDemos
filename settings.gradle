@@ -1,1 +1,1 @@
-include ':app', ':gwskenburnsview', ':gwsrippledecoview'
+include ':app', ':gwskenburnsview', ':gwsrippledecoview', ':gwszdepthshadow'
