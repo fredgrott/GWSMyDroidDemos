@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" filepath="$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsrippledecoview/gwsrippledecoview.iml" filepath="$PROJECT_DIR$/gwsrippledecoview/gwsrippledecoview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsscenetransitions/gwsscenetransitions.iml" filepath="$PROJECT_DIR$/gwsscenetransitions/gwsscenetransitions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" filepath="$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsviewpagertransforms/gwsviewpagertransforms.iml" filepath="$PROJECT_DIR$/gwsviewpagertransforms/gwsviewpagertransforms.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" filepath="$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" />
     </modules>
