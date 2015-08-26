@@ -1,1 +1,1 @@
-include ':app', ':gwskenburnsview', ':gwsrippledecoview', ':gwszdepthshadow', ':gwsobservablescroll', ':gwsfrag', ':gwsscenetransitions', ':gwseasing', ':gwsviewpagertransforms', ':gwssvgprogressview', ':gwsspringindicator', ':gwspagerslidingtabstrip'
+include ':app', ':gwskenburnsview', ':gwsrippledecoview', ':gwszdepthshadow', ':gwsobservablescroll', ':gwsfrag', ':gwsscenetransitions', ':gwseasing', ':gwsviewpagertransforms', ':gwssvgprogressview', ':gwsspringindicator', ':gwspagerslidingtabstrip', ':gwsdiscrollview'
