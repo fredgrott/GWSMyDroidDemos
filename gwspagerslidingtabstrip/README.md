@@ -1,0 +1,6 @@
+
+
+Credits
+=======
+
+[Andreas Stuetz PagerSlidingTabStrip]()
