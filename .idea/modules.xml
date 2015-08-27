@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GWSMyDroidDemos.iml" filepath="$PROJECT_DIR$/GWSMyDroidDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwscolours/gwscolours.iml" filepath="$PROJECT_DIR$/gwscolours/gwscolours.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsdiscrollview/gwsdiscrollview.iml" filepath="$PROJECT_DIR$/gwsdiscrollview/gwsdiscrollview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwseasing/gwseasing.iml" filepath="$PROJECT_DIR$/gwseasing/gwseasing.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsfrag/gwsfrag.iml" filepath="$PROJECT_DIR$/gwsfrag/gwsfrag.iml" />
