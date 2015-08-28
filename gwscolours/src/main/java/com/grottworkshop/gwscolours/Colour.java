@@ -1147,8 +1147,642 @@ public class Colour extends Color {
     public static int mdLightBlueA700(){
         return Color.parseColor("#0091ea");
     }
-    
 
+
+    public static int mdCyan50(){
+        return Color.parseColor("#e0f7fa");
+    }
+
+    public static int mdCyan100(){
+        return Color.parseColor("#b2ebf2");
+    }
+
+    public static int mdCyan200(){
+        return Color.parseColor("#80deea");
+    }
+
+    public static int mdCyan300(){
+        return Color.parseColor("#4dd0e1");
+    }
+
+    public static int mdCyan400(){
+        return Color.parseColor("#26c6da");
+    }
+
+    public static int mdCyan500(){
+        return Color.parseColor("#00bcd4");
+    }
+
+    public static int mdCyan600(){
+        return Color.parseColor("#00acc1");
+    }
+
+    public static int mdCyan700(){
+        return Color.parseColor("#0097a7");
+    }
+
+    public static int mdCyan800(){
+        return Color.parseColor("#00838f");
+    }
+
+    public static int mdCyan900(){
+        return Color.parseColor("#006064");
+    }
+
+    public static int mdCyanA100(){
+        return Color.parseColor("#84ffff");
+    }
+
+    public static int mdCyanA200(){
+        return Color.parseColor("#18ffff");
+    }
+
+    public static int mdCyanA400(){
+        return Color.parseColor("#00e5ff");
+    }
+
+    public static int mdCyanA700(){
+        return Color.parseColor("#00b8d4");
+    }
+
+    public static int mdTeal50(){
+        return Color.parseColor("#e0f2f1");
+    }
+
+    public static int mdTeal100(){
+        return Color.parseColor("#b2dfdb");
+    }
+
+    public static int mdTeal200(){
+        return Color.parseColor("#80cbc4");
+    }
+
+    public static int mdTeal300(){
+        return Color.parseColor("#4db6ac");
+    }
+
+    public static int mdTeal400(){
+        return Color.parseColor("#26a69a");
+    }
+
+    public static int mdTeal500(){
+        return Color.parseColor("#009688");
+    }
+
+    public static int mdTeal600(){
+        return Color.parseColor("#00897b");
+    }
+
+    public static int mdTeal700(){
+        return Color.parseColor("#00796b");
+    }
+
+    public static int mdTeal800(){
+        return Color.parseColor("#00695c");
+    }
+
+    public static int mdTeal900(){
+        return Color.parseColor("#004d40");
+    }
+
+    public static int mdTealA100(){
+        return Color.parseColor("#a7ffeb");
+    }
+
+    public static int mdTealA200(){
+        return Color.parseColor("#64ffda");
+    }
+
+    public static int mdTealA400(){
+        return Color.parseColor("#1de9b6");
+    }
+
+    public static int mdTealA700(){
+        return Color.parseColor("#00bfa5");
+    }
+
+
+    public static int mdGreen50(){
+        return Color.parseColor("#d0f8ce");
+    }
+
+    public static int mdGreen100(){
+        return Color.parseColor("#a3e9a4");
+    }
+
+    public static int mdGreen200(){
+        return Color.parseColor("#72d572");
+    }
+
+    public static int mdGreen300(){
+        return Color.parseColor("#42bd41");
+    }
+
+    public static int mdGreen400(){
+        return Color.parseColor("#2baf2b");
+    }
+
+    public static int mdGreen500(){
+        return Color.parseColor("#259b24");
+    }
+
+    public static int mdGreen600(){
+        return Color.parseColor("#0a8f08");
+    }
+
+    public static int mdGreen700(){
+        return Color.parseColor("#0a7e07");
+    }
+
+    public static int mdGreen800(){
+        return Color.parseColor("#056f00");
+    }
+
+    public static int mdGreen900(){
+        return Color.parseColor("#0d5302");
+    }
+
+    public static int mdGreenA100(){
+        return Color.parseColor("#a2f78d");
+    }
+
+    public static int mdGreenA200(){
+        return Color.parseColor("#5af158");
+    }
+
+    public static int mdGreenA400(){
+        return Color.parseColor("#14e715");
+    }
+
+    public static int mdGreenA700(){
+        return Color.parseColor("#12c700");
+    }
+
+
+    public static int mdLightGreen50(){
+        return Color.parseColor("#f1f8e9");
+    }
+
+    public static int mdLightGreen100(){
+        return Color.parseColor("#dcedc8");
+    }
+
+    public static int mdLightGreen200(){
+        return Color.parseColor("#c5e1a5");
+    }
+
+    public static int mdLightGreen300(){
+        return Color.parseColor("#aed581");
+    }
+
+    public static int mdLightGreen400(){
+        return Color.parseColor("#9ccc65");
+    }
+
+    public static int mdLightGreen500(){
+        return Color.parseColor("#8bc34a");
+    }
+
+    public static int mdLightGreen600(){
+        return Color.parseColor("#7cb342");
+    }
+
+    public static int mdLightGreen700(){
+        return Color.parseColor("#689f38");
+    }
+
+    public static int mdLightGreen800(){
+        return Color.parseColor("#558b2f");
+    }
+
+    public static int mdLightGreen900(){
+        return Color.parseColor("#33691e");
+    }
+
+    public static int mdLightGreenA100(){
+        return Color.parseColor("#ccff90");
+    }
+
+    public static int mdLightGreenA200(){
+        return Color.parseColor("#b2ff59");
+    }
+
+    public static int mdLightGreenA400(){
+        return Color.parseColor("#76ff03");
+    }
+
+    public static int mdLightGreenA700(){
+        return Color.parseColor("#64dd17");
+    }
+
+    public static int mdLime50(){
+        return Color.parseColor("#f9fbe7");
+    }
+
+    public static int mdLime100(){
+        return Color.parseColor("#f0f4c3");
+    }
+
+    public static int mdLime200(){
+        return Color.parseColor("#e6ee9c");
+    }
+
+    public static int mdLime300(){
+        return Color.parseColor("#dce775");
+    }
+
+    public static int mdLime400(){
+        return Color.parseColor("#d4e157");
+    }
+
+    public static int mdLime500(){
+        return Color.parseColor("#cddc39");
+    }
+
+    public static int mdLime600(){
+        return Color.parseColor("#c0ca33");
+    }
+
+    public static int mdLime700(){
+        return Color.parseColor("#afb42b");
+    }
+
+    public static int mdLime800(){
+        return Color.parseColor("#9e9d24");
+    }
+
+    public static int mdLime900(){
+        return Color.parseColor("#827717");
+    }
+
+    public static int mdLimeA100(){
+        return Color.parseColor("#f4ff81");
+    }
+
+    public static int mdLimeA200(){
+        return Color.parseColor("#eeff41");
+    }
+
+    public static int mdLimeA400(){
+        return Color.parseColor("#c6ff00");
+    }
+
+    public static int mdLimeA700(){
+        return Color.parseColor("#aeea00");
+    }
+
+    public static int mdYellow50(){
+        return Color.parseColor("#fffde7");
+    }
+
+    public static int mdYellow100(){
+        return Color.parseColor("#fff9c4");
+    }
+
+    public static int mdYellow200(){
+        return Color.parseColor("#fff59d");
+    }
+
+    public static int mdYellow300(){
+        return Color.parseColor("#fff176");
+    }
+
+    public static int mdYellow400(){
+        return Color.parseColor("#ffee58");
+    }
+
+    public static int mdYellow500(){
+        return Color.parseColor("#ffeb3b");
+    }
+
+    public static int mdYellow600(){
+        return Color.parseColor("#fdd835");
+    }
+
+    public static int mdYellow700(){
+        return Color.parseColor("#fbc02d");
+    }
+
+    public static int mdYellow800(){
+        return Color.parseColor("#f9a825");
+    }
+
+    public static int mdYellow900(){
+        return Color.parseColor("#f57f17");
+    }
+
+    public static int mdYellowA100(){
+        return Color.parseColor("#ffff8d");
+    }
+
+    public static int mdYellowA200(){
+        return Color.parseColor("#ffff00");
+    }
+
+    public static int mdYellowA400(){
+        return Color.parseColor("#ffea00");
+    }
+
+    public static int mdYellowA700(){
+        return Color.parseColor("#ffd600");
+    }
+
+    public static int mdAmber50(){
+        return Color.parseColor("#fff8e1");
+    }
+
+    public static int mdAmber100(){
+        return Color.parseColor("#ffecb3");
+    }
+
+    public static int mdAmber200(){
+        return Color.parseColor("#ffe082");
+    }
+
+    public static int mdAmber300(){
+        return Color.parseColor("#ffd54f");
+    }
+
+    public static int mdAmber400(){
+        return Color.parseColor("#ffca28");
+    }
+
+    public static int mdAmber500(){
+        return Color.parseColor("#ffc107");
+    }
+
+    public static int mdAmber600(){
+        return Color.parseColor("#ffb300");
+    }
+
+    public static int mdAmber700(){
+        return Color.parseColor("#ffa000");
+    }
+
+    public static int mdAmber800(){
+        return Color.parseColor("#ff8f00");
+    }
+
+    public static int mdAmber900(){
+        return Color.parseColor("#ff6f00");
+    }
+
+    public static int mdAmberA100(){
+        return Color.parseColor("#ffe57f");
+    }
+
+    public static int mdAmberA200(){
+        return Color.parseColor("#ffd740");
+    }
+
+    public static int mdAmberA400(){
+        return Color.parseColor("#ffc400");
+    }
+
+    public static int mdAmberA700(){
+        return Color.parseColor("#ffab00");
+    }
+
+    public static int mdOrange50(){
+        return Color.parseColor("#fff3e0");
+    }
+
+    public static int mdOrange100(){
+        return Color.parseColor("#ffe0b2");
+    }
+
+    public static int mdOrange200(){
+        return Color.parseColor("#ffcc80");
+    }
+
+    public static int mdOrange300(){
+        return Color.parseColor("#ffb74d");
+    }
+
+    public static int mdOrange400(){
+        return Color.parseColor("#ffa726");
+    }
+
+    public static int mdOrange500(){
+        return Color.parseColor("#ff9800");
+    }
+
+    public static int mdOrange600(){
+        return Color.parseColor("#fb8c00");
+    }
+
+    public static int mdOrange700(){
+        return Color.parseColor("#f57c00");
+    }
+
+    public static int mdOrange800(){
+        return Color.parseColor("#ef6c00");
+    }
+
+    public static int mdOrange900(){
+        return Color.parseColor("#e65100");
+    }
+
+    public static int mdOrangeA100(){
+        return Color.parseColor("#ffd180");
+    }
+
+    public static int mdOrangeA200(){
+        return Color.parseColor("#ffab40");
+    }
+
+    public static int mdOrangeA400(){
+        return Color.parseColor("#ff9100");
+    }
+
+    public static int mdOrangeA700(){
+        return Color.parseColor("#ff6d00");
+    }
+
+    public static int mdDeepOrange50(){
+        return Color.parseColor("#fbe9e7");
+    }
+
+    public static int mdDeepOrange100(){
+        return Color.parseColor("#ffccbc");
+    }
+
+    public static int mdDeepOrange200(){
+        return Color.parseColor("#ffab91");
+    }
+
+    public static int mdDeepOrange300(){
+        return Color.parseColor("#ff8a65");
+    }
+
+    public static int mdDeepOrange400(){
+        return Color.parseColor("#ff7043");
+    }
+
+    public static int mdDeepOrange500(){
+        return Color.parseColor("#ff5722");
+    }
+
+    public static int mdDeepOrange600(){
+        return Color.parseColor("#f4511e");
+    }
+
+    public static int mdDeepOrange700(){
+        return Color.parseColor("#e64a19");
+    }
+
+    public static int mdDeepOrange800(){
+        return Color.parseColor("#d84315");
+    }
+
+    public static int mdDeepOrange900(){
+        return Color.parseColor("#bf360c");
+    }
+
+    public static int mdDeepOrangeA100(){
+        return Color.parseColor("#ff9e80");
+    }
+
+    public static int mdDeepOrangeA200(){
+        return Color.parseColor("#ff6e40");
+    }
+
+    public static int mdDeepOrangeA400(){
+        return Color.parseColor("#ff3d00");
+    }
+
+
+    public static int mdDeepOrangeA700(){
+        return Color.parseColor("#dd2c00");
+    }
+
+    public static int mdBrown50(){
+        return Color.parseColor("#efebe9");
+    }
+
+    public static int mdBrown100(){
+        return Color.parseColor("#d7ccc8");
+    }
+
+    public static int mdBrown200(){
+        return Color.parseColor("#bcaaa4");
+    }
+
+    public static int mdBrown300(){
+        return Color.parseColor("#a1887f");
+    }
+
+    public static int mdBrown400(){
+        return Color.parseColor("#8d6e63");
+    }
+
+    public static int mdBrown500(){
+        return Color.parseColor("#795548");
+    }
+
+    public static int mdBrown600(){
+        return Color.parseColor("#6d4c41");
+    }
+
+    public static int mdBrown700(){
+        return Color.parseColor("#5d4037");
+    }
+
+    public static int mdBrown800(){
+        return Color.parseColor("#4e342e");
+    }
+
+    public static int mdBrown900(){
+        return Color.parseColor("#3e2723");
+    }
+
+    public static int mdGrey50(){
+        return Color.parseColor("#fafafa");
+    }
+
+    public static int mdGrey100(){
+        return Color.parseColor("#f5f5f5");
+    }
+
+    public static int mdGrey200(){
+        return Color.parseColor("#eeeeee");
+    }
+
+    public static int mdGrey300(){
+        return Color.parseColor("#e0e0e0");
+    }
+
+    public static int mdGrey400(){
+        return Color.parseColor("#bdbdbd");
+    }
+
+    public static int mdGrey500(){
+        return Color.parseColor("#9e9e9e");
+    }
+
+    public static int mdGrey600(){
+        return Color.parseColor("#757575");
+    }
+
+    public static int mdGrey700(){
+        return Color.parseColor("#616161");
+    }
+
+    public static int mdGrey800(){
+        return Color.parseColor("#424242");
+    }
+
+    public static int mdGrey900(){
+        return Color.parseColor("#212121");
+    }
+
+    public static int mdBlack(){
+        return Color.parseColor("#000000");
+    }
+
+    public static int mdWhite(){
+        return Color.parseColor("#ffffff");
+    }
+
+    public static int mdBlueGrey50(){
+        return Color.parseColor("#eceff1");
+    }
+
+    public static int mdBlueGrey100(){
+        return Color.parseColor("#cfd8dc");
+    }
+
+    public static int mdBlueGrey200(){
+        return Color.parseColor("#b0bec5");
+    }
+
+    public static int mdBlueGrey300(){
+        return Color.parseColor("#90a4ae");
+    }
+
+    public static int mdBlueGrey400(){
+        return Color.parseColor("#78909c");
+    }
+
+    public static int mdBluegrey500(){
+        return Color.parseColor("#607d8b");
+    }
+
+    public static int mdBlueGrey600(){
+        return Color.parseColor("#546e7a");
+    }
+
+    public static int mdBlueGrey700(){
+        return Color.parseColor("#455a64");
+    }
+
+    public static int mdBlueGrey800(){
+        return Color.parseColor("#37474f");
+    }
+
+    public static int mdBlueGrey900(){
+        return Color.parseColor("#263238");
+    }
     // All Holo Colors in Android
 
     public static int holoBlueLightColor() {
