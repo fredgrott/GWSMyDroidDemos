@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/gwschips" />
             <option value="$PROJECT_DIR$/gwscolours" />
             <option value="$PROJECT_DIR$/gwsdiscrollview" />
             <option value="$PROJECT_DIR$/gwseasing" />
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$/gwskenburnsview" />
             <option value="$PROJECT_DIR$/gwsobservablescroll" />
             <option value="$PROJECT_DIR$/gwspagerslidingtabstrip" />
+            <option value="$PROJECT_DIR$/gwsreimage" />
             <option value="$PROJECT_DIR$/gwsrippledecoview" />
             <option value="$PROJECT_DIR$/gwsscenetransitions" />
             <option value="$PROJECT_DIR$/gwsspringindicator" />
