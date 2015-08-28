@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsspringindicator/gwsspringindicator.iml" filepath="$PROJECT_DIR$/gwsspringindicator/gwsspringindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" filepath="$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsviewanimations/gwsviewanimations.iml" filepath="$PROJECT_DIR$/gwsviewanimations/gwsviewanimations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsviewhover/gwsviewhover.iml" filepath="$PROJECT_DIR$/gwsviewhover/gwsviewhover.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsviewpagertransforms/gwsviewpagertransforms.iml" filepath="$PROJECT_DIR$/gwsviewpagertransforms/gwsviewpagertransforms.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" filepath="$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" />
     </modules>
