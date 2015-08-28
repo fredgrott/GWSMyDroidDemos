@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsfrag/gwsfrag.iml" filepath="$PROJECT_DIR$/gwsfrag/gwsfrag.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwskenburnsview/gwskenburnsview.iml" filepath="$PROJECT_DIR$/gwskenburnsview/gwskenburnsview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaskablelayout/gwsmaskablelayout.iml" filepath="$PROJECT_DIR$/gwsmaskablelayout/gwsmaskablelayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" filepath="$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" filepath="$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" filepath="$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreimage/gwsreimage.iml" filepath="$PROJECT_DIR$/gwsreimage/gwsreimage.iml" />
