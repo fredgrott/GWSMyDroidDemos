@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="ViewRelealAnimator">
+
+		<!-- fallback animations (pre lollipop) -->
+		<attr name="android:inAnimation"></attr>
+		<attr name="android:outAnimation"></attr>
+
+		<attr name="android:animateFirstView"></attr>
+		<attr name="android:measureAllChildren"></attr>
+
+		<!-- for API 21 and above: hide the current view before showing the next one -->
+		<attr name="vra_hideBeforeReveal" format="boolean"></attr>
+
+		<!-- duration of the reveal effect animation -->
+		<!-- this field does not affect the inAnimation and outAnimation fallbacks -->
+		<attr name="android:animationDuration"></attr>
+
+		<attr name="android:interpolator"></attr>
+	</declare-styleable>
+</resources>
