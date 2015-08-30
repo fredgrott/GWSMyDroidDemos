@@ -33,6 +33,7 @@
             <option value="$PROJECT_DIR$/gwsviewanimations" />
             <option value="$PROJECT_DIR$/gwsviewhover" />
             <option value="$PROJECT_DIR$/gwsviewpagertransforms" />
+            <option value="$PROJECT_DIR$/gwswizardpager" />
             <option value="$PROJECT_DIR$/gwszdepthshadow" />
           </set>
         </option>
