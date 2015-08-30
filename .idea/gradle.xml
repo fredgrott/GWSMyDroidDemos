@@ -21,6 +21,8 @@
             <option value="$PROJECT_DIR$/gwsfrag" />
             <option value="$PROJECT_DIR$/gwskenburnsview" />
             <option value="$PROJECT_DIR$/gwsmaskablelayout" />
+            <option value="$PROJECT_DIR$/gwsmaterialcardrecycler" />
+            <option value="$PROJECT_DIR$/gwsmaterialprogressbar" />
             <option value="$PROJECT_DIR$/gwsmaterialviewpagerreg" />
             <option value="$PROJECT_DIR$/gwsmultistateview" />
             <option value="$PROJECT_DIR$/gwsobservablescroll" />
