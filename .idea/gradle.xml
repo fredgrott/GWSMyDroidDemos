@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/gwsmaskablelayoutdemo" />
             <option value="$PROJECT_DIR$/gwsmaterialcardrecycler" />
             <option value="$PROJECT_DIR$/gwsmaterialprogressbar" />
+            <option value="$PROJECT_DIR$/gwsmaterialprogressbardemo" />
             <option value="$PROJECT_DIR$/gwsmaterialviewpagerreg" />
             <option value="$PROJECT_DIR$/gwsmultistateview" />
             <option value="$PROJECT_DIR$/gwsobservablescroll" />
@@ -45,6 +46,7 @@
             <option value="$PROJECT_DIR$/gwsviewserver" />
             <option value="$PROJECT_DIR$/gwswizardpager" />
             <option value="$PROJECT_DIR$/gwszdepthshadow" />
+            <option value="$PROJECT_DIR$/gwszdepthshadowdemo" />
           </set>
         </option>
       </GradleProjectSettings>

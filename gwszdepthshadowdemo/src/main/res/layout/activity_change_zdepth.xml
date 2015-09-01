@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shadow="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout
+        android:id="@+id/zDepthShadowLayout_rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/view_dummy"
+        shadow:z_depth="z_depth1"
+        shadow:z_depth_shape="rect"
+        shadow:z_depth_padding="z_depth5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Change ZDepth"
+            android:background="@android:color/white"/>
+
+    </com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout>
+
+    <View
+        android:id="@+id/view_dummy"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"/>
+
+    <com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout
+        android:id="@+id/zDepthShadowLayout_oval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/view_dummy"
+        shadow:z_depth="z_depth1"
+        shadow:z_depth_shape="oval"
+        shadow:z_depth_padding="z_depth5">
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="16dp"
+            android:text="+"
+            android:gravity="center"
+            android:background="@drawable/drawable_circle"/>
+
+    </com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_changeZDepthButtons_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zDepthShadowLayout_rect"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_zDepth_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 0"/>
+
+        <Button
+            android:id="@+id/button_zDepth_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 1"/>
+
+        <Button
+            android:id="@+id/button_zDepth_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 2"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/linearLayout_changeZDepthButtons_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout_changeZDepthButtons_1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_zDepth_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 3"/>
+
+        <Button
+            android:id="@+id/button_zDepth_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 4"/>
+
+        <Button
+            android:id="@+id/button_zDepth_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="ZDepth 5"/>
+    </LinearLayout>
+
+    <com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout
+        android:id="@+id/zDepthShadowLayout_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        shadow:z_depth="z_depth1"
+        shadow:z_depth_shape="rect"
+        shadow:z_depth_paddingLeft="z_depth0"
+        shadow:z_depth_paddingTop="z_depth0"
+        shadow:z_depth_paddingRight="z_depth0"
+        shadow:z_depth_paddingBottom="z_depth5">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
+
+    </com.grottworkshop.gwszdepthshadow.ZDepthShadowLayout>
+
+</RelativeLayout>

@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsmaskablelayoutdemo/gwsmaskablelayoutdemo.iml" filepath="$PROJECT_DIR$/gwsmaskablelayoutdemo/gwsmaskablelayoutdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialcardrecycler/gwsmaterialcardrecycler.iml" filepath="$PROJECT_DIR$/gwsmaterialcardrecycler/gwsmaterialcardrecycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialviewpagerreg/gwsmaterialviewpagerreg.iml" filepath="$PROJECT_DIR$/gwsmaterialviewpagerreg/gwsmaterialviewpagerreg.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" filepath="$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" filepath="$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" />
@@ -38,6 +39,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsviewserver/gwsviewserver.iml" filepath="$PROJECT_DIR$/gwsviewserver/gwsviewserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwswizardpager/gwswizardpager.iml" filepath="$PROJECT_DIR$/gwswizardpager/gwswizardpager.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" filepath="$PROJECT_DIR$/gwszdepthshadow/gwszdepthshadow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwszdepthshadowdemo/gwszdepthshadowdemo.iml" filepath="$PROJECT_DIR$/gwszdepthshadowdemo/gwszdepthshadowdemo.iml" />
     </modules>
   </component>
 </project>
