@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GWSKenBurnsViewDemo</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+
+    <string-array name="main_options">
+        <item>Single image</item>
+        <item>Multiple images</item>
+
+    </string-array>
+
+</resources>
