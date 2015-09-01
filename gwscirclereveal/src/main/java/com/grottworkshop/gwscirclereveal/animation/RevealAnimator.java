@@ -31,6 +31,8 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
 
+import com.grottworkshop.gwsutil.FloatProperty;
+
 import java.lang.ref.WeakReference;
 
 import static com.grottworkshop.gwscirclereveal.animation.ViewAnimationUtils.SimpleAnimationListener;
