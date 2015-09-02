@@ -12,9 +12,10 @@ Best Practices
 2. Material Design
 3. Code optimization for Davlik/ART and SMP.
 4. Coding to the proper Thread.
-5. Catching Memory Leaks
+5. Catching Memory Leaks, context and otherwise.
 6. Proper Debug Logging and privatizing fields so no user information leaks in production builds as user
    enemies love to root a stolen device.
+7. Daily builds
 
 
 
