@@ -5,6 +5,19 @@ This code repo serves two purposes. One, to soft fork some libraries I use that 
 Two, to provide one place to put my UI control demos and application demos. In this readme you will
 see links to the videos of the demos and in the application demos case, sometimes apk file links.
 
+Best Practices
+==============
+
+1. Code audit the 3rrd party libraries(non-Google) you use.
+2. Material Design
+3. Code optimization for Davlik/ART and SMP.
+4. Coding to the proper Thread.
+5. Catching Memory Leaks
+6. Proper Debug Logging and privatizing fields so no user information leaks in production builds as user
+   enemies love to root a stolen device.
+
+
+
 UI Control Demos
 ================
 
