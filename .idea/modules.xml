@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsldialogs/gwsldialogs.iml" filepath="$PROJECT_DIR$/gwsldialogs/gwsldialogs.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaskablelayout/gwsmaskablelayout.iml" filepath="$PROJECT_DIR$/gwsmaskablelayout/gwsmaskablelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaskablelayoutdemo/gwsmaskablelayoutdemo.iml" filepath="$PROJECT_DIR$/gwsmaskablelayoutdemo/gwsmaskablelayoutdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmaterialcab/gwsmaterialcab.iml" filepath="$PROJECT_DIR$/gwsmaterialcab/gwsmaterialcab.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialcardrecycler/gwsmaterialcardrecycler.iml" filepath="$PROJECT_DIR$/gwsmaterialcardrecycler/gwsmaterialcardrecycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" />
