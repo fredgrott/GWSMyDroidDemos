@@ -46,5 +46,6 @@ Contacting
 ==========
 
 Same rules as is on my LinkedIN profile, no recruiters and only funded(beyond speculation seed capital stage)
-startups. See my Github profile for the email address(ie click on the shareme link at the top of this page).
+startups and it would be helpful to view the demos and ask about the code as you would standout from
+all the freeloaders who want to exploit that spam me. See my Github profile for the email address(ie click on the shareme link at the top of this page).
 
