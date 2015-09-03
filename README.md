@@ -16,6 +16,9 @@ Best Practices
 6. Proper Debug Logging and privatizing fields so no user information leaks in production builds as user
    enemies love to root a stolen device.
 7. Daily builds
+8. Cover only one mobile platform at a time. Why? 45 3rd party libraries code cleaned plus the android support
+   libraries just to backport material design feature to get a consistent look and feel across all
+   Android OS versions in the marketplace.
 
 
 
@@ -28,7 +31,7 @@ port features backward to prior OS versions as Google only backports the feature
 important.
 
 The UI demos below cover most of the new feature effects of Material backported from the Lollipop and
-Marshmellow version releases.
+Marshmallow version releases.
 
 Application Demos
 =================
