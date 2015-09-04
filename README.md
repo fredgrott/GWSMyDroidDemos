@@ -15,7 +15,7 @@ Best Practices
 5. Catching Memory Leaks, context and otherwise.
 6. Proper Debug Logging and privatizing fields so no user information leaks in production builds as user
    enemies love to root a stolen device.
-7. Daily builds
+7. Daily builds with best gradle build practtices followed
 8. Cover only one mobile platform at a time. Why? 45 3rd party libraries code cleaned plus the android support
    libraries just to backport material design feature to get a consistent look and feel across all
    Android OS versions in the marketplace.

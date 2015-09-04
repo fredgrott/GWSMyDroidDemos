@@ -18,6 +18,19 @@ allprojects {
     }
 }
 
+ext {
+
+    //Configure stuff
+    ourReportsDir = '${project.buildDir}/reports'
+    //Android block
+    //def globalConfiguration = rootProject.extensions.getByName("ext")
+    //than globalConfiguration.getAt("androidCompileSdkVersion")
+    androidCompileSdkVersion = 23
+    androidBuildToolsVersion = '23.0.0'
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 23
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
