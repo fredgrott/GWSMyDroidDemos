@@ -1,16 +1,41 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion rootProject.ext.getAt("androidCompileSdkVersion")
+    buildToolsVersion rootProject.ext.getAt("androidBuildToolsVersion")
 
     defaultConfig {
         applicationId "com.grottworkshop.gwsblurringviewdemo"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
+        targetSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
         versionCode 1
         versionName "1.0"
     }
+
+    aaptOptions {
+        noCompress 'txt'
+        ignoreAssetsPattern "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    signingConfigs {
+
+        release {
+            //props stored in gradle.properties at userhome .gradle subfolder
+
+            storeFile file(FREDGROTT_RELEASE_STORE_FILE)
+            storePassword FREDGROTT_RELEASE_STORE_PASSWORD
+            keyAlias FREDGROTT_RELEASE_KEY_ALIAS
+            keyPassword FREDGROTT_RELEASE_KEY_PASSWORD
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
