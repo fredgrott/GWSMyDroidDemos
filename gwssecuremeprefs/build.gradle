@@ -1,15 +1,28 @@
 apply plugin: 'com.android.library'
+apply plugin: 'de.hannesstruss.godot'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion rootProject.ext.getAt("androidCompileSdkVersion")
+    buildToolsVersion rootProject.ext.getAt("androidBuildToolsVersion")
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
+        targetSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
         versionCode 1
         versionName "1.0"
     }
+
+    aaptOptions {
+        noCompress 'txt'
+        ignoreAssetsPattern "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,6 +33,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
+    testCompile rootProject.ext.tddJunitDependencies.junit
+    compile rootProject.ext.androidSupportDependencies.appCompat
 }
