@@ -33,15 +33,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:recyclerview-v7:23.0.0'
-    compile 'com.android.support:cardview-v7:23.0.0'
-    compile 'com.android.support:support-annotations:23.0.0'
+    testCompile rootProject.ext.tddJunitDependencies.junit
+    compile rootProject.ext.androidSupportDependencies.appCompat
+    compile rootProject.ext.androidSupportDependencies.recyclerView
+    compile rootProject.ext.androidSupportDependencies.cardView
+    compile rootProject.ext.androidSupportDependencies.supportAnnotations
     compile project(":gwskenburnsview")
     compile project(":gwsobservablescroll")
     compile project(":gwspagerslidingtabstrip")
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile rootProject.ext.regularDependencies.picasso
 
 
 
