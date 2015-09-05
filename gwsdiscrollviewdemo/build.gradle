@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'de.hannesstruss.godot'
+
 
 android {
     compileSdkVersion rootProject.ext.getAt("androidCompileSdkVersion")
