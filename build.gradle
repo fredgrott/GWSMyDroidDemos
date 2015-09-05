@@ -21,6 +21,11 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    tasks.withType(JavaForkOptions) {
+// Forked processes like GradleWorkerMain for tests won't steal focus!
+        jvmArgs '-Djava.awt.headless=true'
+    }
 }
 
 ext {
@@ -83,6 +88,13 @@ ext {
 
     assertjVersion = '1.0.0'
 
+    //Remember, test libs are usually out of synch with both support libs and
+    //annotations so need this in each module build file:
+    // configurations.all {
+    //     resolutionStrategy.force 'com.android.support:support-annotations:22.2.0'
+    //}
+    //
+    // with espresso 2.2 it needs to be annotations 22.2.0 see the runner 0.3 pom
     instrumentedTestDependencies = [
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espressoContribVersion",
             espressoCore: "com.android.support.test.espresso:espresso-core:$espressoCoreVersion",
