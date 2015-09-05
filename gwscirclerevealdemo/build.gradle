@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'de.hannesstruss.godot'
+apply plugin: 'hugo'
 
 
 android {
@@ -53,5 +54,9 @@ dependencies {
     compile rootProject.ext.androidSupportDependencies.recyclerView
     compile rootProject.ext.androidSupportDependencies.cardView
     compile rootProject.ext.androidSupportDependencies.design
+    debugCompile rootProject.ext.appDependencies.leakcanaryAndroidDC
+    releaseCompile rootProject.ext.appDependencies.leakcanaryAndroidNOOPRC
+    compile rootProject.ext.appDependencies.timber
+    compile rootProject.ext.appDependencies.timberLint
 
 }

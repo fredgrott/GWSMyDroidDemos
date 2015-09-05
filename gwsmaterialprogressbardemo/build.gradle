@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'de.hannesstruss.godot'
+apply plugin: 'hugo'
 
 
 android {
@@ -52,4 +53,8 @@ dependencies {
     testCompile rootProject.ext.tddJunitDependencies.junit
     compile rootProject.ext.androidSupportDependencies.appCompat
     compile project(":gwsmaterialprogressbar")
+    debugCompile rootProject.ext.appDependencies.leakcanaryAndroidDC
+    releaseCompile rootProject.ext.appDependencies.leakcanaryAndroidNOOPRC
+    compile rootProject.ext.appDependencies.timber
+    compile rootProject.ext.appDependencies.timberLint
 }
