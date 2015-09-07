@@ -31,6 +31,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialrangebar/gwsmaterialrangebar.iml" filepath="$PROJECT_DIR$/gwsmaterialrangebar/gwsmaterialrangebar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmaterialrangebardemo/gwsmaterialrangebardemo.iml" filepath="$PROJECT_DIR$/gwsmaterialrangebardemo/gwsmaterialrangebardemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialspinner/gwsmaterialspinner.iml" filepath="$PROJECT_DIR$/gwsmaterialspinner/gwsmaterialspinner.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialviewpagerreg/gwsmaterialviewpagerreg.iml" filepath="$PROJECT_DIR$/gwsmaterialviewpagerreg/gwsmaterialviewpagerreg.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" filepath="$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" />
