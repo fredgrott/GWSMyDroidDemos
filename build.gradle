@@ -12,6 +12,8 @@ buildscript {
 
         classpath 'de.hannesstruss:godot:0.2'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
+        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.0.3'
+
 
 
     }
@@ -88,6 +90,11 @@ ext {
 
     assertjVersion = '1.0.0'
 
+    jacocoVersion = '0.7.4.201502262128'
+
+    spoonClientVersion = '1.1.10'
+
+
     //Remember, test libs are usually out of synch with both support libs and
     //annotations so need this in each module build file:
     // configurations.all {
@@ -111,7 +118,8 @@ ext {
             assertjGridlayout:"com.squareup.assertj:assertj-android-gridlayoout-v7:$assertjVersion",
             assertjCardview:"com.squareup.assertj:assertj-android-cardview-v7:$assertjVersion",
             assertjRecyclerview:"com.squareup.assertj:assertj-android-recyclerview-v7:$assertjVersion",
-            assertjPalette:"com.squareup.assertj:assertj-android-palette-v7:$assertjVersion"
+            assertjPalette:"com.squareup.assertj:assertj-android-palette-v7:$assertjVersion",
+            spoonClient:"com.squareup.spoon:spoon-client:$spoonClientVersion"
     ]
 
     picassoVersion = '2.5.2'

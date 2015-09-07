@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'de.hannesstruss.godot'
 
 
+
 android {
     compileSdkVersion rootProject.ext.getAt("androidCompileSdkVersion")
     buildToolsVersion rootProject.ext.getAt("androidBuildToolsVersion")
@@ -14,7 +15,16 @@ android {
         renderscriptTargetApi rootProject.ext.getAt("androidCompileSdkVersion")
         renderscriptSupportModeEnabled true
 
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+
 
     aaptOptions {
         noCompress 'txt'
@@ -26,8 +36,30 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
 
+    testOptions {
+        //puts instrumented test results in reports/androidTests
+        //unit tests are in reports/tests
+        reportDir = "$rootProject.ext.ourReportsDir/androidTests"
+        unitTests.all {
+            testLogging {
+                events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+            }
+        }
+    }
+
+    jacoco {
+        version = rootProject.ext.getAt("jacocoVersion")
+    }
 
     buildTypes {
+
+        debug{
+            debuggable true
+            minifyEnabled false
+            testCoverageEnabled true
+
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -35,9 +67,21 @@ android {
     }
 }
 
+
+
+//noinspection GroovyAssignabilityCheck
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:22.2.0'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile rootProject.ext.tddJunitDependencies.junit
+    testCompile rootProject.ext.tddJunitDependencies.mockito
     compile rootProject.ext.androidSupportDependencies.appCompat
     compile project(":gwsviewanimations")
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoContrib
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoCore
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoRunner
+
 }
