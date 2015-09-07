@@ -123,10 +123,12 @@ ext {
     ]
 
     picassoVersion = '2.5.2'
+    butterknifeVersion = '7.0.1'
 
 
     regularDependencies = [
-            picasso: "com.squareup.picasso:picasso:$picassoVersion"
+            picasso: "com.squareup.picasso:picasso:$picassoVersion",
+            butterknife: "com.jakewharton:butterknife:$butterknifeVersion"
     ]
 
     leakCanaryVersion = '1.3.1'
