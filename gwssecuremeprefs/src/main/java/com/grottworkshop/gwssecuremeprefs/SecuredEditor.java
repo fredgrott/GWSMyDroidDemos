@@ -13,6 +13,7 @@ import java.util.Set;
  * @author NoTiCe
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class SecuredEditor implements Editor {
     private Editor editor;
     private EncryptionHelper helper;

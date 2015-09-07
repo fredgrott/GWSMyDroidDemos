@@ -14,6 +14,7 @@ import javax.crypto.NoSuchPaddingException;
  * @author NoTiCe
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public final class SecureFactory {
     private static final String INITIALIZATION_ERROR = "Can not initialize SecureSharedPreferences";
     public static final int VERSION_1 = 1;

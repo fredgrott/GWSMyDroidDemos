@@ -1,10 +1,11 @@
 package com.grottworkshop.gwssecuremeprefs;
 
-import java.util.Map;
-import java.util.Set;
-
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -29,6 +30,7 @@ public final class SecureUtils {
      * @param version The version code to write into the preferences for future check.
      */
     @SuppressWarnings("unchecked")
+    @SuppressLint("CommitPrefEdits")
     public static void migrateData(SharedPreferences from, SharedPreferences to, int version) {
         Map<String, ?> all = from.getAll();
         Set<String> keySet = all.keySet();
@@ -58,11 +60,10 @@ public final class SecureUtils {
 
     /**
      * Gets the version of {@link SharedPreferences} if any.
-     * @param preferences
+     * @param preferences the preferences
      * @return The version or -1.
      */
     public static int getVersion(SharedPreferences preferences) {
-        int currentVersion = preferences.getInt(VERSION_KEY, -1);
-        return currentVersion;
+        return preferences.getInt(VERSION_KEY, -1);
     }
 }

@@ -1,5 +1,6 @@
 package com.grottworkshop.gwssecuremeprefs;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -13,6 +14,7 @@ import java.util.Set;
  * @author NoTiCe
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class SecureSharedPreferences implements SharedPreferences {
     private SharedPreferences prefs;
     private EncryptionAlgorithm encryption;
@@ -38,6 +40,7 @@ public class SecureSharedPreferences implements SharedPreferences {
         return prefs.contains(key);
     }
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     public SecuredEditor edit() {
         return new SecuredEditor(helper, prefs.edit());

@@ -5,6 +5,7 @@ package com.grottworkshop.gwssecuremeprefs;
  * @author NoTiCe
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class EncryptionException extends Exception {
 
     /**

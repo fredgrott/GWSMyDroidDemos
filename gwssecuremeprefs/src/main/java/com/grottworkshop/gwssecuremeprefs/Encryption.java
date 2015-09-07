@@ -19,6 +19,7 @@ import javax.crypto.spec.SecretKeySpec;
  * @author http://www.java2s.com/Code/Android/Security/AESEncryption.htm
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class Encryption implements EncryptionAlgorithm {
     /**
      * Author of the base of this implementation.
@@ -39,7 +40,8 @@ public class Encryption implements EncryptionAlgorithm {
             throw new IllegalArgumentException("null key given");
         } else {
             skeySpec = new SecretKeySpec(keyraw, "AES");
-            cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            //TODO: ECB mode is insecure is CBC appropriate?
+            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         }
     }
 
@@ -55,7 +57,8 @@ public class Encryption implements EncryptionAlgorithm {
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] thedigest = md.digest(bytesOfMessage);
         skeySpec = new SecretKeySpec(thedigest, "AES");
-        cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        //TODO: ECB mode is insecure is CBC appropriate?
+        cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     }
 
     /**
@@ -70,11 +73,7 @@ public class Encryption implements EncryptionAlgorithm {
         try {
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
             return cipher.doFinal(plaintext);
-        } catch (InvalidKeyException e) {
-            throw new EncryptionException(e);
-        } catch (IllegalBlockSizeException e) {
-            throw new EncryptionException(e);
-        } catch (BadPaddingException e) {
+        } catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
             throw new EncryptionException(e);
         }
     }
@@ -91,11 +90,7 @@ public class Encryption implements EncryptionAlgorithm {
         try {
             cipher.init(Cipher.DECRYPT_MODE, skeySpec);
             return cipher.doFinal(ciphertext);
-        } catch (InvalidKeyException e) {
-            throw new EncryptionException(e);
-        } catch (IllegalBlockSizeException e) {
-            throw new EncryptionException(e);
-        } catch (BadPaddingException e) {
+        } catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
             throw new EncryptionException(e);
         }
     }
