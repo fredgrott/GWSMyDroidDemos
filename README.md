@@ -93,6 +93,14 @@ catch memory leaks and wrong lifecycle assumptions. Even with the 3rd party libs
 a manual process of writing log statements and checking the logs to see what was logged and than
 resolving anything that crops up.
 
+And this is what it looks like:
+
+![ide no errors](/readme_images/ide_no_errorsxcf.png)
+
+For the untrained you want the android developer that is using some best practices manual development
+processes to create maintainable, testable, and predictable android native java code and to your untrained
+eye you will see @Annotations and or comments with each manual process verifying the correct developer
+best practice process and choice.
 
 There are many more, and those items are not on any resume or reference check. Now, you know why I usually
 ask Greater ChicagoLand Area start-ups to come to my location on a Saturday and see me code and my manual
