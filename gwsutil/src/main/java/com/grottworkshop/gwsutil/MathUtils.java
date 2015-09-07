@@ -22,6 +22,7 @@ import java.util.Random;
  * A class that contains utility methods related to numbers.
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public final class MathUtils {
     private static final Random sRandom = new Random();
     private static final float DEG_TO_RAD = 3.1415926f / 180.0f;

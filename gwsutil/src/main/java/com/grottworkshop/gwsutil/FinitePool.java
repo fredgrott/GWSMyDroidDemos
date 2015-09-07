@@ -3,6 +3,7 @@ package com.grottworkshop.gwsutil;
 import android.util.Log;
 
 /**
+ * FinitePool class
  * Created by fgrott on 8/31/2015.
  */
 class FinitePool<T extends Poolable<T>> implements Pool<T> {

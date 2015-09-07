@@ -28,6 +28,7 @@ import android.util.Property;
  * @param <T> The class on which the Property is declared.
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public abstract class IntProperty<T> extends Property<T, Integer> {
 
     public IntProperty(String name) {
@@ -39,10 +40,11 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
      * with fields of type <code>int</code>.
      */
     public abstract void setValue(T object, int value);
-
+    //TODO: set method has infiniterecursion fix
+    @SuppressWarnings("InfiniteRecursion")
     @Override
     final public void set(T object, Integer value) {
-        set(object, value.intValue());
+        set(object, value);
     }
 
 }

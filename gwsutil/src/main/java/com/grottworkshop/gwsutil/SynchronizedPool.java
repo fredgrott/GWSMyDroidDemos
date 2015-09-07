@@ -17,6 +17,7 @@
 package com.grottworkshop.gwsutil;
 
 /**
+ * SynchronizedPoo; class
  * Created by fgrott on 8/31/2015.
  */
 class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {

@@ -22,6 +22,7 @@ package com.grottworkshop.gwsutil;
  * Modeled after frameworks/base/include/utils/Singleton.h
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public abstract class Singleton<T> {
     private T mInstance;
 

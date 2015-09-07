@@ -28,6 +28,7 @@ import java.lang.reflect.Array;
  * the most efficient increments by which to grow arrays.
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public class ArrayUtils
 {
     private static Object[] EMPTY = new Object[0];
@@ -100,8 +101,10 @@ public class ArrayUtils
      * it will return the same empty array every time to avoid reallocation,
      * although this is not guaranteed.
      */
+    @SuppressWarnings("unchecked")
     public static <T> T[] emptyArray(Class<T> kind) {
         if (kind == Object.class) {
+            //TODO: does this need generic-ified?
             return (T[]) EMPTY;
         }
 

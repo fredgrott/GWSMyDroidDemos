@@ -17,6 +17,7 @@
 package com.grottworkshop.gwsutil;
 
 /**
+ * Poll interface
  * Created by fgrott on 8/31/2015.
  */
 public interface Pool<T extends Poolable<T>> {

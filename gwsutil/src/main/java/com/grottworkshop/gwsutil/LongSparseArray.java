@@ -24,6 +24,7 @@ import android.util.Log;
  * than using a HashMap to map Longs to Objects.
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public class LongSparseArray<E> {
     private static final Object DELETED = new Object();
     private boolean mGarbage = false;
@@ -65,8 +66,8 @@ public class LongSparseArray<E> {
      */
     public void setValues(long[] keys, E uniqueValue) {
         int length = keys.length;
-        for (int i = 0; i < length; i++) {
-            put(keys[i], uniqueValue);
+        for (long key : keys) {
+            put(key, uniqueValue);
         }
     }
 
@@ -82,12 +83,14 @@ public class LongSparseArray<E> {
      * Gets the Object mapped from the specified key, or the specified Object
      * if no such mapping has been made.
      */
+    @SuppressWarnings("unchecked")
     public E get(long key, E valueIfKeyNotFound) {
         int i = binarySearch(mKeys, 0, mSize, key);
 
         if (i < 0 || mValues[i] == DELETED) {
             return valueIfKeyNotFound;
         } else {
+            //TODO: does this need generic-ified?
             return (E) mValues[i];
         }
     }
@@ -222,11 +225,13 @@ public class LongSparseArray<E> {
      * the value from the <code>index</code>th key-value mapping that this
      * SparseArray stores.
      */
+    @SuppressWarnings("unchecked")
     public E valueAt(int index) {
         if (mGarbage) {
             gc();
         }
 
+        //TODO: does this need generic-ified?
         return (E) mValues[index];
     }
 

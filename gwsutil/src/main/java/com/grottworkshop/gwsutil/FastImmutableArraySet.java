@@ -16,6 +16,8 @@
  */
 package com.grottworkshop.gwsutil;
 
+import android.support.annotation.NonNull;
+
 import java.util.AbstractSet;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -28,6 +30,7 @@ import java.util.Iterator;
  * hundreds of times.
  * Created by fgrott on 8/31/2015.
  */
+@SuppressWarnings("unused")
 public final class FastImmutableArraySet<T> extends AbstractSet<T> {
     FastIterator<T> mIterator;
     T[] mContents;
@@ -36,11 +39,12 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {
         mContents = contents;
     }
 
+    @NonNull
     @Override
     public Iterator<T> iterator() {
         FastIterator<T> it = mIterator;
         if (it == null) {
-            it = new FastIterator<T>(mContents);
+            it = new FastIterator<>(mContents);
             mIterator = it;
         } else {
             it.mIndex = 0;

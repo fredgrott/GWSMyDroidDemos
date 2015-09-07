@@ -17,6 +17,7 @@
 package com.grottworkshop.gwsutil;
 
 /**
+ * PoolableManager interface
  * Created by fgrott on 8/31/2015.
  */
 public interface PoolableManager<T extends Poolable<T>> {

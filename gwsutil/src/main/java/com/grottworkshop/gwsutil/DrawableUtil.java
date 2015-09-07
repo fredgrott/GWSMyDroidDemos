@@ -24,8 +24,10 @@ import android.support.annotation.IntRange;
  * </code>
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class DrawableUtil {
 
+    @SuppressWarnings("deprecation")
     public static StateListDrawable getStateListDrawable(Context context, @DrawableRes int imageResource, @ColorRes int desiredColor, @IntRange(from = 0, to = 255) int disableAlpha) {
 
         // Create the colorized image (pressed state)
@@ -42,7 +44,7 @@ public class DrawableUtil {
         Bitmap disabled = BitmapFactory.decodeResource(context.getResources(), imageResource);
         Bitmap disabledCopy = Bitmap.createBitmap(disabled.getWidth(), disabled.getHeight(), Bitmap.Config.ARGB_8888);
 
-        Canvas disabledCanvas = new Canvas(disabledCopy);;
+        Canvas disabledCanvas = new Canvas(disabledCopy);
         Paint alphaPaint = new Paint();
         alphaPaint.setAlpha(disableAlpha);
         disabledCanvas.drawBitmap(disabled, 0, 0, alphaPaint);
@@ -50,6 +52,7 @@ public class DrawableUtil {
         StateListDrawable stateListDrawable = new StateListDrawable();
 
         // Pressed State
+        //TODO: BitmapDrawable(bitmap) depreciated, adjust to new way
         stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, new BitmapDrawable(oneCopy));
 
         // Disabled State
