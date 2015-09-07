@@ -2,6 +2,7 @@ package com.grottworkshop.gwszdepthshadowdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -17,7 +18,8 @@ import butterknife.OnClick;
 public class ChangeZDepthActivity extends AppCompatActivity {
 
 
-    //{@literal @}Bind(R.id.toolBar) Toolbar mToolbar;
+
+    Toolbar mToolbar =(Toolbar) findViewById(R.id.toolBar);
 
 
     ZDepthShadowLayout mZDepthShadowLayoutToolbar =(ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_toolBar);
@@ -34,7 +36,7 @@ public class ChangeZDepthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_zdepth);
         ButterKnife.bind(this);
 
-        //setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
     }
 
     @OnClick(R.id.button_zDepth_0)
