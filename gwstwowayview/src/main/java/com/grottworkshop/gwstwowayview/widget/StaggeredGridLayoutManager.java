@@ -32,10 +32,11 @@ import com.grottworkshop.gwstwowayview.R;
 
 
 /**
+ * StaggeredGridLayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class StaggeredGridLayoutManager extends GridLayoutManager {
-    private static final String LOGTAG = "StaggeredGridLayoutManager";
 
     private static final int DEFAULT_NUM_COLS = 2;
     private static final int DEFAULT_NUM_ROWS = 2;

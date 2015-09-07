@@ -38,17 +38,18 @@ import java.util.List;
 
 
 /**
+ * TwoWayLayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class TwoWayLayoutManager extends LayoutManager {
-    private static final String LOGTAG = "TwoWayLayoutManager";
 
-    public static enum Orientation {
+    public enum Orientation {
         HORIZONTAL,
         VERTICAL
     }
 
-    public static enum Direction {
+    public enum Direction {
         START,
         END
     }
@@ -404,6 +405,7 @@ public abstract class TwoWayLayoutManager extends LayoutManager {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private static View findNextScrapView(List<ViewHolder> scrapList, Direction direction,
                                           int position) {
         final int scrapCount = scrapList.size();
@@ -414,6 +416,7 @@ public abstract class TwoWayLayoutManager extends LayoutManager {
         for (int i = 0; i < scrapCount; i++) {
             final ViewHolder holder = scrapList.get(i);
 
+            //TODO: ViewHolder.getPosition is depreciated fix
             final int distance = holder.getPosition() - position;
             if ((distance < 0 && direction == Direction.END) ||
                     (distance > 0 && direction == Direction.START)) {

@@ -35,10 +35,11 @@ import static com.grottworkshop.gwstwowayview.widget.Lanes.calculateLaneSize;
 
 
 /**
+ * BaseLayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class BaseLayoutManager extends TwoWayLayoutManager {
-    private static final String LOGTAG = "BaseLayoutManager";
 
     protected static class ItemEntry implements Parcelable {
         public int startLane;

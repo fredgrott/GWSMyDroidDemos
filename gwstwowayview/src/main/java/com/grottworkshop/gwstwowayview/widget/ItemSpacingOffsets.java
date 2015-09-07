@@ -68,11 +68,8 @@ class ItemSpacingOffsets {
         }
 
         final int previousLaneSpan = lm.getLaneSpanForPosition(previousPosition);
-        if (previousLane == 0) {
-            return (lane == previousLane + previousLaneSpan);
-        }
+        return previousLane == 0 && (lane == previousLane + previousLaneSpan);
 
-        return false;
     }
 
     /**
@@ -106,12 +103,9 @@ class ItemSpacingOffsets {
 
         // TODO: Figure out a robust way to compute this for layouts
         // that are dynamically placed and might span multiple lanes.
-        if (lm instanceof SpannableGridLayoutManager ||
-                lm instanceof StaggeredGridLayoutManager) {
-            return false;
-        }
+        return !(lm instanceof SpannableGridLayoutManager ||
+                lm instanceof StaggeredGridLayoutManager);
 
-        return true;
     }
 
     public void setAddSpacingAtEnd(boolean spacingAtEnd) {

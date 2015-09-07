@@ -19,6 +19,7 @@ package com.grottworkshop.gwstwowayview.widget;
 import java.util.Arrays;
 
 /**
+ * ItemEntries class
  * Created by fgrott on 9/2/2015.
  */
 class ItemEntries {

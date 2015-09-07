@@ -17,14 +17,17 @@
 package com.grottworkshop.gwstwowayview;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.SoundEffectConstants;
 import android.view.View;
 
 
 /**
+ * ItemClickSupport class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class ItemClickSupport {
     /**
      * Interface definition for a callback to be invoked when an item in the
@@ -105,7 +108,7 @@ public class ItemClickSupport {
             itemClickSupport = new ItemClickSupport(recyclerView);
             recyclerView.setTag(R.id.twowayview_item_click_support, itemClickSupport);
         } else {
-            // TODO: Log warning
+            Log.w("ItemClickSupport", "itemClickSupport is null");
         }
 
         return itemClickSupport;

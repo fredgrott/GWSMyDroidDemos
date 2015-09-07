@@ -32,10 +32,11 @@ import com.grottworkshop.gwstwowayview.R;
 
 
 /**
+ * SpannableGridlayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class SpannableGridLayoutManager extends GridLayoutManager {
-    private static final String LOGTAG = "SpannableGridLayoutManager";
 
     private static final int DEFAULT_NUM_COLS = 3;
     private static final int DEFAULT_NUM_ROWS = 3;

@@ -36,6 +36,7 @@ import com.grottworkshop.gwstwowayview.R;
  * {@link android.support.v7.widget.RecyclerView}.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class DividerItemDecoration extends ItemDecoration {
     private final ItemSpacingOffsets mItemSpacing;
 
@@ -94,7 +95,8 @@ public class DividerItemDecoration extends ItemDecoration {
 
         return spacing;
     }
-
+    //TODO ItemDecoration.onDrawOver depreciated, fix
+    @SuppressWarnings("deprecation")
     @Override
     public void onDrawOver(Canvas c, RecyclerView parent) {
         final BaseLayoutManager lm = (BaseLayoutManager) parent.getLayoutManager();
@@ -115,28 +117,26 @@ public class DividerItemDecoration extends ItemDecoration {
 
             final int bottomOffset = childBottom - child.getBottom() - lp.bottomMargin;
             if (bottomOffset > 0 && childBottom < bottomWithPadding) {
-                final int left = childLeft;
                 final int top = childBottom - bottomOffset;
-                final int right = childRight;
                 final int bottom = top + mHorizontalDivider.getIntrinsicHeight();
 
-                mHorizontalDivider.setBounds(left, top, right, bottom);
+                mHorizontalDivider.setBounds(childLeft, top, childRight, bottom);
                 mHorizontalDivider.draw(c);
             }
 
             final int rightOffset = childRight - child.getRight() - lp.rightMargin;
             if (rightOffset > 0 && childRight < rightWithPadding) {
                 final int left = childRight - rightOffset;
-                final int top = childTop;
                 final int right = left + mVerticalDivider.getIntrinsicWidth();
-                final int bottom = childBottom;
 
-                mVerticalDivider.setBounds(left, top, right, bottom);
+                mVerticalDivider.setBounds(left, childTop, right, childBottom);
                 mVerticalDivider.draw(c);
             }
         }
     }
 
+    //TODO: depreciated fix
+    @SuppressWarnings("deprecation")
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
         mItemSpacing.getItemOffsets(outRect, itemPosition, parent);

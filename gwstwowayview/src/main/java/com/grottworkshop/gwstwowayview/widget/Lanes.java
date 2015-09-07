@@ -21,12 +21,13 @@ import android.graphics.Rect;
 import com.grottworkshop.gwstwowayview.TwoWayLayoutManager;
 
 /**
+ * Lanes class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 class Lanes {
     public static final int NO_LANE = -1;
 
-    private final BaseLayoutManager mLayout;
     private final boolean mIsVertical;
     private final Rect[] mLanes;
     private final Rect[] mSavedLanes;
@@ -58,7 +59,6 @@ class Lanes {
     }
 
     public Lanes(BaseLayoutManager layout, TwoWayLayoutManager.Orientation orientation, Rect[] lanes, int laneSize) {
-        mLayout = layout;
         mIsVertical = (orientation == TwoWayLayoutManager.Orientation.VERTICAL);
         mLanes = lanes;
         mLaneSize = laneSize;
@@ -70,7 +70,6 @@ class Lanes {
     }
 
     public Lanes(BaseLayoutManager layout, int laneCount) {
-        mLayout = layout;
         mIsVertical = layout.isVertical();
 
         mLanes = new Rect[laneCount];
@@ -285,8 +284,7 @@ class Lanes {
     }
 
     public void reset(TwoWayLayoutManager.Direction direction) {
-        for (int i = 0; i < mLanes.length; i++) {
-            final Rect laneRect = mLanes[i];
+        for (final Rect laneRect : mLanes) {
             if (mIsVertical) {
                 if (direction == TwoWayLayoutManager.Direction.START) {
                     laneRect.bottom = laneRect.top;
@@ -306,9 +304,7 @@ class Lanes {
     }
 
     public void reset(int offset) {
-        for (int i = 0; i < mLanes.length; i++) {
-            final Rect laneRect = mLanes[i];
-
+        for (final Rect laneRect : mLanes) {
             laneRect.offsetTo(mIsVertical ? laneRect.left : offset,
                     mIsVertical ? offset : laneRect.top);
 
@@ -328,8 +324,7 @@ class Lanes {
         }
 
         mInnerStart = Integer.MIN_VALUE;
-        for (int i = 0; i < mLanes.length; i++) {
-            final Rect laneRect = mLanes[i];
+        for (final Rect laneRect : mLanes) {
             mInnerStart = Math.max(mInnerStart, mIsVertical ? laneRect.top : laneRect.left);
         }
 
@@ -342,8 +337,7 @@ class Lanes {
         }
 
         mInnerEnd = Integer.MAX_VALUE;
-        for (int i = 0; i < mLanes.length; i++) {
-            final Rect laneRect = mLanes[i];
+        for (final Rect laneRect : mLanes) {
             mInnerEnd = Math.min(mInnerEnd, mIsVertical ? laneRect.bottom : laneRect.right);
         }
 

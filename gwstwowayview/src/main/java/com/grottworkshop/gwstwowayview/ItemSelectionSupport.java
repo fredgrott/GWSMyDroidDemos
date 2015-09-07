@@ -24,6 +24,7 @@ import android.os.Parcelable;
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.Checkable;
@@ -32,12 +33,14 @@ import static android.os.Build.VERSION_CODES.HONEYCOMB;
 
 
 /**
+ * ItemSelectionSupport class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class ItemSelectionSupport {
     public static final int INVALID_POSITION = -1;
 
-    public static enum ChoiceMode {
+    public enum ChoiceMode {
         NONE,
         SINGLE,
         MULTIPLE
@@ -65,10 +68,12 @@ public class ItemSelectionSupport {
         recyclerView.addOnItemTouchListener(mTouchListener);
     }
 
+    @SuppressWarnings("deprecation")
     private void updateOnScreenCheckedViews() {
         final int count = mRecyclerView.getChildCount();
         for (int i = 0; i < count; i++) {
             final View child = mRecyclerView.getChildAt(i);
+            //TODO: getChildPosition(android.ivew.view) depreciated fix
             final int position = mRecyclerView.getChildPosition(child);
             setViewChecked(child, mCheckedStates.get(position));
         }
@@ -103,11 +108,8 @@ public class ItemSelectionSupport {
      * @see #setChoiceMode(ChoiceMode)
      */
     public boolean isItemChecked(int position) {
-        if (mChoiceMode != ChoiceMode.NONE && mCheckedStates != null) {
-            return mCheckedStates.get(position);
-        }
+        return mChoiceMode != ChoiceMode.NONE && mCheckedStates != null && mCheckedStates.get(position);
 
-        return false;
     }
 
     /**
@@ -366,7 +368,7 @@ public class ItemSelectionSupport {
             itemSelectionSupport = new ItemSelectionSupport(recyclerView);
             recyclerView.setTag(R.id.twowayview_item_selection_support, itemSelectionSupport);
         } else {
-            // TODO: Log warning
+            Log.w("ItemSelectionSupport", "itemSelectionSupport is null");
         }
 
         return itemSelectionSupport;

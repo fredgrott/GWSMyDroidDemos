@@ -23,8 +23,10 @@ import android.util.AttributeSet;
 
 
 /**
+ * ListLayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class ListLayoutManager extends BaseLayoutManager {
     private static final String LOGTAG = "ListLayoutManager";
 

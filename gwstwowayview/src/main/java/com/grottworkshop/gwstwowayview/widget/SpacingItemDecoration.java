@@ -32,6 +32,7 @@ import com.grottworkshop.gwstwowayview.R;
  * {@link android.support.v7.widget.RecyclerView}.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class SpacingItemDecoration extends ItemDecoration {
     private final ItemSpacingOffsets mItemSpacing;
 
@@ -57,6 +58,8 @@ public class SpacingItemDecoration extends ItemDecoration {
         mItemSpacing = new ItemSpacingOffsets(verticalSpacing, horizontalSpacing);
     }
 
+    //TODO: widgets v7 RecyclerView.ItemDecoration.getItemOffsets is depreciated fix
+    @SuppressWarnings("deprecation")
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
         mItemSpacing.getItemOffsets(outRect, itemPosition, parent);

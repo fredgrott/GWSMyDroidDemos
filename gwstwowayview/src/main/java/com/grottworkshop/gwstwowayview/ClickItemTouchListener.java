@@ -28,10 +28,11 @@ import android.view.View;
 
 
 /**
+ * ClickItemTouchListener class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 abstract class ClickItemTouchListener implements OnItemTouchListener {
-    private static final String LOGTAG = "ClickItemTouchListener";
 
     private final GestureDetectorCompat mGestureDetector;
 
@@ -126,6 +127,7 @@ abstract class ClickItemTouchListener implements OnItemTouchListener {
             }
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public boolean onSingleTapUp(MotionEvent event) {
             boolean handled = false;
@@ -133,6 +135,7 @@ abstract class ClickItemTouchListener implements OnItemTouchListener {
             if (mTargetChild != null) {
                 mTargetChild.setPressed(false);
 
+                //TODO: getChildPoistion(android.view.View) is depreciated fix
                 final int position = mHostView.getChildPosition(mTargetChild);
                 final long id = mHostView.getAdapter().getItemId(position);
                 handled = performItemClick(mHostView, mTargetChild, position, id);
@@ -155,12 +158,14 @@ abstract class ClickItemTouchListener implements OnItemTouchListener {
             return false;
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public void onLongPress(MotionEvent event) {
             if (mTargetChild == null) {
                 return;
             }
 
+            //TODO: getChildPosition(android.view.View) is depreciated fix
             final int position = mHostView.getChildPosition(mTargetChild);
             final long id = mHostView.getAdapter().getItemId(position);
             final boolean handled = performItemLongClick(mHostView, mTargetChild, position, id);

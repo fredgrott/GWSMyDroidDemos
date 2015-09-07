@@ -27,10 +27,11 @@ import com.grottworkshop.gwstwowayview.R;
 
 
 /**
+ * GridLayoutManager class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class GridLayoutManager extends BaseLayoutManager {
-    private static final String LOGTAG = "GridLayoutManager";
 
     private static final int DEFAULT_NUM_COLS = 2;
     private static final int DEFAULT_NUM_ROWS = 2;
