@@ -61,6 +61,7 @@ import javax.crypto.spec.SecretKeySpec;
  *      article</a>
  * Created by fgrott on 9/5/2015.
  */
+@SuppressWarnings("unused")
 public class SecurePreferences implements SharedPreferences {
 
     private static final int KEY_SIZE = 256;
@@ -142,16 +143,16 @@ public class SecurePreferences implements SharedPreferences {
     /**
      * Derive a secure key based on the passphraseOrPin
      *
-     * @param passphraseOrPin
-     * @param salt
-     * @param algorthm
+     * @param passphraseOrPin passphrase
+     * @param salt the salt
+     * @param algorthm the algo
      *            - which PBE algorthm to use. some <4.0 devices don;t support
      *            the prefered PBKDF2WithHmacSHA1
      * @param iterations
      *            - Number of PBKDF2 hardening rounds to use. Larger values
      *            increase computation time (a good thing), defaults to 1000 if
      *            not set.
-     * @param keyLength
+     * @param keyLength the key length
      * @return Derived Secretkey
      * @throws NoSuchAlgorithmException
      * @throws InvalidKeySpecException
@@ -170,8 +171,7 @@ public class SecurePreferences implements SharedPreferences {
                 algorthm, PROVIDER);
         KeySpec keySpec = new PBEKeySpec(passphraseOrPin, salt, iterations,
                 keyLength);
-        SecretKey secretKey = secretKeyFactory.generateSecret(keySpec);
-        return secretKey;
+        return secretKeyFactory.generateSecret(keySpec);
     }
 
     /**
@@ -255,7 +255,7 @@ public class SecurePreferences implements SharedPreferences {
     @Override
     public Map<String, String> getAll() {
         final Map<String, ?> encryptedMap = SecurePreferences.sFile.getAll();
-        final Map<String, String> decryptedMap = new HashMap<String, String>(
+        final Map<String, String> decryptedMap = new HashMap<>(
                 encryptedMap.size());
         for (Entry<String, ?> entry : encryptedMap.entrySet()) {
             try {
@@ -281,8 +281,8 @@ public class SecurePreferences implements SharedPreferences {
      * Added to get a values as as it can be useful to store values that are
      * already encrypted and encoded
      *
-     * @param key
-     * @param defaultValue
+     * @param key the key
+     * @param defaultValue the default value
      * @return Unencrypted value of the key or the defaultValue if
      */
     public String getStringUnencrypted(String key, String defaultValue) {
@@ -299,7 +299,7 @@ public class SecurePreferences implements SharedPreferences {
         if (encryptedSet == null) {
             return defaultValues;
         }
-        final Set<String> decryptedSet = new HashSet<String>(
+        final Set<String> decryptedSet = new HashSet<>(
                 encryptedSet.size());
         for (String encryptedValue : encryptedSet) {
             decryptedSet.add(SecurePreferences.decrypt(encryptedValue));
@@ -407,7 +407,7 @@ public class SecurePreferences implements SharedPreferences {
          *            - encrypted as usual
          * @param value
          *            will not be encrypted
-         * @return
+         * @return this
          */
         public SharedPreferences.Editor putStringNoEncrypted(String key,
                                                              String value) {
@@ -419,7 +419,7 @@ public class SecurePreferences implements SharedPreferences {
         @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         public SharedPreferences.Editor putStringSet(String key,
                                                      Set<String> values) {
-            final Set<String> encryptedValues = new HashSet<String>(
+            final Set<String> encryptedValues = new HashSet<>(
                     values.size());
             for (String value : values) {
                 encryptedValues.add(SecurePreferences.encrypt(value));
