@@ -22,8 +22,10 @@ import android.graphics.Region;
 import android.view.View;
 
 /**
+ * RoundedClippingTransform class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class RoundedClippingTransform implements ClippingTransform {
 
     private int width, height;
@@ -68,10 +70,9 @@ public class RoundedClippingTransform implements ClippingTransform {
         float nextCPX = widthDiff;
         float nextCPY = startingHeight + roundedEdgeHeight;
         float nextX = nextCPX + widthDiff;
-        float nextY = startingHeight;
 
         for (int i = 0; i < waveCount; i++) {
-            roundedPath.quadTo(nextCPX, nextCPY, nextX, nextY);
+            roundedPath.quadTo(nextCPX, nextCPY, nextX, startingHeight);
             nextCPX = nextX + widthDiff;
             nextCPY =
                     (i % 2 != 0) ? startingHeight + roundedEdgeHeight : startingHeight - roundedEdgeHeight;

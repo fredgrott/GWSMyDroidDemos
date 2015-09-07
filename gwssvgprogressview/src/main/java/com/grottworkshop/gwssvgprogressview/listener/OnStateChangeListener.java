@@ -17,6 +17,7 @@
 package com.grottworkshop.gwssvgprogressview.listener;
 
 /**
+ * OnStateChangeListener interface
  * Created by fgrott on 8/26/2015.
  */
 public interface OnStateChangeListener {

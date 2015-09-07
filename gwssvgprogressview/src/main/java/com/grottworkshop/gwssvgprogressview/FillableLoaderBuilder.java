@@ -28,6 +28,7 @@ import com.grottworkshop.gwssvgprogressview.clipping.PlainClippingTransform;
  * readability.({@link FillableLoader} was getting a little bit big).
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class FillableLoaderBuilder {
 
     private ViewGroup parent;
@@ -94,8 +95,10 @@ public class FillableLoaderBuilder {
         return this;
     }
 
+    @SuppressWarnings("deprecation")
     public FillableLoader build() {
         Resources res = parent.getContext().getResources();
+        //TODO: getColor(int) is depreciated fix
         strokeColor = strokeColor == -1 ? res.getColor(R.color.strokeColor) : strokeColor;
         fillColor = fillColor == -1 ? res.getColor(R.color.fillColor) : fillColor;
         strokeWidth = strokeWidth < 0 ? res.getDimensionPixelSize(R.dimen.strokeWidth) : strokeWidth;

@@ -50,6 +50,7 @@ import java.text.ParseException;
  * @see <a href="https://github.com/poolqf/FillableLoaders.">poolqf/FillableLoaders</a>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class FillableLoader extends View {
 
     private int strokeColor, fillColor, strokeWidth;

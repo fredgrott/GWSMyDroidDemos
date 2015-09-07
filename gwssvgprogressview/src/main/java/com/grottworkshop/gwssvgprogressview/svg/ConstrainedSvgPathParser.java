@@ -17,6 +17,7 @@
 package com.grottworkshop.gwssvgprogressview.svg;
 
 /**
+ * ConstrainedSvgPathParser class
  * Created by fgrott on 8/26/2015.
  */
 public class ConstrainedSvgPathParser extends SvgPathParser {

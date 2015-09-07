@@ -23,8 +23,10 @@ import android.view.View;
 
 
 /**
+ * BitesClippingTransform class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class BitesClippingTransform implements ClippingTransform {
 
     private float roundedEdgeHeight = 32f;

@@ -17,6 +17,7 @@
 package com.grottworkshop.gwssvgprogressview.clipping;
 
 /**
+ * TransformAbstractFactory interface
  * Created by fgrott on 8/26/2015.
  */
 public interface TransformAbstractFactory {

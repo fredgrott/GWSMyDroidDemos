@@ -24,6 +24,7 @@ import android.view.View;
 import java.util.Random;
 
 /**
+ * WavesClippingTransform class
  * Created by fgrott on 8/26/2015.
  */
 public class WavesClippingTransform implements ClippingTransform {

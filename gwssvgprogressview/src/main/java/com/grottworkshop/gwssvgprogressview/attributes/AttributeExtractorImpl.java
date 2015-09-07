@@ -28,6 +28,7 @@ import com.grottworkshop.gwssvgprogressview.clipping.TransformFactoryImpl;
 import java.lang.ref.WeakReference;
 
 /**
+ * AttributteExtractorImpl class
  * Created by fgrott on 8/26/2015.
  */
 public class AttributeExtractorImpl implements AttributeExtractor {
@@ -58,12 +59,16 @@ public class AttributeExtractorImpl implements AttributeExtractor {
         return weakAttributeArray.get();
     }
 
+    @SuppressWarnings("deprecation")
     @Override public int getStrokeColor() {
+        //TODO: getColor(int) is depreciated fix
         return attributeArray().getColor(R.styleable.FillableLoader_fl_strokeColor,
                 context().getResources().getColor(R.color.strokeColor));
     }
 
+    @SuppressWarnings("deprecation")
     @Override public int getFillColor() {
+        //TODO: getColor(int) is depreciated fix
         return attributeArray().getColor(R.styleable.FillableLoader_fl_fillColor,
                 context().getResources().getColor(R.color.fillColor));
     }
@@ -117,7 +122,7 @@ public class AttributeExtractorImpl implements AttributeExtractor {
             if (context == null) {
                 throw new IllegalArgumentException("Context must not be null!");
             }
-            weakContext = new WeakReference<Context>(context);
+            weakContext = new WeakReference<>(context);
             return this;
         }
 
@@ -125,7 +130,7 @@ public class AttributeExtractorImpl implements AttributeExtractor {
             if (attributeSet == null) {
                 throw new IllegalArgumentException("Attribute set must nost be null!");
             }
-            weakAttrs = new WeakReference<AttributeSet>(attributeSet);
+            weakAttrs = new WeakReference<>(attributeSet);
             return this;
         }
 

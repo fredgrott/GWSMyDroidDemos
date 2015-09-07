@@ -19,6 +19,7 @@ package com.grottworkshop.gwssvgprogressview.attributes;
 import com.grottworkshop.gwssvgprogressview.clipping.ClippingTransform;
 
 /**
+ * AttributeExtractor class
  * Created by fgrott on 8/26/2015.
  */
 public interface AttributeExtractor {

@@ -17,8 +17,10 @@
 package com.grottworkshop.gwssvgprogressview.clipping;
 
 /**
+ * FillMode class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class FillMode {
     public static final int PLAIN = 0;
     public static final int SPIKES = 1;

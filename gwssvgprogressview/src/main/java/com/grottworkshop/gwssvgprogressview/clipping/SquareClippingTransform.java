@@ -22,8 +22,10 @@ import android.graphics.Region;
 import android.view.View;
 
 /**
+ * SquareClippingTransform class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class SquareClippingTransform implements ClippingTransform {
 
     private int width, height;
