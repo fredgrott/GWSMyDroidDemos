@@ -32,10 +32,11 @@ import android.widget.FrameLayout;
 
 
 /**
+ * ZDepthShadowLayout class
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ZDepthShadowLayout extends FrameLayout {
-    public static final String TAG = "ZDepthShadowLayout";
 
     protected static final int DEFAULT_ATTR_SHAPE = 0;
     protected static final int DEFAULT_ATTR_ZDEPTH = 1;

@@ -28,6 +28,7 @@ import android.content.Context;
 
 
 /**
+ * ZDepth enum
  * Created by fgrott on 8/25/2015.
  */
 public enum ZDepth {
@@ -91,7 +92,7 @@ public enum ZDepth {
     public final float mBlurTopShadow; // dp
     public final float mBlurBottomShadow; // dp
 
-    private ZDepth(int alphaTopShadow, int alphaBottomShadow, float offsetYTopShadow, float offsetYBottomShadow, float blurTopShadow, float blurBottomShadow) {
+    ZDepth(int alphaTopShadow, int alphaBottomShadow, float offsetYTopShadow, float offsetYBottomShadow, float blurTopShadow, float blurBottomShadow) {
         mAlphaTopShadow = alphaTopShadow;
         mAlphaBottomShadow = alphaBottomShadow;
         mOffsetYTopShadow = offsetYTopShadow;

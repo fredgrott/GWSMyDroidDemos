@@ -27,6 +27,7 @@ package com.grottworkshop.gwszdepthshadow;
 import android.graphics.Canvas;
 
 /**
+ * Shadow interface
  * Created by fgrott on 8/25/2015.
  */
 public interface Shadow {

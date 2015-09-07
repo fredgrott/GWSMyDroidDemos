@@ -33,6 +33,7 @@ import android.graphics.drawable.shapes.RectShape;
 
 
 /**
+ * ShadowRect class
  * Created by fgrott on 8/25/2015.
  */
 public class ShadowRect implements Shadow {

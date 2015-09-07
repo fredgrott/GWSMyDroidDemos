@@ -27,6 +27,7 @@ package com.grottworkshop.gwszdepthshadow;
 import android.content.Context;
 
 /**
+ * DisplayUtils class
  * Created by fgrott on 8/25/2015.
  */
 public class DisplayUtils {

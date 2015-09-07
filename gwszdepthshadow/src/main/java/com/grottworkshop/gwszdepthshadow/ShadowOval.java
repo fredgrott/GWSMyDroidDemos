@@ -33,6 +33,7 @@ import android.graphics.drawable.shapes.OvalShape;
 
 
 /**
+ * ShadowOval class
  * Created by fgrott on 8/25/2015.
  */
 public class ShadowOval implements Shadow {

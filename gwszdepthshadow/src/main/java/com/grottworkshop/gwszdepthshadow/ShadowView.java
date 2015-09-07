@@ -35,10 +35,10 @@ import android.view.animation.LinearInterpolator;
 
 
 /**
+ * ShadowView class
  * Created by fgrott on 8/25/2015.
  */
 public class ShadowView extends View {
-    protected static final String TAG = "ShadowView";
 
     protected static final String ANIM_PROPERTY_ALPHA_TOP_SHADOW = "alphaTopShadow";
     protected static final String ANIM_PROPERTY_ALPHA_BOTTOM_SHADOW = "alphaBottomShadow";
