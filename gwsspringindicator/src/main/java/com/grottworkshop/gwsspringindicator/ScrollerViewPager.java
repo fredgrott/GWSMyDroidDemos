@@ -27,8 +27,10 @@ import java.lang.reflect.Field;
 
 
 /**
+ * ScrollerViewPager class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ScrollerViewPager extends ViewPager {
 
     private static final String TAG = ScrollerViewPager.class.getSimpleName();

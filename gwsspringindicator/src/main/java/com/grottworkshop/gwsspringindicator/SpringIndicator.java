@@ -35,8 +35,10 @@ import java.util.List;
 
 
 /**
+ * SpringIndicator class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class SpringIndicator extends FrameLayout {
 
     private static final int INDICATOR_ANIM_DURATION = 3000;
@@ -114,8 +116,10 @@ public class SpringIndicator extends FrameLayout {
         addTabItems();
     }
 
+    @SuppressWarnings("deprecation")
     private void addPointView() {
         springView = new SpringView(getContext());
+        //TODO: getColor(int) is depreciated fix
         springView.setIndicatorColor(getResources().getColor(indicatorColorId));
         addView(springView);
     }
@@ -128,6 +132,7 @@ public class SpringIndicator extends FrameLayout {
         addView(tabContainer);
     }
 
+    @SuppressWarnings("deprecation")
     private void addTabItems() {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
         tabs = new ArrayList<>();
@@ -138,6 +143,7 @@ public class SpringIndicator extends FrameLayout {
             }
             textView.setGravity(Gravity.CENTER);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            //TODO: getColor(int) is depreciated fix
             textView.setTextColor(getResources().getColor(textColorId));
             if (textBgResId != 0){
                 textView.setBackgroundResource(textBgResId);
@@ -178,7 +184,9 @@ public class SpringIndicator extends FrameLayout {
     }
 
 
+    @SuppressWarnings("deprecation")
     private void setUpListener(){
+        //TODO: setOnPageChangeListener() is depreciated fix
         viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 
             @Override
@@ -268,8 +276,10 @@ public class SpringIndicator extends FrameLayout {
         return tabs.get(position).getX() + tabs.get(position).getWidth() / 2;
     }
 
+    @SuppressWarnings("deprecation")
     private void setSelectedTextColor(int position){
         for (TextView tab : tabs) {
+            //TODO: getOclor(int) is depreciated fix
             tab.setTextColor(getResources().getColor(textColorId));
         }
         tabs.get(position).setTextColor(getResources().getColor(selectedTextColorId));

@@ -17,6 +17,7 @@
 package com.grottworkshop.gwsspringindicator;
 
 /**
+ * Point class
  * Created by fgrott on 8/26/2015.
  */
 public class Point {

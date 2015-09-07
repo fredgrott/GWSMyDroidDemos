@@ -28,8 +28,10 @@ import android.view.animation.OvershootInterpolator;
 
 
 /**
+ * SpringView class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class SpringView extends View {
 
     private Paint paint;
