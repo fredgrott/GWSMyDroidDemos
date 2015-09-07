@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 
 /**
+ * StickyListHeadersAdapter interface
  * Created by fgrott on 9/3/2015.
  */
 public interface StickyListHeadersAdapter extends ListAdapter {

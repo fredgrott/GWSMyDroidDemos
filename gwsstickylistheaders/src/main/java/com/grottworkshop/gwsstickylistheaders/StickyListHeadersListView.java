@@ -50,6 +50,7 @@ import android.widget.SectionIndexer;
  *   2. It used to be a ListView subclass and refactoring the name would cause compatibility errors.
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 public class StickyListHeadersListView extends FrameLayout {
 
     public interface OnHeaderClickListener {
@@ -1086,10 +1087,7 @@ public class StickyListHeadersListView extends FrameLayout {
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public boolean isFastScrollAlwaysVisible() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-            return false;
-        }
-        return mList.isFastScrollAlwaysVisible();
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && mList.isFastScrollAlwaysVisible();
     }
 
     public void setScrollBarStyle(int style) {

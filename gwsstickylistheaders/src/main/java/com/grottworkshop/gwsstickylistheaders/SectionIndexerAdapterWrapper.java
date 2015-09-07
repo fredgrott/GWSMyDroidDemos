@@ -21,6 +21,7 @@ import android.content.Context;
 import android.widget.SectionIndexer;
 
 /**
+ * SectionIndexerAdapterWrapper class
  * Created by fgrott on 9/3/2015.
  */
 class SectionIndexerAdapterWrapper extends

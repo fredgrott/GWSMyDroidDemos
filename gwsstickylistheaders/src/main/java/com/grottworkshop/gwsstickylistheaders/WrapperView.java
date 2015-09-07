@@ -29,6 +29,7 @@ import android.view.ViewParent;
  * the view that wrapps a divider header and a normal list item. The listview sees this as 1 item
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 public class WrapperView extends ViewGroup {
 
     View mItem;

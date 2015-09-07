@@ -31,8 +31,10 @@ import java.util.List;
 
 
 /**
+ * WrapperViewList class
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 class WrapperViewList extends ListView {
 
     interface LifeCycleListener {
@@ -47,7 +49,7 @@ class WrapperViewList extends ListView {
     private boolean mClippingToPadding = true;
     private boolean mBlockLayoutChildren = false;
 
-    public WrapperViewList(Context context) {
+    public WrapperViewList(Context context) throws IllegalArgumentException, IllegalAccessException {
         super(context);
 
         // Use reflection to be able to change the size/position of the list
@@ -63,10 +65,6 @@ class WrapperViewList extends ListView {
             }
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         }
     }
 
@@ -80,7 +78,12 @@ class WrapperViewList extends ListView {
 
     private void positionSelectorRect() {
         if (!mSelectorRect.isEmpty()) {
-            int selectorPosition = getSelectorPosition();
+            int selectorPosition = 0;
+            try {
+                selectorPosition = getSelectorPosition();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
             if (selectorPosition >= 0) {
                 int firstVisibleItem = getFixedFirstVisibleItem();
                 View v = getChildAt(selectorPosition - firstVisibleItem);
@@ -92,7 +95,7 @@ class WrapperViewList extends ListView {
         }
     }
 
-    private int getSelectorPosition() {
+    private int getSelectorPosition() throws IllegalAccessException {
         if (mSelectorPositionField == null) { // not all supported andorid
             // version have this variable
             for (int i = 0; i < getChildCount(); i++) {
@@ -104,8 +107,6 @@ class WrapperViewList extends ListView {
             try {
                 return mSelectorPositionField.getInt(this);
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
@@ -146,7 +147,7 @@ class WrapperViewList extends ListView {
 
     private void addInternalFooterView(View v) {
         if (mFooterViews == null) {
-            mFooterViews = new ArrayList<View>();
+            mFooterViews = new ArrayList<>();
         }
         mFooterViews.add(v);
     }
@@ -161,10 +162,7 @@ class WrapperViewList extends ListView {
     }
 
     boolean containsFooterView(View v) {
-        if (mFooterViews == null) {
-            return false;
-        }
-        return mFooterViews.contains(v);
+        return mFooterViews != null && mFooterViews.contains(v);
     }
 
     void setTopClippingLength(int topClipping) {

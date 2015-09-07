@@ -28,18 +28,19 @@ import java.util.Set;
  * and the map also support getKey by value quickly
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 class DistinctMultiHashMap<TKey,TItemValue> {
     private IDMapper<TKey, TItemValue> mIDMapper;
 
     interface IDMapper<TKey,TItemValue>{
-        public Object keyToKeyId(TKey key);
-        public TKey keyIdToKey(TKey keyId);
-        public Object valueToValueId(TItemValue value);
-        public TItemValue valueIdToValue(Object valueId);
+        Object keyToKeyId(TKey key);
+        TKey keyIdToKey(TKey keyId);
+        Object valueToValueId(TItemValue value);
+        TItemValue valueIdToValue(Object valueId);
     }
 
-    LinkedHashMap<Object,List<TItemValue>> mKeyToValuesMap = new LinkedHashMap<Object, List<TItemValue>>();
-    LinkedHashMap<Object,TKey> mValueToKeyIndexer = new LinkedHashMap<Object, TKey>();
+    LinkedHashMap<Object,List<TItemValue>> mKeyToValuesMap = new LinkedHashMap<>();
+    LinkedHashMap<Object,TKey> mValueToKeyIndexer = new LinkedHashMap<>();
 
     @SuppressWarnings("unchecked")
     DistinctMultiHashMap(){
@@ -150,8 +151,8 @@ class DistinctMultiHashMap<TKey,TItemValue> {
     }
 
     /**
-     * @param position
-     * @return
+     * @param position the position
+     * @return td value
      */
     public TItemValue getValueByPosition(int position){
         Object[] vauleIdArray = mValueToKeyIndexer.keySet().toArray();
