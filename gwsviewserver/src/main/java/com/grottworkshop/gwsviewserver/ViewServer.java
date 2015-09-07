@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -108,6 +109,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * </pre>
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class ViewServer implements Runnable {
     /**
      * The default port used to start view servers.
@@ -141,9 +143,9 @@ public class ViewServer implements Runnable {
     private ExecutorService mThreadPool;
 
     private final List<WindowListener> mListeners =
-            new CopyOnWriteArrayList<ViewServer.WindowListener>();
+            new CopyOnWriteArrayList<>();
 
-    private final HashMap<View, String> mWindows = new HashMap<View, String>();
+    private final HashMap<View, String> mWindows = new HashMap<>();
     private final ReentrantReadWriteLock mWindowsLock = new ReentrantReadWriteLock();
 
     private View mFocusedWindow;
@@ -322,7 +324,7 @@ public class ViewServer implements Runnable {
      * Invoke this method to register a new view hierarchy.
      *
      * @param view A view that belongs to the view hierarchy/window to register
-     * @name name The name of the view hierarchy/window to register
+     * @param name The name of the view hierarchy/window to register
      *
      * @see #removeWindow(View)
      */
@@ -470,6 +472,7 @@ public class ViewServer implements Runnable {
             // Don't close the stream
         }
 
+        @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
         public boolean equals(Object o) {
             return mStream.equals(o);
         }
@@ -486,12 +489,12 @@ public class ViewServer implements Runnable {
             return mStream.toString();
         }
 
-        public void write(byte[] buffer, int offset, int count)
+        public void write(@NonNull byte[] buffer, int offset, int count)
                 throws IOException {
             mStream.write(buffer, offset, count);
         }
 
-        public void write(byte[] buffer) throws IOException {
+        public void write(@NonNull byte[] buffer) throws IOException {
             mStream.write(buffer);
         }
 
