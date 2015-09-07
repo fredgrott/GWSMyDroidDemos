@@ -153,12 +153,14 @@ public class HeaderPositionCalculator {
             Rect headerMargins = mDimensionCalculator.getMargins(stickyHeader);
 
             if (mOrientationProvider.getOrientation(recyclerView) == LinearLayoutManager.VERTICAL) {
+                assert viewAfterHeader != null;
                 int topOfNextHeader = viewAfterHeader.getTop() - nextHeaderMargins.bottom - nextHeader.getHeight() - nextHeaderMargins.top;
                 int bottomOfThisHeader = recyclerView.getPaddingTop() + stickyHeader.getBottom() + headerMargins.top + headerMargins.bottom;
                 if (topOfNextHeader < bottomOfThisHeader) {
                     return true;
                 }
             } else {
+                assert viewAfterHeader != null;
                 int leftOfNextHeader = viewAfterHeader.getLeft() - nextHeaderMargins.right - nextHeader.getWidth() - nextHeaderMargins.left;
                 int rightOfThisHeader = recyclerView.getPaddingLeft() + stickyHeader.getRight() + headerMargins.left + headerMargins.right;
                 if (leftOfNextHeader < rightOfThisHeader) {
@@ -212,7 +214,7 @@ public class HeaderPositionCalculator {
      * Determines if an item is obscured by a header
      *
      *
-     * @param parent
+     * @param parent the recyclerview parent
      * @param item        to determine if obscured by header
      * @param header      that might be obscuring the item
      * @param orientation of the {@link RecyclerView}

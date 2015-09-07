@@ -24,8 +24,10 @@ import android.view.SoundEffectConstants;
 import android.view.View;
 
 /**
+ * StickyRecyclerHeadersTouchListener class
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 public class StickyRecyclerHeadersTouchListener implements RecyclerView.OnItemTouchListener {
     private final GestureDetector mTapDetector;
     private final RecyclerView mRecyclerView;

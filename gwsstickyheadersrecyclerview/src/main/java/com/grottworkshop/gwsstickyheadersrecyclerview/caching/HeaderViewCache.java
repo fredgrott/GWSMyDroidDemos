@@ -42,6 +42,7 @@ public class HeaderViewCache implements HeaderProvider {
         mOrientationProvider = orientationProvider;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public View getHeader(RecyclerView parent, int position) {
         long headerId = mAdapter.getHeaderId(position);

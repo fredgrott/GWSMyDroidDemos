@@ -21,6 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 /**
+ * StickyRecyclerHeadersAdapter
  * Created by fgrott on 9/3/2015.
  */
 public interface StickyRecyclerHeadersAdapter<VH extends RecyclerView.ViewHolder> {
@@ -29,28 +30,28 @@ public interface StickyRecyclerHeadersAdapter<VH extends RecyclerView.ViewHolder
      * items by their first letter, you could return the character representation of the first letter.
      * Return a value < 0 if the view should not have a header (like, a header view or footer view)
      *
-     * @param position
-     * @return
+     * @param position the position
+     *
      */
-    public long getHeaderId(int position);
+    long getHeaderId(int position);
 
     /**
      * Creates a new ViewHolder for a header.  This works the same way onCreateViewHolder in
      * Recycler.Adapter, ViewHolders can be reused for different views.  This is usually a good place
      * to inflate the layout for the header.
      *
-     * @param parent
-     * @return
+     * @param parent ViewGroup parent
+     *
      */
-    public VH onCreateHeaderViewHolder(ViewGroup parent);
+    VH onCreateHeaderViewHolder(ViewGroup parent);
 
     /**
      * Binds an existing ViewHolder to the specified adapter position.
      *
-     * @param holder
-     * @param position
+     * @param holder the holder
+     * @param position the position
      */
-    public void onBindHeaderViewHolder(VH holder, int position);
+    void onBindHeaderViewHolder(VH holder, int position);
 
-    public int getItemCount();
+    int getItemCount();
 }

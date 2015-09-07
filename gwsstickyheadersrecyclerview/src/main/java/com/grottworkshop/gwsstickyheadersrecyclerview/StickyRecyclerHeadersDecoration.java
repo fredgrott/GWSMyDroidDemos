@@ -32,8 +32,10 @@ import com.grottworkshop.gwsstickyheadersrecyclerview.util.LinearLayoutOrientati
 import com.grottworkshop.gwsstickyheadersrecyclerview.util.OrientationProvider;
 
 /**
+ * StickyRecyclerHeadersDecoration class
  * Created by fgrott on 9/3/2015.
  */
+@SuppressWarnings("unused")
 public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration {
 
     private final StickyRecyclerHeadersAdapter mAdapter;
@@ -149,8 +151,8 @@ public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration
      * Gets the header view for the associated position.  If it doesn't exist yet, it will be
      * created, measured, and laid out.
      *
-     * @param parent
-     * @param position
+     * @param parent the parent
+     * @param position the position
      * @return Header view
      */
     public View getHeaderView(RecyclerView parent, int position) {
