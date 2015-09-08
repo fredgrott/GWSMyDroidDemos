@@ -30,8 +30,10 @@ import android.widget.RelativeLayout;
 
 
 /**
+ * RippleDecoratorView class
  * Created by fgrott on 8/24/2015.
  */
+@SuppressWarnings("unused")
 public class RippleDecoratorView extends RelativeLayout {
     public static final float NANOS_TO_MILLIS = 1000000.0F;
 
@@ -236,9 +238,11 @@ public class RippleDecoratorView extends RelativeLayout {
         mHighlightPaint.setStyle(Paint.Style.FILL);
     }
 
+    @SuppressWarnings("deprecation")
     private void initFromTypedArray(Context context, AttributeSet attrs) {
         final TypedArray typedArray = context.obtainStyledAttributes(attrs,
                 R.styleable.RippleDecoratorView);
+        //TODO: getColor(int) is depreciated fix
         mRippleColor = typedArray.getColor(R.styleable.RippleDecoratorView_rdv_rippleColor,
                 getResources().getColor(RIPPLE_COLOR));
         mRippleStyle = Styles.fromOrdinal(typedArray.getInt(
