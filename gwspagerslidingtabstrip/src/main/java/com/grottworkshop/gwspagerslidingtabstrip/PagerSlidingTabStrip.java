@@ -45,8 +45,10 @@ import android.widget.TextView;
 
 
 /**
+ * PagerSlidingTabStrip class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     public static final int DEF_VALUE_TAB_TEXT_ALPHA = 150;
@@ -118,6 +120,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         this(context, attrs, 0);
     }
 
+    @SuppressWarnings("deprecation")
     public PagerSlidingTabStrip(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setFillViewport(true);
@@ -145,6 +148,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         // get system attrs for container
         TypedArray a = context.obtainStyledAttributes(attrs, ANDROID_ATTRS);
+        //TODO: getColor(int) depreciated fix
         int textPrimaryColor = a.getColor(TEXT_COLOR_PRIMARY, getResources().getColor(android.R.color.black));
         mUnderlineColor = textPrimaryColor;
         mDividerColor = textPrimaryColor;
@@ -214,6 +218,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), bottomMargin);
     }
 
+    @SuppressWarnings("deprecation")
     public void setViewPager(ViewPager pager) {
         this.mPager = pager;
         if (pager.getAdapter() == null) {
@@ -221,6 +226,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         }
 
         isCustomTabs = pager.getAdapter() instanceof CustomTabProvider;
+        //TODO: depreciated fix
         pager.setOnPageChangeListener(mPageListener);
         pager.getAdapter().registerDataSetObserver(mAdapterObserver);
         mAdapterObserver.setAttached(true);
@@ -327,7 +333,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             lineRight = (mCurrentPositionOffset * nextTabRight + (1f - mCurrentPositionOffset) * lineRight);
         }
 
-        return new Pair<Float, Float>(lineLeft, lineRight);
+        return new Pair<>(lineLeft, lineRight);
     }
 
     @Override
@@ -665,7 +671,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         invalidate();
     }
 
+    @SuppressWarnings("deprecation")
     public void setIndicatorColorResource(int resId) {
+        //TODO: getColor(int) depreciated fix
         this.mIndicatorColor = getResources().getColor(resId);
         invalidate();
     }
@@ -680,7 +688,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         invalidate();
     }
 
+    @SuppressWarnings("deprecation")
     public void setUnderlineColorResource(int resId) {
+        //TODO: getColor(int) depreciated fix
         this.mUnderlineColor = getResources().getColor(resId);
         invalidate();
     }
@@ -690,7 +700,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         invalidate();
     }
 
+    @SuppressWarnings("deprecation")
     public void setDividerColorResource(int resId) {
+        //TODO: getColor(int) depreciated fix
         this.mDividerColor = getResources().getColor(resId);
         invalidate();
     }
@@ -731,6 +743,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         updateTabStyles();
     }
 
+    //TODO: getColor(int) depreciated fix
+    @SuppressWarnings("deprecation")
     public void setTextColorResource(int resId) {
         setTextColor(getResources().getColor(resId));
     }
@@ -739,7 +753,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         setTextColor(createColorStateList(textColor));
     }
 
+    @SuppressWarnings("deprecation")
     public void setTextColorStateListResource(int resId) {
+        //TODO: getColorStateList(int) depreciated fix
         setTextColor(getResources().getColorStateList(resId));
     }
 
