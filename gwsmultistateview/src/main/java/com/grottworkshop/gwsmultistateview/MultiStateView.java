@@ -41,6 +41,7 @@ import java.util.Locale;
  * View. Note that this layout can only have one direct descendant which is used as the "content" view.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class MultiStateView extends FrameLayout {
     private static final String TAG = "MultiStateView";
     private final MultiStateViewData mViewState = new MultiStateViewData(ContentState.CONTENT);
@@ -77,8 +78,8 @@ public class MultiStateView extends FrameLayout {
     /**
      * Parses the incoming attributes from XML inflation
      *
-     * @param context
-     * @param attrs
+     * @param context the context
+     * @param attrs the attributes
      */
     private void parseAttrs(Context context, AttributeSet attrs) {
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.MultiStateView, 0, 0);
@@ -184,7 +185,7 @@ public class MultiStateView extends FrameLayout {
      * Configures the view to be in the given state. This method is an internal method used for parsing the native integer value used in attributes
      * in XML.
      *
-     * @param nativeInt
+     * @param nativeInt the nativeInt
      * @see ContentState
      * @see #setState(ContentState)
      */
@@ -195,7 +196,7 @@ public class MultiStateView extends FrameLayout {
     /**
      * Configures the view to be in the given state, hiding and showing internally maintained-views as needed
      *
-     * @param state
+     * @param state the state
      */
     public void setState(final ContentState state) {
         if (state == mViewState.state) {
@@ -288,8 +289,8 @@ public class MultiStateView extends FrameLayout {
     /**
      * Returns the given view corresponding to the specified {@link ContentState}
      *
-     * @param state
-     * @return
+     * @param state the state
+     * @return null if state is null
      */
     @Nullable
     public View getStateView(ContentState state) {
@@ -315,7 +316,7 @@ public class MultiStateView extends FrameLayout {
     /**
      * Returns the view to be displayed for the case of a network error
      *
-     * @return
+     * @return mNetworkErrorView
      */
     @NonNull
     public View getNetworkErrorView() {
@@ -336,7 +337,7 @@ public class MultiStateView extends FrameLayout {
     /**
      * Returns the view to be displayed for the case of an unknown error
      *
-     * @return
+     * @return mGeneralErrorView
      */
     @NonNull
     public View getGeneralErrorView() {
@@ -384,7 +385,7 @@ public class MultiStateView extends FrameLayout {
      * Adds the given view as content, throwing an {@link IllegalStateException} if a content view is already set (this layout can only have one
      * direct descendant)
      *
-     * @param contentView
+     * @param contentView the contentView
      */
     private void addContentView(View contentView) {
         if (mContentView != null && mContentView != contentView) {
@@ -406,7 +407,7 @@ public class MultiStateView extends FrameLayout {
     /**
      * Sets the content view of this view. This does nothing to eradicate the inflated or any pre-existing descendant
      *
-     * @param contentView
+     * @param contentView the contentView
      */
     public void setContentView(View contentView) {
         mContentView = contentView;
@@ -498,7 +499,7 @@ public class MultiStateView extends FrameLayout {
     /**
      * States of the MultiStateView
      */
-    public static enum ContentState {
+    public enum ContentState {
         /**
          * Used to indicate that content should be displayed to the user
          *
@@ -541,7 +542,7 @@ public class MultiStateView extends FrameLayout {
             return null;
         }
 
-        private ContentState(int nativeValue) {
+        ContentState(int nativeValue) {
             this.nativeInt = nativeValue;
         }
     }
