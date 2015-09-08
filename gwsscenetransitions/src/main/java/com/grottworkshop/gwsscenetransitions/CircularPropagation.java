@@ -32,6 +32,7 @@ import android.view.ViewGroup;
  * {@link android.transition.Explode}.
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class CircularPropagation extends VisibilityPropagation {
     private static final String TAG = "CircularPropagation";
 

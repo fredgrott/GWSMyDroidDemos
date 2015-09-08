@@ -1,11 +1,10 @@
 package com.grottworkshop.gwsscenetransitions.utils;
 
-import android.annotation.TargetApi;
 import android.graphics.PointF;
-import android.os.Build;
 
 
 /**
+ * PointFAnimator class
  * Created by fgrott on 8/25/2015.
  */
 public class PointFAnimator extends BasePointFAnimator {

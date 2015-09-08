@@ -44,6 +44,7 @@ import com.grottworkshop.gwsscenetransitions.TransitionValues;
  * scenes, the color change is animated.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class Recolor extends Transition {
 
     private static final String PROPNAME_BACKGROUND = "android:recolor:background";
@@ -109,6 +110,7 @@ public class Recolor extends Transition {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public Animator createAnimator(ViewGroup sceneRoot, TransitionValues startValues,
                                    TransitionValues endValues) {
         if (startValues == null || endValues == null) {

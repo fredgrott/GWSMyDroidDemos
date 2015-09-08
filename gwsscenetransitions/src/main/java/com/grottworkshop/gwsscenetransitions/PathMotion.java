@@ -41,6 +41,7 @@ import android.util.AttributeSet;
  * </pre>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public abstract class PathMotion {
 
     public static final PathMotion STRAIGHT_PATH_MOTION = new PathMotion() {

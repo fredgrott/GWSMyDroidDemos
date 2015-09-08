@@ -25,6 +25,7 @@ package com.grottworkshop.gwsscenetransitions.utils;
  * entry values are retrieved.</p>
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class LongSparseArray<E> implements Cloneable {
     private static final Object DELETED = new Object();
     private boolean mGarbage = false;

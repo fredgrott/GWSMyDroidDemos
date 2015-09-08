@@ -42,6 +42,7 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * transition.
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeTransform extends Transition {
 
     private static final String TAG = "ChangeTransform";
@@ -111,7 +112,7 @@ public class ChangeTransform extends Transition {
      * @return <code>true</code> when a changed parent should execute the transition
      * inside the scene root's overlay or <code>false</code> if a parent change only
      * affects the transform of the transitioning view.
-     * @attr ref android.R.styleable#ChangeTransform_reparentWithOverlay
+     * ref android.R.styleable#ChangeTransform_reparentWithOverlay
      */
     public boolean getReparentWithOverlay() {
         return mUseOverlay;
@@ -130,10 +131,10 @@ public class ChangeTransform extends Transition {
      * child view will be relative to its parent's final position, so it may appear to "jump"
      * at the beginning.</p>
      *
-     * @return <code>true</code> when a changed parent should execute the transition
+     * return <code>true</code> when a changed parent should execute the transition
      * inside the scene root's overlay or <code>false</code> if a parent change only
      * affects the transform of the transitioning view.
-     * @attr ref android.R.styleable#ChangeTransform_reparentWithOverlay
+     * ref android.R.styleable#ChangeTransform_reparentWithOverlay
      */
     public void setReparentWithOverlay(boolean reparentWithOverlay) {
         mUseOverlay = reparentWithOverlay;
@@ -146,7 +147,7 @@ public class ChangeTransform extends Transition {
      * view will be tracked. Default is true.
      *
      * @return whether parent changes will be tracked by the ChangeTransform.
-     * @attr ref android.R.styleable#ChangeTransform_reparent
+     * ref android.R.styleable#ChangeTransform_reparent
      */
     public boolean getReparent() {
         return mReparent;
@@ -160,7 +161,7 @@ public class ChangeTransform extends Transition {
      *
      * @param reparent Set to true to track parent changes or false to only track changes
      *                 of the transitioning view without considering the parent change.
-     * @attr ref android.R.styleable#ChangeTransform_reparent
+     * ref android.R.styleable#ChangeTransform_reparent
      */
     public void setReparent(boolean reparent) {
         mReparent = reparent;
@@ -324,7 +325,10 @@ public class ChangeTransform extends Transition {
         };
 
         animator.addListener(listener);
-        animator.addPauseListener(listener);
+        //TODO: supply the else clause of this
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            animator.addPauseListener(listener);
+        }
         return animator;
     }
 
@@ -448,12 +452,10 @@ public class ChangeTransform extends Transition {
     private static class GhostListener extends Transition.TransitionListenerAdapter {
         private View mView;
         private View mGhostView;
-        private Matrix mEndMatrix;
 
         public GhostListener(View view, View ghostView, Matrix endMatrix) {
             mView = view;
             mGhostView = ghostView;
-            mEndMatrix = endMatrix;
         }
 
         @Override

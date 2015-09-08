@@ -16,8 +16,10 @@
  */
 package com.grottworkshop.gwsscenetransitions.utils;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
@@ -46,6 +48,7 @@ import java.util.Set;
  * explicit call to set the capacity should turn off this aggressive shrinking behavior.</p>
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public final class ArrayMap<K, V> implements Map<K, V> {
     private static final boolean DEBUG = false;
     private static final String TAG = "ArrayMap";
@@ -176,7 +179,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
                     mHashes = (int[]) array[1];
                     array[0] = array[1] = null;
                     mTwiceBaseCacheSize--;
-                    if (DEBUG) Log.d(TAG, "Retrieving 2x cache " + mHashes
+                    if (DEBUG) Log.d(TAG, "Retrieving 2x cache " + Arrays.toString(mHashes)
                             + " now have " + mTwiceBaseCacheSize + " entries");
                     return;
                 }
@@ -190,7 +193,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
                     mHashes = (int[]) array[1];
                     array[0] = array[1] = null;
                     mBaseCacheSize--;
-                    if (DEBUG) Log.d(TAG, "Retrieving 1x cache " + mHashes
+                    if (DEBUG) Log.d(TAG, "Retrieving 1x cache " + Arrays.toString(mHashes)
                             + " now have " + mBaseCacheSize + " entries");
                     return;
                 }
@@ -212,7 +215,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
                     }
                     mTwiceBaseCache = array;
                     mTwiceBaseCacheSize++;
-                    if (DEBUG) Log.d(TAG, "Storing 2x cache " + array
+                    if (DEBUG) Log.d(TAG, "Storing 2x cache " + Arrays.toString(array)
                             + " now have " + mTwiceBaseCacheSize + " entries");
                 }
             }
@@ -226,7 +229,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
                     }
                     mBaseCache = array;
                     mBaseCacheSize++;
-                    if (DEBUG) Log.d(TAG, "Storing 1x cache " + array
+                    if (DEBUG) Log.d(TAG, "Storing 1x cache " + Arrays.toString(array)
                             + " now have " + mBaseCacheSize + " entries");
                 }
             }
@@ -265,6 +268,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
     /**
      * Create a new ArrayMap with the mappings from the given ArrayMap.
      */
+    @SuppressWarnings("unchecked")
     public ArrayMap(ArrayMap map) {
         this();
         if (map != null) {
@@ -366,6 +370,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * or null if there is no such key.
      */
     @Override
+    @SuppressWarnings("unchecked")
     public V get(Object key) {
         final int index = key == null ? indexOfNull() : indexOf(key, key.hashCode());
         return index >= 0 ? (V) mArray[(index << 1) + 1] : null;
@@ -377,6 +382,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the key stored at the given index.
      */
+    @SuppressWarnings("unchecked")
     public K keyAt(int index) {
         return (K) mArray[index << 1];
     }
@@ -387,6 +393,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the value stored at the given index.
      */
+    @SuppressWarnings("unchecked")
     public V valueAt(int index) {
         return (V) mArray[(index << 1) + 1];
     }
@@ -398,6 +405,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * @param value The new value to store at this index.
      * @return Returns the previous value at the given index.
      */
+    @SuppressWarnings("unchecked")
     public V setValueAt(int index, V value) {
         index = (index << 1) + 1;
         V old = (V) mArray[index];
@@ -423,6 +431,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * was no such key.
      */
     @Override
+    @SuppressWarnings("unchecked")
     public V put(K key, V value) {
         final int hash;
         int index;
@@ -546,6 +555,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the value that was stored at this index.
      */
+    @SuppressWarnings("unchecked")
     public V removeAt(int index) {
         final Object old = mArray[(index << 1) + 1];
         if (mSize <= 1) {
@@ -773,7 +783,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * @param map The map whose contents are to be retrieved.
      */
     @Override
-    public void putAll(Map<? extends K, ? extends V> map) {
+    public void putAll(@NonNull Map<? extends K, ? extends V> map) {
         ensureCapacity(mSize + map.size());
         for (Entry<? extends K, ? extends V> entry : map.entrySet()) {
             put(entry.getKey(), entry.getValue());
@@ -814,6 +824,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * object that exists for the entire iterator, so you can <b>not</b> hold on to it
      * after calling {@link java.util.Iterator#next() Iterator.next}.</p>
      */
+    @NonNull
     @Override
     public Set<Entry<K, V>> entrySet() {
         return getCollection().getEntrySet();
@@ -826,6 +837,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it
      * requires generating a number of temporary objects.</p>
      */
+    @NonNull
     @Override
     public Set<K> keySet() {
         return getCollection().getKeySet();
@@ -838,6 +850,7 @@ public final class ArrayMap<K, V> implements Map<K, V> {
      * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it
      * requires generating a number of temporary objects.</p>
      */
+    @NonNull
     @Override
     public Collection<V> values() {
         return getCollection().getValues();

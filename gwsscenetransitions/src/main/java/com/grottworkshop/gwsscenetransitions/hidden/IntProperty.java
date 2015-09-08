@@ -30,6 +30,7 @@ import android.util.Property;
  * @hide
  * Created by fgrott on 8/26/2015.
  */
+//TODO: switch to using same class in GWSUtil
 public abstract class IntProperty<T> extends Property<T, Integer> {
 
     public IntProperty(String name) {
@@ -42,9 +43,10 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
      */
     public abstract void setValue(T object, int value);
 
+    @SuppressWarnings("InfiniteRecursion")
     @Override
     final public void set(T object, Integer value) {
-        set(object, value.intValue());
+        set(object, value);
     }
 
 }

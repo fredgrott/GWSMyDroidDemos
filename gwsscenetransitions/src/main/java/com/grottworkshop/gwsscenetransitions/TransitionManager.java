@@ -68,6 +68,7 @@ import java.util.ArrayList;
  * and {@link com.grottworkshop.gwsscenetransitions.R.styleable#TransitionManager}.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class TransitionManager {
     // TODO: how to handle enter/exit?
 
@@ -77,13 +78,13 @@ public class TransitionManager {
 
     private static final String[] EMPTY_STRINGS = new String[0];
 
-    ArrayMap<Scene, Transition> mSceneTransitions = new ArrayMap<Scene, Transition>();
+    ArrayMap<Scene, Transition> mSceneTransitions = new ArrayMap<>();
     ArrayMap<Scene, ArrayMap<Scene, Transition>> mScenePairTransitions =
-            new ArrayMap<Scene, ArrayMap<Scene, Transition>>();
+            new ArrayMap<>();
     private static ThreadLocal<WeakReference<ArrayMap<ViewGroup, ArrayList<Transition>>>>
             sRunningTransitions =
-            new ThreadLocal<WeakReference<ArrayMap<ViewGroup, ArrayList<Transition>>>>();
-    private static ArrayList<ViewGroup> sPendingTransitions = new ArrayList<ViewGroup>();
+            new ThreadLocal<>();
+    private static ArrayList<ViewGroup> sPendingTransitions = new ArrayList<>();
 
 
     /**
@@ -138,7 +139,7 @@ public class TransitionManager {
     public void setTransition(Scene fromScene, Scene toScene, Transition transition) {
         ArrayMap<Scene, Transition> sceneTransitionMap = mScenePairTransitions.get(toScene);
         if (sceneTransitionMap == null) {
-            sceneTransitionMap = new ArrayMap<Scene, Transition>();
+            sceneTransitionMap = new ArrayMap<>();
             mScenePairTransitions.put(toScene, sceneTransitionMap);
         }
         sceneTransitionMap.put(fromScene, transition);
@@ -193,7 +194,12 @@ public class TransitionManager {
                 sPendingTransitions.add(sceneRoot);
 
                 if (transition != null) {
-                    transitionClone = transition.clone();
+                    try {
+                        transitionClone = transition.clone();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
+                    assert transitionClone != null;
                     transitionClone.setSceneRoot(sceneRoot);
                 }
 
@@ -217,8 +223,8 @@ public class TransitionManager {
                 sRunningTransitions.get();
         if (runningTransitions == null || runningTransitions.get() == null) {
             ArrayMap<ViewGroup, ArrayList<Transition>> transitions =
-                    new ArrayMap<ViewGroup, ArrayList<Transition>>();
-            runningTransitions = new WeakReference<ArrayMap<ViewGroup, ArrayList<Transition>>>(
+                    new ArrayMap<>();
+            runningTransitions = new WeakReference<>(
                     transitions);
             sRunningTransitions.set(runningTransitions);
         }
@@ -298,10 +304,10 @@ public class TransitionManager {
             ArrayList<Transition> currentTransitions = runningTransitions.get(mSceneRoot);
             ArrayList<Transition> previousRunningTransitions = null;
             if (currentTransitions == null) {
-                currentTransitions = new ArrayList<Transition>();
+                currentTransitions = new ArrayList<>();
                 runningTransitions.put(mSceneRoot, currentTransitions);
             } else if (currentTransitions.size() > 0) {
-                previousRunningTransitions = new ArrayList<Transition>(currentTransitions);
+                previousRunningTransitions = new ArrayList<>(currentTransitions);
             }
             currentTransitions.add(mTransition);
             mTransition.addListener(new Transition.TransitionListenerAdapter() {
@@ -398,7 +404,7 @@ public class TransitionManager {
      *
      * @param sceneRoot The root of the View hierarchy to run the transition on.
      */
-    public static void beginDelayedTransition(final ViewGroup sceneRoot) {
+    public static void beginDelayedTransition(final ViewGroup sceneRoot) throws CloneNotSupportedException {
         beginDelayedTransition(sceneRoot, null);
     }
 
@@ -425,7 +431,7 @@ public class TransitionManager {
      * @param transition The transition to use for this change. A
      *                   value of null causes the TransitionManager to use the default transition.
      */
-    public static void beginDelayedTransition(final ViewGroup sceneRoot, Transition transition) {
+    public static void beginDelayedTransition(final ViewGroup sceneRoot, Transition transition) throws CloneNotSupportedException {
         if (!sPendingTransitions.contains(sceneRoot) && ViewUtils.isLaidOut(sceneRoot, true)) {
             if (Transition.DBG) {
                 Log.d(LOG_TAG, "beginDelayedTransition: root, transition = " +
@@ -447,6 +453,7 @@ public class TransitionManager {
      *
      * @param sceneRoot The root of the View hierarchy to end transitions on.
      */
+    @SuppressWarnings("unchecked")
     public static void endTransitions(final ViewGroup sceneRoot) {
         sPendingTransitions.remove(sceneRoot);
 

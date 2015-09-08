@@ -30,6 +30,7 @@ import com.grottworkshop.gwsscenetransitions.TransitionValues;
  * the scene change and animates any changes.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class Rotate extends Transition {
 
     private static final String PROPNAME_ROTATION = "android:rotate:rotation";

@@ -19,9 +19,8 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * scene change and animates those changes during the transition.
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeClipBounds extends Transition {
-
-    private static final String TAG = "ChangeTransform";
 
     private static final String PROPNAME_CLIP = "android:clipBounds:clip";
     private static final String PROPNAME_BOUNDS = "android:clipBounds:bounds";

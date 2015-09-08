@@ -1,13 +1,12 @@
 package com.grottworkshop.gwsscenetransitions.utils;
 
-import android.annotation.TargetApi;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.PointF;
-import android.os.Build;
 
 
 /**
+ * PathAnimatorCompat class
  * Created by fgrott on 8/25/2015.
  */
 public class PathAnimatorCompat extends BasePointFAnimator {

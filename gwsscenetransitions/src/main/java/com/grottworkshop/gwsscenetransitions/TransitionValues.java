@@ -56,11 +56,11 @@ public class TransitionValues {
     /**
      * The set of values tracked by transitions for this scene
      */
-    public final Map<String, Object> values = new ArrayMap<String, Object>();
+    public final Map<String, Object> values = new ArrayMap<>();
     /**
      * The Transitions that targeted this view.
      */
-    final ArrayList<Transition> targetedTransitions = new ArrayList<Transition>();
+    final ArrayList<Transition> targetedTransitions = new ArrayList<>();
 
     @Override
     public boolean equals(Object other) {

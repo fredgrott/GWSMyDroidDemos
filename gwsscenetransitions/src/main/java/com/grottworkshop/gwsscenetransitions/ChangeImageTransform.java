@@ -45,9 +45,8 @@ import java.util.Map;
  * smoothly.</p>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeImageTransform extends Transition {
-
-    private static final String TAG = "ChangeImageTransform";
 
     private static final String PROPNAME_MATRIX = "android:changeImageTransform:matrix";
     private static final String PROPNAME_BOUNDS = "android:changeImageTransform:bounds";

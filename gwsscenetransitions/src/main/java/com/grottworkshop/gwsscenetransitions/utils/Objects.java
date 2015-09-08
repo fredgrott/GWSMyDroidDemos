@@ -23,6 +23,7 @@ import java.util.Arrays;
  * Object utility methods.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class Objects {
 
     /**

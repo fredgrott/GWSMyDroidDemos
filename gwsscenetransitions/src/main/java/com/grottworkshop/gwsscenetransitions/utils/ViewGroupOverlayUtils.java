@@ -11,8 +11,10 @@ import com.grottworkshop.gwsscenetransitions.hidden.Crossfade;
 
 
 /**
+ * ViewGroupOverlayUtils class
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ViewGroupOverlayUtils {
 
     static class BaseViewGroupOverlayUtils {

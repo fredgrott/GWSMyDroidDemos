@@ -12,6 +12,7 @@ import com.grottworkshop.gwsscenetransitions.PathMotion;
 
 
 /**
+ * AnimatorUtils class
  * Created by fgrott on 8/25/2015.
  */
 public class AnimatorUtils {

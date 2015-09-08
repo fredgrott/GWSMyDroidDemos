@@ -33,8 +33,8 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * This is the default TransitionPropagation used with {@link android.transition.Slide}.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class SidePropagation extends VisibilityPropagation {
-    private static final String TAG = "SlidePropagation";
 
     private float mPropagationSpeed = 3.0f;
     private int mSide = Gravity.BOTTOM;

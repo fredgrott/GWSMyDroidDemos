@@ -16,6 +16,8 @@
  */
 package com.grottworkshop.gwsscenetransitions.utils;
 
+import android.support.annotation.NonNull;
+
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
@@ -105,6 +107,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public K getKey() {
             if (!mEntryValid) {
                 throw new IllegalStateException(
@@ -114,6 +117,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public V getValue() {
             if (!mEntryValid) {
                 throw new IllegalStateException(
@@ -170,7 +174,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
+        public boolean addAll(@NonNull Collection<? extends Map.Entry<K, V>> collection) {
             int oldSize = colGetSize();
             for (Map.Entry<K, V> entry : collection) {
                 colPut(entry.getKey(), entry.getValue());
@@ -197,9 +201,10 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean containsAll(Collection<?> collection) {
+        public boolean containsAll(@NonNull Collection<?> collection) {
             Iterator<?> it = collection.iterator();
-            while (it.hasNext()) {
+            while (true) {
+                if (!(it.hasNext())) break;
                 if (!contains(it.next())) {
                     return false;
                 }
@@ -212,6 +217,7 @@ public abstract class MapCollections<K, V> {
             return colGetSize() == 0;
         }
 
+        @NonNull
         @Override
         public Iterator<Map.Entry<K, V>> iterator() {
             return new MapIterator();
@@ -223,12 +229,12 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean removeAll(Collection<?> collection) {
+        public boolean removeAll(@NonNull Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public boolean retainAll(Collection<?> collection) {
+        public boolean retainAll(@NonNull Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
@@ -237,16 +243,19 @@ public abstract class MapCollections<K, V> {
             return colGetSize();
         }
 
+        @NonNull
         @Override
         public Object[] toArray() {
             throw new UnsupportedOperationException();
         }
 
+        @NonNull
         @Override
-        public <T> T[] toArray(T[] array) {
+        public <T> T[] toArray(@NonNull T[] array) {
             throw new UnsupportedOperationException();
         }
 
+        @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
         @Override
         public boolean equals(Object object) {
             return equalsSetHelper(this, object);
@@ -265,7 +274,7 @@ public abstract class MapCollections<K, V> {
         }
     }
 
-    ;
+
 
     final class KeySet implements Set<K> {
 
@@ -275,7 +284,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean addAll(Collection<? extends K> collection) {
+        public boolean addAll(@NonNull Collection<? extends K> collection) {
             throw new UnsupportedOperationException();
         }
 
@@ -290,7 +299,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean containsAll(Collection<?> collection) {
+        public boolean containsAll(@NonNull Collection<?> collection) {
             return containsAllHelper(colGetMap(), collection);
         }
 
@@ -299,6 +308,7 @@ public abstract class MapCollections<K, V> {
             return colGetSize() == 0;
         }
 
+        @NonNull
         @Override
         public Iterator<K> iterator() {
             return new ArrayIterator<K>(0);
@@ -315,12 +325,12 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean removeAll(Collection<?> collection) {
+        public boolean removeAll(@NonNull Collection<?> collection) {
             return removeAllHelper(colGetMap(), collection);
         }
 
         @Override
-        public boolean retainAll(Collection<?> collection) {
+        public boolean retainAll(@NonNull Collection<?> collection) {
             return retainAllHelper(colGetMap(), collection);
         }
 
@@ -329,16 +339,19 @@ public abstract class MapCollections<K, V> {
             return colGetSize();
         }
 
+        @NonNull
         @Override
         public Object[] toArray() {
             return toArrayHelper(0);
         }
 
+        @NonNull
         @Override
-        public <T> T[] toArray(T[] array) {
+        public <T> T[] toArray(@NonNull T[] array) {
             return toArrayHelper(array, 0);
         }
 
+        @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
         @Override
         public boolean equals(Object object) {
             return equalsSetHelper(this, object);
@@ -355,7 +368,7 @@ public abstract class MapCollections<K, V> {
         }
     }
 
-    ;
+
 
     final class ValuesCollection implements Collection<V> {
 
@@ -365,7 +378,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean addAll(Collection<? extends V> collection) {
+        public boolean addAll(@NonNull Collection<? extends V> collection) {
             throw new UnsupportedOperationException();
         }
 
@@ -380,9 +393,10 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean containsAll(Collection<?> collection) {
+        public boolean containsAll(@NonNull Collection<?> collection) {
             Iterator<?> it = collection.iterator();
-            while (it.hasNext()) {
+            while (true) {
+                if (!(it.hasNext())) break;
                 if (!contains(it.next())) {
                     return false;
                 }
@@ -395,6 +409,7 @@ public abstract class MapCollections<K, V> {
             return colGetSize() == 0;
         }
 
+        @NonNull
         @Override
         public Iterator<V> iterator() {
             return new ArrayIterator<V>(1);
@@ -411,7 +426,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean removeAll(Collection<?> collection) {
+        public boolean removeAll(@NonNull Collection<?> collection) {
             int N = colGetSize();
             boolean changed = false;
             for (int i = 0; i < N; i++) {
@@ -427,7 +442,7 @@ public abstract class MapCollections<K, V> {
         }
 
         @Override
-        public boolean retainAll(Collection<?> collection) {
+        public boolean retainAll(@NonNull Collection<?> collection) {
             int N = colGetSize();
             boolean changed = false;
             for (int i = 0; i < N; i++) {
@@ -447,22 +462,26 @@ public abstract class MapCollections<K, V> {
             return colGetSize();
         }
 
+        @NonNull
         @Override
         public Object[] toArray() {
             return toArrayHelper(1);
         }
 
+        @NonNull
         @Override
-        public <T> T[] toArray(T[] array) {
+        public <T> T[] toArray(@NonNull T[] array) {
             return toArrayHelper(array, 1);
         }
     }
 
     ;
 
+    @SuppressWarnings("SuspiciousMethodCalls")
     public static <K, V> boolean containsAllHelper(Map<K, V> map, Collection<?> collection) {
         Iterator<?> it = collection.iterator();
-        while (it.hasNext()) {
+        while (true) {
+            if (!(it.hasNext())) break;
             if (!map.containsKey(it.next())) {
                 return false;
             }
@@ -470,10 +489,12 @@ public abstract class MapCollections<K, V> {
         return true;
     }
 
+    @SuppressWarnings("SuspiciousMethodCalls")
     public static <K, V> boolean removeAllHelper(Map<K, V> map, Collection<?> collection) {
         int oldSize = map.size();
         Iterator<?> it = collection.iterator();
-        while (it.hasNext()) {
+        while (true) {
+            if (!(it.hasNext())) break;
             map.remove(it.next());
         }
         return oldSize != map.size();
@@ -499,6 +520,7 @@ public abstract class MapCollections<K, V> {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
     public <T> T[] toArrayHelper(T[] array, int offset) {
         final int N = colGetSize();
         if (array.length < N) {

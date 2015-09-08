@@ -37,6 +37,7 @@ import android.util.AttributeSet;
  * </pre>
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class PatternPathMotion extends PathMotion {
 
     private Path mOriginalPatternPath;
@@ -86,7 +87,7 @@ public class PatternPathMotion extends PathMotion {
      * The pattern must not be empty and must have the end point differ from the start point.
      *
      * @return the Path defining a pattern of motion between two coordinates.
-     * @attr ref android.R.styleable#PatternPathMotion_patternPathData
+     * ref android.R.styleable#PatternPathMotion_patternPathData
      */
     public Path getPatternPath() {
         return mOriginalPatternPath;
@@ -98,7 +99,7 @@ public class PatternPathMotion extends PathMotion {
      * The pattern must not be empty and must have the end point differ from the start point.
      *
      * @param patternPath A Path to be used as a pattern for two-dimensional motion.
-     * @attr ref android.R.styleable#PatternPathMotion_patternPathData
+     * ref android.R.styleable#PatternPathMotion_patternPathData
      */
     public void setPatternPath(Path patternPath) {
         PathMeasure pathMeasure = new PathMeasure(patternPath, false);

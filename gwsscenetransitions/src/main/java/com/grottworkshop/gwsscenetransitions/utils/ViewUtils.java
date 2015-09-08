@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 
 
 /**
+ * ViewUtils class
  * Created by fgrott on 8/25/2015.
  */
 public class ViewUtils {

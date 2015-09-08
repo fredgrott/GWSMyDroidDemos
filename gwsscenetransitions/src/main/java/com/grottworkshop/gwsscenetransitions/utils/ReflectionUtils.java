@@ -24,8 +24,10 @@ import java.lang.reflect.Method;
 
 
 /**
+ * ReflectionUtils class
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ReflectionUtils {
 
     private static final String TAG = ReflectionUtils.class.getSimpleName();
@@ -47,9 +49,7 @@ public class ReflectionUtils {
         if (targetClass == null || TextUtils.isEmpty(name)) return null;
         try {
             return targetClass.getMethod(name, parameterTypes);
-        } catch (SecurityException e) {
-            // ignore
-        } catch (NoSuchMethodException e) {
+        } catch (SecurityException | NoSuchMethodException e) {
             // ignore
         }
         return null;
@@ -62,9 +62,7 @@ public class ReflectionUtils {
             Method method = targetClass.getDeclaredMethod(name, parameterTypes);
             method.setAccessible(true);
             return method;
-        } catch (SecurityException e) {
-            // ignore
-        } catch (NoSuchMethodException e) {
+        } catch (SecurityException | NoSuchMethodException e) {
             // ignore
         }
         return null;
@@ -87,10 +85,7 @@ public class ReflectionUtils {
             Field field = targetClass.getDeclaredField(name);
             field.setAccessible(true);
             return field;
-        } catch (SecurityException e) {
-            e.printStackTrace();
-            // ignore
-        } catch (NoSuchFieldException e) {
+        } catch (SecurityException | NoSuchFieldException e) {
             e.printStackTrace();
             // ignore
         }

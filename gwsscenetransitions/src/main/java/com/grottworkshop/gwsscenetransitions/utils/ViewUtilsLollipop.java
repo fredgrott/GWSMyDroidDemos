@@ -1,6 +1,8 @@
 package com.grottworkshop.gwsscenetransitions.utils;
 
+import android.annotation.TargetApi;
 import android.graphics.Matrix;
+import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -8,8 +10,10 @@ import java.lang.reflect.Method;
 
 
 /**
+ * ViewUtilsLollipop class
  * Created by fgrott on 8/25/2015.
  */
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 class ViewUtilsLollipop extends ViewUtilsKitKat {
 
     private static final Class CLASS_GhostView = ReflectionUtils.getClass("android.view.GhostView");
@@ -48,6 +52,7 @@ class ViewUtilsLollipop extends ViewUtilsKitKat {
     public void removeGhostView(View view) {
         ReflectionUtils.invoke(view, null, METHOD_removeGhost, view);
     }
+
 
     @Override
     public void setTransitionName(View v, String name) {

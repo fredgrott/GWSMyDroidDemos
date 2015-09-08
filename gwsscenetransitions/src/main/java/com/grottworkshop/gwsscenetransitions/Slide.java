@@ -40,6 +40,7 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * TransitionValues, int, TransitionValues, int)}.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class Slide extends Visibility {
 
     protected static final TimeInterpolator sDecelerate = new DecelerateInterpolator();
@@ -157,7 +158,7 @@ public class Slide extends Visibility {
      * @param slideEdge The edge of the scene to use for Views appearing and disappearing. One of
      *                  {@link android.view.Gravity#LEFT}, {@link android.view.Gravity#TOP},
      *                  {@link android.view.Gravity#RIGHT}, {@link android.view.Gravity#BOTTOM}.
-     * @attr ref android.R.styleable#Slide_slideEdge
+     * ref android.R.styleable#Slide_slideEdge
      */
     public void setSlideEdge(int slideEdge) {
         switch (slideEdge) {
@@ -195,7 +196,7 @@ public class Slide extends Visibility {
      *         {@link android.view.Gravity#LEFT}, {@link android.view.Gravity#TOP},
      *         {@link android.view.Gravity#RIGHT}, {@link android.view.Gravity#BOTTOM},
      *         {@link android.view.Gravity#START}, {@link android.view.Gravity#END}.
-     * @attr ref android.R.styleable#Slide_slideEdge
+     * ref android.R.styleable#Slide_slideEdge
      */
     public int getSlideEdge() {
         return mSlideEdge;

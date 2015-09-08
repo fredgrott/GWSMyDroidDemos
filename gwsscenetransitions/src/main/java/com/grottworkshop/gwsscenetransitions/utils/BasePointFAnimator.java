@@ -1,14 +1,13 @@
 package com.grottworkshop.gwsscenetransitions.utils;
 
 import android.animation.ValueAnimator;
-import android.annotation.TargetApi;
 import android.graphics.PointF;
-import android.os.Build;
 
 import java.lang.ref.WeakReference;
 
 
 /**
+ * BasePointFAnimator class
  * Created by fgrott on 8/25/2015.
  */
 public abstract class BasePointFAnimator extends ValueAnimator implements ValueAnimator.AnimatorUpdateListener {
@@ -33,6 +32,7 @@ public abstract class BasePointFAnimator extends ValueAnimator implements ValueA
     protected abstract void applyAnimatedFraction(PointF holder, float fraction);
 
     @Override
+    @SuppressWarnings("unchecked")
     public void onAnimationUpdate(ValueAnimator animation) {
         Object target = mTarget.get();
         if (target == null) {

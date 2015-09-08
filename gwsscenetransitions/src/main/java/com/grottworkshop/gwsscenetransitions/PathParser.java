@@ -25,6 +25,7 @@ import java.util.Arrays;
  * @hide
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class PathParser {
     static final String LOGTAG = PathParser.class.getSimpleName();
 
@@ -119,9 +120,7 @@ public class PathParser {
     public static void updateNodes(PathDataNode[] target, PathDataNode[] source) {
         for (int i = 0; i < source.length; i ++) {
             target[i].mType = source[i].mType;
-            for (int j = 0; j < source[i].mParams.length; j ++) {
-                target[i].mParams[j] = source[i].mParams[j];
-            }
+            System.arraycopy(source[i].mParams, 0, target[i].mParams, 0, source[i].mParams.length);
         }
     }
 
@@ -258,9 +257,9 @@ public class PathParser {
         public static void nodesToPath(PathDataNode[] node, Path path) {
             float[] current = new float[4];
             char previousCommand = 'm';
-            for (int i = 0; i < node.length; i++) {
-                addCommand(path, current, previousCommand, node[i].mType, node[i].mParams);
-                previousCommand = node[i].mType;
+            for (PathDataNode aNode : node) {
+                addCommand(path, current, previousCommand, aNode.mType, aNode.mParams);
+                previousCommand = aNode.mType;
             }
         }
 
@@ -281,6 +280,7 @@ public class PathParser {
             }
         }
 
+        @SuppressWarnings("ConstantConditions")
         private static void addCommand(Path path, float[] current,
                                        char previousCmd, char cmd, float[] val) {
 

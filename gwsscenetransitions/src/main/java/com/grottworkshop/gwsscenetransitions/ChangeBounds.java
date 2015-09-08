@@ -49,10 +49,11 @@ import java.util.Map;
  * <p/>
  * <p>A ChangeBounds transition can be described in a resource file by using the
  * tag <code>changeBounds</code>, using its attributes of
- * {@link com.transitionseverywhere.R.styleable#ChangeBounds} along with the other standard
- * attributes of {@link com.transitionseverywhere.R.styleable#Transition}.</p>
+ * {@link R.styleable#ChangeBounds} along with the other standard
+ * attributes of {@link R.styleable#Transition}.</p>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeBounds extends Transition {
 
     private static final String PROPNAME_BOUNDS = "android:changeBounds:bounds";
@@ -181,7 +182,7 @@ public class ChangeBounds extends Transition {
      * @param resizeClip Used to indicate whether the view bounds should be modified or the
      *                   clip bounds should be modified by ChangeBounds.
      * @see android.view.View#setClipBounds(android.graphics.Rect)
-     * @attr ref android.R.styleable#ChangeBounds_resizeClip
+     * ref android.R.styleable#ChangeBounds_resizeClip
      */
     public void setResizeClip(boolean resizeClip) {
         mResizeClip = resizeClip;
@@ -193,7 +194,7 @@ public class ChangeBounds extends Transition {
      *
      * @return true when the ChangeBounds will resize by changing the clip bounds during the
      * view animation or false when bounds are changed. The default value is false.
-     * @attr ref android.R.styleable#ChangeBounds_resizeClip
+     * ref android.R.styleable#ChangeBounds_resizeClip
      */
     public boolean getResizeClip() {
         return mResizeClip;

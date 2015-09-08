@@ -41,6 +41,7 @@ import java.util.Map;
  * text view to its new size before displaying the text that goes there.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeText extends Transition {
 
     private static final String LOG_TAG = "TextChange";
@@ -271,6 +272,7 @@ public class ChangeText extends Transition {
             TransitionListener transitionListener = new TransitionListenerAdapter() {
                 int mPausedColor = 0;
 
+                @SuppressWarnings("ConstantConditions")
                 @Override
                 public void onTransitionPause(Transition transition) {
                     if (mChangeBehavior != CHANGE_BEHAVIOR_IN) {
@@ -285,6 +287,7 @@ public class ChangeText extends Transition {
                     }
                 }
 
+                @SuppressWarnings("ConstantConditions")
                 @Override
                 public void onTransitionResume(Transition transition) {
                     if (mChangeBehavior != CHANGE_BEHAVIOR_IN) {

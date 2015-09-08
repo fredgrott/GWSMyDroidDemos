@@ -24,12 +24,13 @@ import com.grottworkshop.gwsscenetransitions.utils.LongSparseArray;
 
 
 /**
+ * TransitionValuesMaps class
  * Created by fgrott on 8/25/2015.
  */
 class TransitionValuesMaps {
     ArrayMap<View, TransitionValues> viewValues =
             new ArrayMap<>();
-    SparseArray<View> idValues = new SparseArray<View>();
-    LongSparseArray<View> itemIdValues = new LongSparseArray<View>();
-    ArrayMap<String, View> nameValues = new ArrayMap<String, View>();
+    SparseArray<View> idValues = new SparseArray<>();
+    LongSparseArray<View> itemIdValues = new LongSparseArray<>();
+    ArrayMap<String, View> nameValues = new ArrayMap<>();
 }

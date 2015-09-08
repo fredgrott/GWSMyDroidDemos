@@ -38,6 +38,7 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * @hide
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class TransitionUtils {
     private static int MAX_IMAGE_SIZE = (1024 * 1024);
 
@@ -72,9 +73,9 @@ public class TransitionUtils {
         }
 
         TransitionSet transitionSet = new TransitionSet();
-        for (int i = 0; i < transitions.length; i++) {
-            if (transitions[i] != null) {
-                transitionSet.addTransition(transitions[i]);
+        for (Transition transition : transitions) {
+            if (transition != null) {
+                transitionSet.addTransition(transition);
             }
         }
         return transitionSet;

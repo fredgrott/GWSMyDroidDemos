@@ -37,8 +37,8 @@ import java.util.ArrayList;
  * <p/>
  * <p>A TransitionSet can be described in a resource file by using the
  * tag <code>transitionSet</code>, along with the standard
- * attributes of {@link com.transitionseverywhere.R.styleable#TransitionSet} and
- * {@link com.transitionseverywhere.R.styleable#Transition}. Child transitions of the
+ * attributes of {@link R.styleable#TransitionSet} and
+ * {@link R.styleable#Transition}. Child transitions of the
  * TransitionSet object can be loaded by adding those child tags inside the
  * enclosing <code>transitionSet</code> tag. For example, the following xml
  * describes a TransitionSet that plays a Fade and then a ChangeBounds
@@ -52,6 +52,7 @@ import java.util.ArrayList;
  * </pre>
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class TransitionSet extends Transition {
 
     ArrayList<Transition> mTransitions = new ArrayList<Transition>();
@@ -575,7 +576,7 @@ public class TransitionSet extends Transition {
     }
 
     @Override
-    public TransitionSet clone() {
+    public TransitionSet clone() throws CloneNotSupportedException {
         TransitionSet clone = (TransitionSet) super.clone();
         clone.mTransitions = new ArrayList<Transition>();
         int numTransitions = mTransitions.size();

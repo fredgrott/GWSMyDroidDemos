@@ -31,6 +31,7 @@ import android.view.ViewGroup;
  * scene change.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public final class Scene {
 
     private Context mContext;
@@ -51,12 +52,13 @@ public final class Scene {
      * @param layoutId  The id of a standard layout resource file.
      * @param context   The context used in the process of inflating
      *                  the layout resource.
-     * @return
+     *
      */
+    @SuppressWarnings("unchecked")
     public static Scene getSceneForLayout(ViewGroup sceneRoot, int layoutId, Context context) {
         SparseArray<Scene> scenes = (SparseArray<Scene>) sceneRoot.getTag(R.id.scene_layoutid_cache);
         if (scenes == null) {
-            scenes = new SparseArray<Scene>();
+            scenes = new SparseArray<>();
             sceneRoot.setTag(R.id.scene_layoutid_cache, scenes);
         }
         Scene scene = scenes.get(layoutId);

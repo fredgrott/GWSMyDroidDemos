@@ -46,6 +46,7 @@ import android.util.AttributeSet;
  * </pre>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ArcMotion extends PathMotion {
 
     private static final float DEFAULT_MIN_ANGLE_DEGREES = 0;
@@ -87,7 +88,7 @@ public class ArcMotion extends PathMotion {
      *
      * @param angleInDegrees The minimum angle of the arc on a circle describing the Path
      *                       between two nearly horizontally-separated points.
-     * @attr ref android.R.styleable#ArcMotion_minimumHorizontalAngle
+     *  ref android.R.styleable#ArcMotion_minimumHorizontalAngle
      */
     public void setMinimumHorizontalAngle(float angleInDegrees) {
         mMinimumHorizontalAngle = angleInDegrees;
@@ -103,7 +104,7 @@ public class ArcMotion extends PathMotion {
      * <p>The default value is 0.</p>
      *
      * @return  The minimum arc along the circle between two points aligned near horizontally.
-     * @attr ref android.R.styleable#ArcMotion_minimumHorizontalAngle
+     * ref android.R.styleable#ArcMotion_minimumHorizontalAngle
      */
     public float getMinimumHorizontalAngle() {
         return mMinimumHorizontalAngle;
@@ -119,7 +120,7 @@ public class ArcMotion extends PathMotion {
      *
      * @param angleInDegrees The minimum angle of the arc on a circle describing the Path
      *                       between two nearly vertically-separated points.
-     * @attr ref android.R.styleable#ArcMotion_minimumVerticalAngle
+     * ref android.R.styleable#ArcMotion_minimumVerticalAngle
      */
     public void setMinimumVerticalAngle(float angleInDegrees) {
         mMinimumVerticalAngle = angleInDegrees;
@@ -136,7 +137,7 @@ public class ArcMotion extends PathMotion {
      *
      * @return The minimum angle of the arc on a circle describing the Path
      *         between two nearly vertically-separated points.
-     * @attr ref android.R.styleable#ArcMotion_minimumVerticalAngle
+     * ref android.R.styleable#ArcMotion_minimumVerticalAngle
      */
     public float getMinimumVerticalAngle() {
         return mMinimumVerticalAngle;
@@ -150,7 +151,7 @@ public class ArcMotion extends PathMotion {
      *
      * @param angleInDegrees The maximum angle of the arc on a circle describing the Path
      *                       between the start and end points.
-     * @attr ref android.R.styleable#ArcMotion_maximumAngle
+     * ref android.R.styleable#ArcMotion_maximumAngle
      */
     public void setMaximumAngle(float angleInDegrees) {
         mMaximumAngle = angleInDegrees;
@@ -165,7 +166,7 @@ public class ArcMotion extends PathMotion {
      *
      * @return The maximum angle of the arc on a circle describing the Path
      *         between the start and end points.
-     * @attr ref android.R.styleable#ArcMotion_maximumAngle
+     * ref android.R.styleable#ArcMotion_maximumAngle
      */
     public float getMaximumAngle() {
         return mMaximumAngle;
@@ -220,7 +221,7 @@ public class ArcMotion extends PathMotion {
             // Distance squared between end point and mid point is (1/2 hypotenuse)^2
             float midDist2 = h2 * 0.25f;
 
-            float minimumArcDist2 = 0;
+            float minimumArcDist2;
 
             if (Math.abs(deltaX) < Math.abs(deltaY)) {
                 // Similar triangles bfa and bde mean that (ab/fb = eb/bd)

@@ -30,6 +30,7 @@ import android.view.ViewGroup;
  * the scene change and animates any changes.
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ChangeScroll extends Transition {
 
     private static final String PROPNAME_SCROLL_X = "android:changeScroll:x";

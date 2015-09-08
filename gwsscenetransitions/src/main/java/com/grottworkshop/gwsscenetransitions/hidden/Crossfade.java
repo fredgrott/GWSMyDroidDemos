@@ -34,6 +34,7 @@ import java.util.Map;
  * or {@link SurfaceView}.</p>
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class Crossfade extends Transition {
     // TODO: Add a hook that lets a Transition call user code to query whether it should run on
     // a given target view. This would save bitmap comparisons in this transition, for example.

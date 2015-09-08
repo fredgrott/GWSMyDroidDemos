@@ -44,6 +44,7 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * {@link #onDisappear(ViewGroup, View, TransitionValues, TransitionValues)}.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public abstract class Visibility extends Transition {
 
     static final String PROPNAME_VISIBILITY = "android:visibility:visibility";
@@ -102,7 +103,7 @@ public abstract class Visibility extends Transition {
      *
      * @param mode The behavior supported by this transition, a combination of
      *             {@link #MODE_IN} and {@link #MODE_OUT}.
-     * @attr ref android.R.styleable#VisibilityTransition_transitionVisibilityMode
+     * ref android.R.styleable#VisibilityTransition_transitionVisibilityMode
      */
     public void setMode(int mode) {
         if ((mode & ~(MODE_IN | MODE_OUT)) != 0) {
@@ -116,7 +117,7 @@ public abstract class Visibility extends Transition {
      *
      * Returns whether appearing and/or disappearing Views are supported. A combination of
      *         {@link #MODE_IN} and {@link #MODE_OUT}.
-     * @attr ref android.R.styleable#VisibilityTransition_transitionVisibilityMode
+     * ref android.R.styleable#VisibilityTransition_transitionVisibilityMode
      */
     public int getMode() {
         return mMode;

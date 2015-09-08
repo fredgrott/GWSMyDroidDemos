@@ -18,10 +18,8 @@ package com.grottworkshop.gwsscenetransitions;
 
 import android.animation.Animator;
 import android.animation.TimeInterpolator;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Rect;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,10 +39,10 @@ import android.view.animation.DecelerateInterpolator;
  * no epicenter was provided.</p>
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class Explode extends Visibility {
     private static final TimeInterpolator sDecelerate = new DecelerateInterpolator();
     private static final TimeInterpolator sAccelerate = new AccelerateInterpolator();
-    private static final String TAG = "Explode";
     private static final String PROPNAME_SCREEN_BOUNDS = "android:explode:screenBounds";
 
     private int[] mTempLoc = new int[2];

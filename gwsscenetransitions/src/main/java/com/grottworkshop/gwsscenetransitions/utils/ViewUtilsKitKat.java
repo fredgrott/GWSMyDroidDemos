@@ -9,8 +9,10 @@ import java.lang.reflect.Method;
 
 
 /**
+ * ViewUtilsKitKat class
  * Created by fgrott on 8/25/2015.
  */
+@TargetApi(Build.VERSION_CODES.KITKAT)
 class ViewUtilsKitKat extends ViewUtils.ViewUtilsJellyBeanMR2 {
 
     private static final Method METHOD_getTransitionAlpha = ReflectionUtils.getMethod(View.class, "getTransitionAlpha");
@@ -34,7 +36,7 @@ class ViewUtilsKitKat extends ViewUtils.ViewUtilsJellyBeanMR2 {
         return (Float) ReflectionUtils.invoke(v, 1, METHOD_getTransitionAlpha);
     }
 
-    @TargetApi(Build.VERSION_CODES.KITKAT)
+
     @Override
     public boolean isLaidOut(View v, boolean defaultValue) {
         return v.isLaidOut();

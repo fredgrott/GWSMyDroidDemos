@@ -57,8 +57,8 @@ import com.grottworkshop.gwsscenetransitions.utils.ViewUtils;
  * <p/>
  * <p>A Fade transition can be described in a resource file by using the
  * tag <code>fade</code>, along with the standard
- * attributes of {@link com.transitionseverywhere.R.styleable#Fade} and
- * {@link com.transitionseverywhere.R.styleable#Transition}.</p>
+ * attributes of {@link R.styleable#Fade} and
+ * {@link R.styleable#Transition}.</p>
  * Created by fgrott on 8/26/2015.
  */
 public class Fade extends Visibility {

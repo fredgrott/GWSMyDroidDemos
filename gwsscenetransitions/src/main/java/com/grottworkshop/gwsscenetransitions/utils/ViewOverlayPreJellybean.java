@@ -16,6 +16,7 @@ import java.util.List;
 
 
 /**
+ * ViewOverlayPreJellybean class
  * Created by fgrott on 8/25/2015.
  */
 class ViewOverlayPreJellybean extends FrameLayout {
@@ -40,7 +41,7 @@ class ViewOverlayPreJellybean extends FrameLayout {
     }
 
     private void init() {
-        mDrawableOverlays = new ArrayList<Drawable>();
+        mDrawableOverlays = new ArrayList<>();
     }
 
     public void addView(View child, int left, int top) {
