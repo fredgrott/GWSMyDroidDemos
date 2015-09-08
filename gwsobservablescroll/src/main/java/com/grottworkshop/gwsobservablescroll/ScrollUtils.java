@@ -25,6 +25,7 @@ import android.view.ViewTreeObserver;
  * Utilities for creating scrolling effects.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public final class ScrollUtils {
 
     private ScrollUtils() {
@@ -69,9 +70,11 @@ public final class ScrollUtils {
     public static void addOnGlobalLayoutListener(final View view, final Runnable runnable) {
         ViewTreeObserver vto = view.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onGlobalLayout() {
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+
                     view.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 } else {
                     view.getViewTreeObserver().removeOnGlobalLayoutListener(this);

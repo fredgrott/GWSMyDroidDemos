@@ -34,6 +34,7 @@ import android.view.ViewGroup;
  * provided by the support library officially.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ObservableRecyclerView extends RecyclerView implements Scrollable {
 
     private static int recyclerViewLibraryVersion = 22;

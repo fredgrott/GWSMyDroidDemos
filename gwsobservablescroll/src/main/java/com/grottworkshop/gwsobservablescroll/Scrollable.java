@@ -23,6 +23,7 @@ import android.view.ViewGroup;
  * Provides common API for observable and scrollable widgets.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public interface Scrollable {
     /**
      * Sets a callback listener.

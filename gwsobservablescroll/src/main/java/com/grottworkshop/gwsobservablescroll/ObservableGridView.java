@@ -43,6 +43,7 @@ import java.util.ArrayList;
  * GridView that its scroll position can be observed.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ObservableGridView extends GridView implements Scrollable {
 
     // Fields that should be saved onSaveInstanceState

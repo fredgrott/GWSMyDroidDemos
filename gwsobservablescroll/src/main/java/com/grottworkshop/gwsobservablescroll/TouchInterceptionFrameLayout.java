@@ -35,6 +35,7 @@ import android.widget.FrameLayout;
  * so be careful when you handle touches with this layout.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class TouchInterceptionFrameLayout extends FrameLayout {
 
     /**

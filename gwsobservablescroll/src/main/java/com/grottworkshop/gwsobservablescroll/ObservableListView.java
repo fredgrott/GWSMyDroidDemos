@@ -32,6 +32,7 @@ import android.widget.ListView;
  * ListView that its scroll position can be observed.
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public class ObservableListView extends ListView implements Scrollable {
 
     // Fields that should be saved onSaveInstanceState
