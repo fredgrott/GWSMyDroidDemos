@@ -31,6 +31,7 @@ import android.view.animation.Interpolator;
 import java.lang.ref.WeakReference;
 
 /**
+ * SupportAnimatorLollipop class
  * Created by fgrott on 8/30/2015.
  */
 final class SupportAnimatorLollipop extends SupportAnimator{

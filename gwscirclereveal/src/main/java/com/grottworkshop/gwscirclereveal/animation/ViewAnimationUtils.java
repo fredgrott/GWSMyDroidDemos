@@ -41,8 +41,10 @@ import static com.grottworkshop.gwscirclereveal.animation.RevealAnimator.CLIP_RA
 
 
 /**
+ * ViewAnimationUtils class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class ViewAnimationUtils {
 
     private final static boolean LOLLIPOP_PLUS = SDK_INT >= LOLLIPOP;

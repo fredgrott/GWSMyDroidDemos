@@ -41,6 +41,7 @@ import static com.grottworkshop.gwscirclereveal.animation.ViewAnimationUtils.Sim
  * @hide
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public interface RevealAnimator{
 
     RevealRadius CLIP_RADIUS = new RevealRadius();

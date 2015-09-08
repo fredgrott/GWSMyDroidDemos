@@ -31,8 +31,10 @@ import java.lang.ref.WeakReference;
 
 
 /**
+ * SupportAnimator class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public abstract class SupportAnimator {
 
     WeakReference<RevealAnimator> mTarget;
