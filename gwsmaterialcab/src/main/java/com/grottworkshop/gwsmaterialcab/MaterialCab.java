@@ -25,6 +25,7 @@
  */
 package com.grottworkshop.gwsmaterialcab;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.AttrRes;
@@ -50,8 +51,10 @@ import java.io.Serializable;
 
 
 /**
+ * MaterialCab class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialCab implements Serializable, Toolbar.OnMenuItemClickListener {
 
     public interface Callback {
@@ -99,6 +102,7 @@ public class MaterialCab implements Serializable, Toolbar.OnMenuItemClickListene
         return mActive;
     }
 
+    @SuppressLint("PrivateResource")
     @UiThread
     public MaterialCab reset() {
         mTitle = Util.resolveString(mContext, R.attr.mcab_title);
@@ -189,8 +193,10 @@ public class MaterialCab implements Serializable, Toolbar.OnMenuItemClickListene
         return this;
     }
 
+    @SuppressWarnings("deprecation")
     @UiThread
     public MaterialCab setBackgroundColorRes(@ColorRes int colorRes) {
+        //TODO: getColor(int) is depreciated
         return setBackgroundColor(mContext.getResources().getColor(colorRes));
     }
 

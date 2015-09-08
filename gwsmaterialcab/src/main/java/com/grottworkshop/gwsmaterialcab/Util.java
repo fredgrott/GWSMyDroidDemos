@@ -33,6 +33,7 @@ import android.support.annotation.DimenRes;
 import android.util.TypedValue;
 
 /**
+ * Util class
  * Created by fgrott on 9/2/2015.
  */
 public class Util {
