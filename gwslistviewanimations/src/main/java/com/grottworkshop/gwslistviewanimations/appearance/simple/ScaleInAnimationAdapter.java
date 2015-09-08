@@ -26,8 +26,10 @@ import android.widget.BaseAdapter;
 import com.grottworkshop.gwslistviewanimations.appearance.AnimationAdapter;
 
 /**
+ * ScaleInAnimationAdapter class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class ScaleInAnimationAdapter extends AnimationAdapter {
 
     private static final float DEFAULT_SCALE_FROM = 0.8f;

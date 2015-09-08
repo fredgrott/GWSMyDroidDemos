@@ -36,6 +36,7 @@ import com.grottworkshop.gwslistviewanimations.util.ListViewWrapper;
  * in {@link #getAnimators(ViewGroup, View)}, plus an alpha transition.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class AnimationAdapter extends BaseAdapterDecorator {
 
     /**

@@ -29,6 +29,7 @@ import android.widget.BaseAdapter;
  * resources.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class ResourceAnimationAdapter extends AnimationAdapter {
 
     @NonNull

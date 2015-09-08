@@ -38,6 +38,7 @@ import com.grottworkshop.gwslistviewanimations.util.ListViewWrapper;
  * It also calculates proper animation delays for the views.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class ViewAnimator {
 
     /* Saved instance state keys */

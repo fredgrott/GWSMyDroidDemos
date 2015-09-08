@@ -25,8 +25,10 @@ import android.widget.BaseAdapter;
 import com.grottworkshop.gwslistviewanimations.appearance.AnimationAdapter;
 
 /**
+ * AlphaInAnimationAdapter class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class AlphaInAnimationAdapter extends AnimationAdapter {
 
     public AlphaInAnimationAdapter(@NonNull final BaseAdapter baseAdapter) {

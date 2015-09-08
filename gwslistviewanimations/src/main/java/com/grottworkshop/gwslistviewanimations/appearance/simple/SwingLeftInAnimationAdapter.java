@@ -30,6 +30,7 @@ import com.grottworkshop.gwslistviewanimations.appearance.SingleAnimationAdapter
  * swing-in-from-the-left-animation to views.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class SwingLeftInAnimationAdapter extends SingleAnimationAdapter {
 
     private static final String TRANSLATION_X = "translationX";
