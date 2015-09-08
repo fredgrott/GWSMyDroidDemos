@@ -25,6 +25,7 @@ import java.util.regex.Pattern;
  * Custom validator for Regexes
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class RegexpValidator extends METValidator {
 
     private Pattern pattern;

@@ -20,6 +20,7 @@ package com.grottworkshop.gwsmaterialedit;
 import android.graphics.Color;
 
 /**
+ * Colors class
  * Created by fgrott on 9/2/2015.
  */
 public class Colors {

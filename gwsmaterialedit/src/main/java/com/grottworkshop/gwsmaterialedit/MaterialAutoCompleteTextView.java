@@ -65,6 +65,7 @@ import java.util.regex.Pattern;
  * AutoCompleteTextView in Material Design
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView {
 
     @IntDef({FLOATING_LABEL_NONE, FLOATING_LABEL_NORMAL, FLOATING_LABEL_HIGHLIGHT})
@@ -251,11 +252,6 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
     private Typeface accentTypeface;
 
     /**
-     * The font used on the view (EditText content)
-     */
-    private Typeface typeface;
-
-    /**
      * Text for the floatLabel if different from the hint
      */
     private CharSequence floatingLabelText;
@@ -404,7 +400,10 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
         }
         String fontPathForView = typedArray.getString(R.styleable.MaterialEditText_met_typeface);
         if (fontPathForView != null && !isInEditMode()) {
-            typeface = getCustomTypeface(fontPathForView);
+            /*
+      The font used on the view (EditText content)
+     */
+            Typeface typeface = getCustomTypeface(fontPathForView);
             setTypeface(typeface);
         }
         floatingLabelText = typedArray.getString(R.styleable.MaterialEditText_met_floatingLabelText);
@@ -695,7 +694,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
 
     /**
      * Set the color of the underline for normal state
-     * @param color
+     * @param color the color
      */
     public void setUnderlineColor(int color) {
         this.underlineColor = color;
@@ -711,7 +710,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
      * <p/>
      * Pass null to force fallback to use hint's value.
      *
-     * @param floatingLabelText
+     * @param floatingLabelText the floatingLabelText
      */
     public void setFloatingLabelText(@Nullable CharSequence floatingLabelText) {
         this.floatingLabelText = floatingLabelText == null ? getHint() : floatingLabelText;
@@ -1159,8 +1158,10 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
      * @return true if it matches the regex, false if not.
      * @deprecated use the new validator interface to add your own custom validator
      */
+    @SuppressWarnings("deprecation")
     @Deprecated
     public boolean validate(String regex, CharSequence errorText) {
+        //TODO: isValid is depreciated
         boolean isValid = isValid(regex);
         if (!isValid) {
             setError(errorText);

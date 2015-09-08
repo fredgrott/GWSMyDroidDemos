@@ -22,6 +22,7 @@ import android.content.res.Resources;
 import android.util.TypedValue;
 
 /**
+ * Density class
  * Created by fgrott on 9/2/2015.
  */
 class Density {

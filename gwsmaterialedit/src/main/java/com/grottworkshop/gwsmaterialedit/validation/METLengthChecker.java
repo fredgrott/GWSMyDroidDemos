@@ -18,6 +18,7 @@
 package com.grottworkshop.gwsmaterialedit.validation;
 
 /**
+ * METLengthChecker class
  * Created by fgrott on 9/2/2015.
  */
 public abstract class METLengthChecker {

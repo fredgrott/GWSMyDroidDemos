@@ -23,6 +23,7 @@ import android.support.annotation.NonNull;
  * Base Validator class to either implement or inherit from for custom validation
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class METValidator {
 
     /**
