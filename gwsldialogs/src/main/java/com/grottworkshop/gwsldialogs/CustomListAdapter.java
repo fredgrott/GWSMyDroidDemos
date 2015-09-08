@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 
 /**
+ * CustomListAdapter class
  * Created by fgrott on 9/2/2015.
  */
 class CustomListAdapter extends ArrayAdapter<String> {

@@ -5,36 +5,37 @@ import android.content.Context;
 import android.view.Gravity;
 
 /**
+ * BaseDialog class
  * Created by fgrott on 9/2/2015.
  */
 public abstract class BaseDialog extends AlertDialog {
 
-    static enum LightColours {
+    enum LightColours {
         TITLE("#474747"), CONTENT("#999999"), ITEM("#999999"), BUTTON("#212121");
 
         final String mColour;
 
-        private LightColours(String _colour) {
+        LightColours(String _colour) {
             this.mColour = _colour;
         }
     }
 
-    static enum DarkColours {
+    enum DarkColours {
         TITLE("#CCCCCC"), CONTENT("#999999"), ITEM("#999999"), BUTTON("#CCCCCC");
 
         final String mColour;
 
-        private DarkColours(String _colour) {
+        DarkColours(String _colour) {
             this.mColour = _colour;
         }
     }
 
-    public static enum Theme {
-        LIGHT, DARK;
+    public enum Theme {
+        LIGHT, DARK
     }
 
-    public static enum Alignment {
-        LEFT, CENTER, RIGHT;
+    public enum Alignment {
+        LEFT, CENTER, RIGHT
     }
 
     BaseDialog(Context _context) {

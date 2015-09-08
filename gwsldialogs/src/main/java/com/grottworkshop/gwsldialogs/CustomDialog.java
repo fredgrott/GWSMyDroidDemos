@@ -1,5 +1,6 @@
 package com.grottworkshop.gwsldialogs;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,8 +17,10 @@ import android.widget.TextView;
 
 
 /**
+ * CustomDialog class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class CustomDialog extends BaseDialog {
 
     // Context for dialog to use.
@@ -122,6 +125,7 @@ public class CustomDialog extends BaseDialog {
         applyTheme();
     }
 
+    @SuppressLint("InflateParams")
     private void init() {
         // Reference root view by inflating the layout file.
         mRootView = LayoutInflater.from(mContext).inflate(
@@ -274,6 +278,7 @@ public class CustomDialog extends BaseDialog {
         return 0;
     }
 
+    @SuppressWarnings("deprecation")
     private void applyTheme() {
         // Apply the correct colours based on theme and user preference.
         ((TextView) mViews[0])
@@ -298,6 +303,7 @@ public class CustomDialog extends BaseDialog {
                         : Color.parseColor(DarkColours.BUTTON.mColour)));
 
         if (null != mPositiveBackground) {
+            //TODO: setBackgroundDrawable depreciated
             mViews[2].setBackgroundDrawable(mPositiveBackground);
         }
     }
@@ -332,9 +338,9 @@ public class CustomDialog extends BaseDialog {
     }
 
     public interface ClickListener {
-        public void onConfirmClick();
+        void onConfirmClick();
 
-        public void onCancelClick();
+        void onCancelClick();
     }
 
     public static class Builder {
@@ -434,24 +440,32 @@ public class CustomDialog extends BaseDialog {
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder positiveColorRes(int _positiveColour) {
+            //TODO: getColor(int) depreciated
             this.mPositiveColour = mContext.getResources().getColor(
                     _positiveColour);
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder negativeColorRes(int _negativeColour) {
+            //TODO: getColor(int) depreciated
             this.mNegativeColour = mContext.getResources().getColor(
                     _negativeColour);
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder titleColorRes(int _colour) {
+            //TODO: getColor(int) depreciated
             this.mTitleColour = mContext.getResources().getColor(_colour);
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder contentColorRes(int _colour) {
+            //TODO: getColor(int) depreciated
             this.mContentColour = mContext.getResources().getColor(_colour);
             return this;
         }
@@ -511,7 +525,9 @@ public class CustomDialog extends BaseDialog {
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder positiveBackground(int _positiveBkgd) {
+            //TODO: getDrawable depreciated
             this.mPositiveBackground = mContext.getResources().getDrawable(_positiveBkgd);
             return this;
         }

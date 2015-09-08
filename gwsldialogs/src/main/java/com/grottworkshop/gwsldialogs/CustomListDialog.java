@@ -1,5 +1,6 @@
 package com.grottworkshop.gwsldialogs;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -14,8 +15,10 @@ import android.widget.TextView;
 
 
 /**
+ * CustomListDialog class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class CustomListDialog extends BaseDialog {
 
     // Context used to create the dialog.
@@ -80,16 +83,16 @@ public class CustomListDialog extends BaseDialog {
 
         // Set correct properties.
         this.mContext = _builder.mContext;
-        this.mTheme = _builder.mIsDark ? Theme.DARK : Theme.LIGHT;
+        mTheme = _builder.mIsDark ? Theme.DARK : Theme.LIGHT;
         this.mTitle = _builder.mTitle;
         this.mItems = _builder.mItems;
-        this.mTitleColour = _builder.mTitleColour != 0 ? _builder.mTitleColour : (this.mTheme == Theme.DARK ? Color.parseColor(DarkColours.TITLE.mColour) : Color.parseColor(LightColours.TITLE.mColour));
-        this.mItemColour = _builder.mItemColour != 0 ? _builder.mItemColour : (this.mTheme == Theme.DARK ? Color.parseColor(DarkColours.ITEM.mColour) : Color.parseColor(LightColours.ITEM.mColour));
+        this.mTitleColour = _builder.mTitleColour != 0 ? _builder.mTitleColour : (mTheme == Theme.DARK ? Color.parseColor(DarkColours.TITLE.mColour) : Color.parseColor(LightColours.TITLE.mColour));
+        mItemColour = _builder.mItemColour != 0 ? _builder.mItemColour : (mTheme == Theme.DARK ? Color.parseColor(DarkColours.ITEM.mColour) : Color.parseColor(LightColours.ITEM.mColour));
         this.mTitleAlignment = _builder.mTitleAlignment;
-        this.mItemAlignment = _builder.mItemAlignment;
+        mItemAlignment = _builder.mItemAlignment;
         this.mTitleTextSize = _builder.mTitleTextSize;
-        this.mItemTextSize = _builder.mItemTextSize;
-        this.mTypeface = _builder.mTypeface == null ? Typeface.createFromAsset(getContext().getResources().getAssets(), "Roboto-Medium.ttf") : _builder.mTypeface;
+        mItemTextSize = _builder.mItemTextSize;
+        mTypeface = _builder.mTypeface == null ? Typeface.createFromAsset(getContext().getResources().getAssets(), "Roboto-Medium.ttf") : _builder.mTypeface;
 
         // Reference everything needed and set the dialog view.
         init();
@@ -101,6 +104,7 @@ public class CustomListDialog extends BaseDialog {
         setTitleProperties();
     }
 
+    @SuppressLint("InflateParams")
     private void init() {
         // Reference the root view from inflated layout file.
         mRootView = LayoutInflater.from(mContext).inflate(
@@ -139,7 +143,7 @@ public class CustomListDialog extends BaseDialog {
             mTitleView.setText(this.mTitle);
             mTitleView.setTextColor(this.mTitleColour);
             mTitleView.setTextSize(TypedValue.COMPLEX_UNIT_SP, mTitleTextSize);
-            mTitleView.setTypeface(this.mTypeface);
+            mTitleView.setTypeface(mTypeface);
             mTitleView.setGravity(getGravityFromAlignment(this.mTitleAlignment) | Gravity.CENTER_VERTICAL);
         }
         return this;
@@ -156,7 +160,7 @@ public class CustomListDialog extends BaseDialog {
     }
 
     public interface ListClickListener {
-        public void onListItemSelected(int position, String[] items, String item);
+        void onListItemSelected(int position, String[] items, String item);
     }
 
     public static class Builder {
@@ -220,12 +224,16 @@ public class CustomListDialog extends BaseDialog {
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder titleColorRes(int _colour) {
+            //TODO: getColor(int) is depreciated
             this.mTitleColour = mContext.getResources().getColor(_colour);
             return this;
         }
 
+        @SuppressWarnings("deprecation")
         public Builder itemColorRes(int _colour) {
+            //TODO: getColor(int) is depreciated
             this.mItemColour = mContext.getResources().getColor(_colour);
             return this;
         }
