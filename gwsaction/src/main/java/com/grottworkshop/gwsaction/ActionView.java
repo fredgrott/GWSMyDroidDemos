@@ -45,6 +45,7 @@ import com.grottworkshop.gwsaction.action.PlusAction;
 
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class ActionView extends View {
 
     public static final int ROTATE_CLOCKWISE = 0;
@@ -159,7 +160,7 @@ public class ActionView extends View {
     /**
      * Set the color used for drawing an {@link Action}.
      *
-     * @param color
+     * @param color the color
      */
     public void setColor(final int color) {
         this.color = color;
@@ -177,7 +178,7 @@ public class ActionView extends View {
     /**
      * Sets the new action. If an action was set before a transition will be started.
      *
-     * @param action
+     * @param action the action
      * @see #setAction(Action, boolean)
      * @see #setAction(Action, boolean, int)
      * @see #setAction(View, Action, Action, int, long)
@@ -189,7 +190,7 @@ public class ActionView extends View {
     /**
      * Sets the new action. If an action was set before a transition will be started.
      *
-     * @param action
+     * @param action the action
      * @param rotation Can be either {@link #ROTATE_CLOCKWISE} or {@link #ROTATE_COUNTER_CLOCKWISE}.
      */
     public void setAction(final Action action, final int rotation) {
@@ -199,7 +200,7 @@ public class ActionView extends View {
     /**
      * Sets the new action.
      *
-     * @param action
+     * @param action the action
      * @param animate If a prior action was set and {@code true} a transition will be started, otherwise not.
      */
     public void setAction(final Action action, final boolean animate) {
@@ -295,16 +296,16 @@ public class ActionView extends View {
         // Once we're near the end of the animation we use the action segments to draw linked lines
         if (animationProgress > 0.95f && !action.getLineSegments().isEmpty()) {
             for (LineSegment s : action.getLineSegments()) {
-                path.moveTo(data[s.getStartIdx() + 0], data[s.getStartIdx() + 1]);
+                path.moveTo(data[s.getStartIdx()], data[s.getStartIdx() + 1]);
                 path.lineTo(data[s.getStartIdx() + 2], data[s.getStartIdx() + 3]);
                 for (int i = 1; i < s.indexes.length; i++) {
-                    path.lineTo(data[s.indexes[i] + 0], data[s.indexes[i] + 1]);
+                    path.lineTo(data[s.indexes[i]], data[s.indexes[i] + 1]);
                     path.lineTo(data[s.indexes[i] + 2], data[s.indexes[i] + 3]);
                 }
             }
         } else {
             for (int i = 0; i < data.length; i += 4) {
-                path.moveTo(data[i + 0], data[i + 1]);
+                path.moveTo(data[i], data[i + 1]);
                 path.lineTo(data[i + 2], data[i + 3]);
             }
         }

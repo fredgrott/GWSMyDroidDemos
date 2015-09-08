@@ -5,8 +5,10 @@ import android.os.Build;
 import android.view.View;
 
 /**
+ * UiHelper class
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class UiHelper {
 
     @SuppressWarnings("deprecation")
