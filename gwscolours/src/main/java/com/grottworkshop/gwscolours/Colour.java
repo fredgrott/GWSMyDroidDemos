@@ -30,6 +30,7 @@ import android.graphics.Color;
  * The type Colour.
  * Created by fgrott on 8/27/2015.
  */
+@SuppressWarnings("unused")
 public class Colour extends Color {
 
     //Color Scheme Enumeration (for color scheme generation)
@@ -85,10 +86,10 @@ public class Colour extends Color {
     }
 
     public static int[] monochromaticColors(float[] hsv) {
-        float[] CA1 = {hsv[0], (float) (hsv[1]), (float) (hsv[2] / 2)};
-        float[] CA2 = {hsv[0], (float) (hsv[1] / 2), (float) (hsv[2] / 3)};
-        float[] CB1 = {hsv[0], (float) (hsv[1] / 3), (float) (hsv[2] * 2 / 3)};
-        float[] CB2 = {hsv[0], (float) (hsv[1]), (float) (hsv[2] * 4 / 5)};
+        float[] CA1 = {hsv[0], hsv[1], hsv[2] / 2};
+        float[] CA2 = {hsv[0], hsv[1] / 2, hsv[2] / 3};
+        float[] CB1 = {hsv[0], hsv[1] / 3, hsv[2] * 2 / 3};
+        float[] CB2 = {hsv[0], hsv[1], hsv[2] * 4 / 5};
 
         return new int[]{Color.HSVToColor(CA1), Color.HSVToColor(CA2),
                 Color.HSVToColor(CB1), Color.HSVToColor(CB2)};
@@ -96,26 +97,26 @@ public class Colour extends Color {
 
     public static int[] triadColors(float[] hsv) {
 
-        float[] CA1 = {Colour.addDegrees(hsv[0], 120), (float) (hsv[1]),
-                (float) (hsv[2])};
+        float[] CA1 = {Colour.addDegrees(hsv[0], 120), hsv[1],
+                hsv[2]};
         float[] CA2 = {Colour.addDegrees(hsv[0], 120),
-                (float) (hsv[1] * 7 / 6), (float) (hsv[2] - 0.05)};
-        float[] CB1 = {Colour.addDegrees(hsv[0], 240), (float) (hsv[1]),
-                (float) (hsv[2])};
+                hsv[1] * 7 / 6, (float) (hsv[2] - 0.05)};
+        float[] CB1 = {Colour.addDegrees(hsv[0], 240), hsv[1],
+                hsv[2]};
         float[] CB2 = {Colour.addDegrees(hsv[0], 240),
-                (float) (hsv[1] * 7 / 6), (float) (hsv[2] - 0.05)};
+                hsv[1] * 7 / 6, (float) (hsv[2] - 0.05)};
 
         return new int[]{Color.HSVToColor(CA1), Color.HSVToColor(CA2),
                 Color.HSVToColor(CB1), Color.HSVToColor(CB2)};
     }
 
     public static int[] complementaryColors(float[] hsv) {
-        float[] CA1 = {hsv[0], (float) (hsv[1] * 5 / 7), (float) (hsv[2])};
-        float[] CA2 = {hsv[0], (float) (hsv[1]), (float) (hsv[2] * 4 / 5)};
-        float[] CB1 = {Colour.addDegrees(hsv[0], 180), (float) (hsv[1]),
-                (float) (hsv[2])};
+        float[] CA1 = {hsv[0], hsv[1] * 5 / 7, hsv[2]};
+        float[] CA2 = {hsv[0], hsv[1], hsv[2] * 4 / 5};
+        float[] CB1 = {Colour.addDegrees(hsv[0], 180), hsv[1],
+                hsv[2]};
         float[] CB2 = {Colour.addDegrees(hsv[0], 180),
-                (float) (hsv[1] * 5 / 7), (float) (hsv[2])};
+                hsv[1] * 5 / 7, hsv[2]};
 
         return new int[]{Color.HSVToColor(CA1), Color.HSVToColor(CA2),
                 Color.HSVToColor(CB1), Color.HSVToColor(CB2)};
@@ -124,8 +125,7 @@ public class Colour extends Color {
     public static float addDegrees(float addDeg, float staticDeg) {
         staticDeg += addDeg;
         if (staticDeg > 360) {
-            float offset = staticDeg - 360;
-            return offset;
+            return staticDeg - 360;
         } else if (staticDeg < 0) {
             return -1 * staticDeg;
         } else {
@@ -210,6 +210,7 @@ public class Colour extends Color {
      * @param color the color int
      * @return double[]
      */
+    @SuppressWarnings("SuspiciousNameCombination")
     public static double[] colorToCIE_LAB(int color) {
         // Convert Color to XYZ format first
         double r = Colour.red(color) / 255.0;
