@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.cubic;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * CubicEaseIn class
  * Created by fgrott on 8/26/2015.
  */
 public class CubicEaseIn extends BaseEasingMethod {

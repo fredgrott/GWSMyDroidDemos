@@ -54,8 +54,10 @@ import com.grottworkshop.gwseasing.sine.SineEaseInOut;
 import com.grottworkshop.gwseasing.sine.SineEaseOut;
 
 /**
+ * Skill enum
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public enum  Skill {
 
     BackEaseIn(BackEaseIn.class),
@@ -99,10 +101,11 @@ public enum  Skill {
 
     private Class easingMethod;
 
-    private Skill(Class clazz) {
+    Skill(Class clazz) {
         easingMethod = clazz;
     }
 
+    @SuppressWarnings("unchecked")
     public BaseEasingMethod getMethod(float duration) {
         try {
             return (BaseEasingMethod)easingMethod.getConstructor(float.class).newInstance(duration);

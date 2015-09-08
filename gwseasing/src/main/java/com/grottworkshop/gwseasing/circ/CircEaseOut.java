@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.circ;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * CircEaseOut class
  * Created by fgrott on 8/26/2015.
  */
 public class CircEaseOut extends BaseEasingMethod {

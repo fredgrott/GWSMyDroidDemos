@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.quint;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * QuintEaseIn class
  * Created by fgrott on 8/26/2015.
  */
 public class QuintEaseIn extends BaseEasingMethod {

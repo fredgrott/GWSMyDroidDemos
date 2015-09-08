@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.linear;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * Linear class
  * Created by fgrott on 8/26/2015.
  */
 public class Linear extends BaseEasingMethod {

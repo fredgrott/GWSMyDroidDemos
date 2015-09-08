@@ -30,15 +30,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * BaseEasingMethod class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public abstract class BaseEasingMethod implements TypeEvaluator<Number> {
     protected float mDuration;
 
-    private ArrayList<EasingListener> mListeners = new ArrayList<EasingListener>();
+    private ArrayList<EasingListener> mListeners = new ArrayList<>();
 
     public interface EasingListener {
-        public void on(float time, float value, float start, float end, float duration);
+        void on(float time, float value, float start, float end, float duration);
     }
 
     public void addEasingListener(EasingListener l){

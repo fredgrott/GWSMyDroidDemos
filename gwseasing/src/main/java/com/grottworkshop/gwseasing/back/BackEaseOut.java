@@ -27,8 +27,10 @@ package com.grottworkshop.gwseasing.back;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * BackEaseOut class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class BackEaseOut extends BaseEasingMethod {
 
     private float s = 1.70158f;

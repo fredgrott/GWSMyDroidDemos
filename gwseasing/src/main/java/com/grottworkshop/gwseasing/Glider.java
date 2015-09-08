@@ -28,10 +28,13 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 
 /**
+ * Glider class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class Glider {
 
+    @SuppressWarnings("NullArgumentToVariableArgMethod")
     public static ValueAnimator glide(Skill skill, float duration, ValueAnimator animator){
         return Glider.glide(skill,duration,animator,null);
     }

@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.sine;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * SineEaseIn class
  * Created by fgrott on 8/26/2015.
  */
 public class SineEaseIn extends BaseEasingMethod {

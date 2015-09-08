@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.bounce;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * BounceEaseInOut class
  * Created by fgrott on 8/26/2015.
  */
 public class BounceEaseInOut extends BaseEasingMethod {

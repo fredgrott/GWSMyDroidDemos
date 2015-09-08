@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.expo;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * ExpoEaseIn class
  * Created by fgrott on 8/26/2015.
  */
 public class ExpoEaseIn extends BaseEasingMethod {

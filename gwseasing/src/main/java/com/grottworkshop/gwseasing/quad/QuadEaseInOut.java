@@ -27,6 +27,7 @@ package com.grottworkshop.gwseasing.quad;
 import com.grottworkshop.gwseasing.BaseEasingMethod;
 
 /**
+ * QuadEaseInOut class
  * Created by fgrott on 8/26/2015.
  */
 public class QuadEaseInOut extends BaseEasingMethod {
