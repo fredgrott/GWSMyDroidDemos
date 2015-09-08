@@ -19,8 +19,10 @@ package com.grottworkshop.gwsviewpagertransforms;
 import android.view.View;
 
 /**
+ * ZoomOutSlideTransformer class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class ZoomOutSlideTransformer extends ABaseTransformer {
 
     private static final float MIN_SCALE = 0.85f;

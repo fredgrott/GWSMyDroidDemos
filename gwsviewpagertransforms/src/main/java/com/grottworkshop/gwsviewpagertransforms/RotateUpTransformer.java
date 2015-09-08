@@ -19,8 +19,10 @@ package com.grottworkshop.gwsviewpagertransforms;
 import android.view.View;
 
 /**
+ * RotateUpTransformer class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class RotateUpTransformer extends ABaseTransformer {
 
     private static final float ROT_MOD = -15f;

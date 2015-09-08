@@ -20,8 +20,10 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
+ * ABaseTransformer class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public abstract class ABaseTransformer implements ViewPager.PageTransformer {
 
     /**
@@ -56,7 +58,7 @@ public abstract class ABaseTransformer implements ViewPager.PageTransformer {
      * If the position offset of a fragment is less than negative one or greater than one, returning true will set the
      * fragment alpha to 0f. Otherwise fragment alpha is always defaulted to 1f.
      *
-     * @return
+     * @return true
      */
     protected boolean hideOffscreenPages() {
         return true;
@@ -65,7 +67,7 @@ public abstract class ABaseTransformer implements ViewPager.PageTransformer {
     /**
      * Indicates if the default animations of the view pager should be used.
      *
-     * @return
+     * @return false
      */
     protected boolean isPagingEnabled() {
         return false;
@@ -120,11 +122,11 @@ public abstract class ABaseTransformer implements ViewPager.PageTransformer {
     /**
      * Same as {@link Math#min(double, double)} without double casting, zero closest to infinity handling, or NaN support.
      *
-     * @param val
-     * @param min
-     * @return
+     * @param val the val
+     * @param min the min
+     * @return val
      */
-    protected static final float min(float val, float min) {
+    protected static float min(float val, float min) {
         return val < min ? min : val;
     }
 

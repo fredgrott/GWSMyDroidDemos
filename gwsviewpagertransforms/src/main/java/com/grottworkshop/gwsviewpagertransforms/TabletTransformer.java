@@ -21,8 +21,10 @@ import android.graphics.Matrix;
 import android.view.View;
 
 /**
+ * TabletTransformer class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class TabletTransformer extends ABaseTransformer {
 
     private static final Matrix OFFSET_MATRIX = new Matrix();

@@ -19,8 +19,10 @@ package com.grottworkshop.gwsviewpagertransforms;
 import android.view.View;
 
 /**
+ * FlipHorizontalTransformer class
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public class FlipHorizontalTransformer extends ABaseTransformer {
 
     @Override
