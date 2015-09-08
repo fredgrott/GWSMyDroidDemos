@@ -36,6 +36,7 @@ import android.view.ViewGroup;
  *
  * Created by fgrott on 8/25/2015.
  */
+@SuppressWarnings("unused")
 public abstract class CacheFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
 
     private static final String STATE_SUPER_STATE = "superState";
@@ -48,7 +49,7 @@ public abstract class CacheFragmentStatePagerAdapter extends FragmentStatePagerA
 
     public CacheFragmentStatePagerAdapter(FragmentManager fm) {
         super(fm);
-        mPages = new SparseArray<Fragment>();
+        mPages = new SparseArray<>();
         mFm = fm;
     }
 
