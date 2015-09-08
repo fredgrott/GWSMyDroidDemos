@@ -21,8 +21,10 @@ import android.widget.FrameLayout;
 
 
 /**
+ * MaskableFrameLayout class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class MaskableFrameLayout extends FrameLayout {
 
     //Constants
@@ -154,9 +156,11 @@ public class MaskableFrameLayout extends FrameLayout {
         return null;
     }
 
+    @SuppressWarnings("deprecation")
     public void setMask(int drawableRes) {
         Resources res = getResources();
         if (res != null) {
+            //TODO: getDrawable depreciated
             setMask(res.getDrawable(drawableRes));
         } else {
             log("Unable to load resources, mask will not be loaded as drawable");
@@ -205,6 +209,7 @@ public class MaskableFrameLayout extends FrameLayout {
         final ViewTreeObserver treeObserver = MaskableFrameLayout.this.getViewTreeObserver();
         if (treeObserver != null && treeObserver.isAlive()) {
             treeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @SuppressWarnings("deprecation")
                 @Override
                 public void onGlobalLayout() {
                     ViewTreeObserver aliveObserver = treeObserver;
