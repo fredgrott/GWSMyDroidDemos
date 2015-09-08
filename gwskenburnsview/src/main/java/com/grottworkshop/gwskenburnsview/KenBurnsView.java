@@ -35,6 +35,7 @@ import android.widget.ImageView;
  * @see TransitionGenerator
  * Created by fgrott on 8/24/2015.
  */
+@SuppressWarnings("unused")
 public class KenBurnsView extends ImageView {
 
     /** Delay between a pair of frames at a 60 FPS frame rate. */
@@ -240,7 +241,7 @@ public class KenBurnsView extends ImageView {
 
     /**
      * Checks whether this view has bounds.
-     * @return
+     * @return not mViewportRect.isEmpty()
      */
     private boolean hasBounds() {
         return !mViewportRect.isEmpty();

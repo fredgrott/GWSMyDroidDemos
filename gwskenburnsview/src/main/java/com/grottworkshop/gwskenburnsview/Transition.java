@@ -21,8 +21,10 @@ import android.view.animation.Interpolator;
 
 
 /**
+ * Transition  class
  * Created by fgrott on 8/24/2015.
  */
+@SuppressWarnings("unused")
 public class Transition {
 
     /** The rect the transition will start from. */

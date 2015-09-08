@@ -24,6 +24,7 @@ import java.util.Random;
 
 
 /**
+ * RandomTransitionGenerator class
  * Created by fgrott on 8/24/2015.
  */
 public class RandomTransitionGenerator implements TransitionGenerator {

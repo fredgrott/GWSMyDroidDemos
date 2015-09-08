@@ -19,6 +19,7 @@ package com.grottworkshop.gwskenburnsview;
 import android.graphics.RectF;
 
 /**
+ * TransitionGenerator interface
  * Created by fgrott on 8/24/2015.
  */
 public interface TransitionGenerator {
