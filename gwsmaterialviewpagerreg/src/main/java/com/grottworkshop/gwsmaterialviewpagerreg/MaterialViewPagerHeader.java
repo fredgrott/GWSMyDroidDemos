@@ -28,6 +28,7 @@ import static com.grottworkshop.gwsmaterialviewpagerreg.Utils.dpToPx;
  * A class containing references to views inside MaterialViewPager's header
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialViewPagerHeader {
 
     protected Context context;

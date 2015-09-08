@@ -59,8 +59,8 @@ public class MaterialViewPagerImageHeader extends KenBurnsView {
 
     /**
      * change the image with a fade
-     * @param urlImage
-     * @param fadeDuration
+     * @param urlImage the urlImage
+     * @param fadeDuration the fadeDuration
      *
      * TODO : remove Picasso
      */
@@ -100,8 +100,8 @@ public class MaterialViewPagerImageHeader extends KenBurnsView {
 
     /**
      * change the image with a fade
-     * @param drawable
-     * @param fadeDuration
+     * @param drawable the drawable
+     * @param fadeDuration the fadeDuration
      */
     public void setImageDrawable(final Drawable drawable, final int fadeDuration) {
         final float alpha = getAlpha();

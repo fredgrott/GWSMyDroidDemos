@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 import com.grottworkshop.gwsobservablescroll.ObservableScrollView;
 
 /**
+ * ScrollView class
  * Created by fgrott on 8/29/2015.
  */
 public class ScrollView extends ObservableScrollView {
@@ -60,10 +61,7 @@ public class ScrollView extends ObservableScrollView {
             linearLayout.addView(placeholder);
         }
 
-        if (child != null && TAG_LINEARLAYOUT.equals(child.getTag())) {
-            return false;
-        }
-        return true;
+        return !(child != null && TAG_LINEARLAYOUT.equals(child.getTag()));
     }
 
     @Override

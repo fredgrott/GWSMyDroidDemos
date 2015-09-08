@@ -22,8 +22,10 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 
 /**
+ * HeaderDesign class
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class HeaderDesign {
     protected int color;
     protected int colorRes;

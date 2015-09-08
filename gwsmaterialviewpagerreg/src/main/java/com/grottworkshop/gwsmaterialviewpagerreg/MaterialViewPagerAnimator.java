@@ -61,13 +61,12 @@ import static com.grottworkshop.gwsmaterialviewpagerreg.Utils.setScale;
  * When scroll, animate the MaterialViewPager Header (toolbar, logo, color ...)
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialViewPagerAnimator {
 
     private static final String TAG = MaterialViewPagerAnimator.class.getSimpleName();
 
     private static final Boolean ENABLE_LOG = false;
-
-    private Context context;
 
     //contains MaterialViewPager subviews references
     private MaterialViewPagerHeader mHeader;
@@ -111,7 +110,7 @@ public class MaterialViewPagerAnimator {
 
         this.materialViewPager = materialViewPager;
         this.mHeader = materialViewPager.materialViewPagerHeader;
-        this.context = mHeader.getContext();
+        Context context = mHeader.getContext();
 
         // initialise the scrollMax to headerHeight, so until the first cell touch the top of the screen
         this.scrollMax = this.settings.headerHeight;
@@ -125,8 +124,8 @@ public class MaterialViewPagerAnimator {
     /**
      * When notified for scroll, dispatch it to all registered scrollables
      *
-     * @param source
-     * @param yOffset
+     * @param source the source
+     * @param yOffset the yOffset
      */
     private void dispatchScrollOffset(Object source, float yOffset) {
         if (scrollViewList != null) {
@@ -143,8 +142,8 @@ public class MaterialViewPagerAnimator {
     /**
      * When notified for scroll, dispatch it to all registered scrollables
      *
-     * @param scroll
-     * @param yOffset
+     * @param scroll the scroll
+     * @param yOffset the yOffset
      */
     private void setScrollOffset(Object scroll, float yOffset) {
         //do not re-scroll the source
@@ -271,8 +270,6 @@ public class MaterialViewPagerAnimator {
         if (headerAnimator != null && percent < 1) {
             if (headerAnimator instanceof ObjectAnimator)
                 ((ObjectAnimator) headerAnimator).cancel();
-            else if (headerAnimator instanceof android.animation.ObjectAnimator)
-                ((android.animation.ObjectAnimator) headerAnimator).cancel();
             headerAnimator = null;
         }
 
@@ -396,14 +393,12 @@ public class MaterialViewPagerAnimator {
     /**
      * Animate enter toolbarlayout
      *
-     * @param yOffset
+     * @param yOffset the yOffset
      */
     private void animateEnterToolbarLayout(float yOffset) {
         if (!followScrollToolbarIsVisible && headerAnimator != null) {
             if (headerAnimator instanceof ObjectAnimator)
                 ((ObjectAnimator) headerAnimator).cancel();
-            else if (headerAnimator instanceof android.animation.ObjectAnimator)
-                ((android.animation.ObjectAnimator) headerAnimator).cancel();
             headerAnimator = null;
         }
 
@@ -438,10 +433,7 @@ public class MaterialViewPagerAnimator {
     }
 
     protected boolean isNewYOffset(int yOffset) {
-        if (lastYOffset == -1)
-            return true;
-        else
-            return yOffset != lastYOffset;
+        return lastYOffset == -1 || yOffset != lastYOffset;
     }
 
     //region register scrollables

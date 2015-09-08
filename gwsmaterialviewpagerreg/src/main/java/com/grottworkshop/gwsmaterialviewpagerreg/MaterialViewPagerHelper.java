@@ -18,6 +18,7 @@
 package com.grottworkshop.gwsmaterialviewpagerreg;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -39,6 +40,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Or register a scrollable to the current activity's MaterialViewPagerAnimator
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialViewPagerHelper {
 
     private static ConcurrentHashMap<Object, MaterialViewPagerAnimator> hashMap = new ConcurrentHashMap<>();
@@ -138,9 +140,11 @@ public class MaterialViewPagerHelper {
      * So inject js for placeholder and setLayerType(WebView.LAYER_TYPE_SOFTWARE, null); for transparency
      * TODO : inject JavaScript for Pre-Lolipop with loadUrl("js:...")
      *
-     * @param webView
+     * @param webView the webView
      * @param withAnimation if true, disapear with a fadein
      */
+    @SuppressWarnings("deprecation")
+    @SuppressLint("SetJavaScriptEnabled")
     public static void injectHeader(final WebView webView, boolean withAnimation) {
         if (webView != null) {
 
@@ -148,6 +152,7 @@ public class MaterialViewPagerHelper {
             if (animator != null) {
 
                 WebSettings webSettings = webView.getSettings();
+                //TODO: setRenderPriority is depreciated fix
                 webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
                 webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
                 webSettings.setJavaScriptEnabled(true);

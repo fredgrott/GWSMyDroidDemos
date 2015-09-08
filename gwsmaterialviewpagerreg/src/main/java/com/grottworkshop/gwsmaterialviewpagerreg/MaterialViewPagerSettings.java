@@ -57,8 +57,8 @@ public class MaterialViewPagerSettings implements Parcelable {
 
     /**
      * Retrieve attributes from the MaterialViewPager
-     * @param context
-     * @param attrs
+     * @param context the context
+     * @param attrs the attributes
      */
     protected void handleAttributes(Context context, AttributeSet attrs){
         try {

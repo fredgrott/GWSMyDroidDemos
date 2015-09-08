@@ -23,6 +23,7 @@ import android.support.v4.view.ViewCompat;
 import android.view.View;
 
 /**
+ * Utils class
  * Created by fgrott on 8/29/2015.
  */
 public class Utils {
@@ -63,7 +64,7 @@ public class Utils {
     /**
      * modify the scale of multiples views
      * @param scale the new scale
-     * @param views
+     * @param views the views
      */
     public static void setScale(float scale, View... views) {
         for (View view : views) {
@@ -77,7 +78,7 @@ public class Utils {
     /**
      * modify the elevation of multiples views
      * @param elevation the new elevation
-     * @param views
+     * @param views the views
      */
     public static void setElevation(float elevation, View... views) {
         for (View view : views) {
@@ -89,7 +90,7 @@ public class Utils {
     /**
      * modify the backgroundcolor of multiples views
      * @param color the new backgroundcolor
-     * @param views
+     * @param views teh views
      */
     public static void setBackgroundColor(int color, View... views) {
         for (View view : views) {

@@ -25,8 +25,10 @@ import android.view.ViewGroup;
 import com.grottworkshop.gwsmaterialviewpagerreg.R;
 
 /**
+ * RecyclerViewMaterialAdapter class
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class RecyclerViewMaterialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     //the constants value of the header view
@@ -75,7 +77,7 @@ public class RecyclerViewMaterialAdapter extends RecyclerView.Adapter<RecyclerVi
     //add the header on first position, else display the true adapter's cells
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = null;
+        View view;
 
         switch (viewType) {
             case TYPE_PLACEHOLDER: {

@@ -33,6 +33,7 @@ import android.view.ViewTreeObserver;
  * ScrollView : add a MaterialViewPagerHeaderView on top of your ScrollView (with LinearLayout vertical)
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialViewPagerHeaderView extends View {
     public MaterialViewPagerHeaderView(Context context) {
         super(context);

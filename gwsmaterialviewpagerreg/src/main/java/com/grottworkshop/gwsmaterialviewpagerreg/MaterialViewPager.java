@@ -44,6 +44,7 @@ import com.grottworkshop.gwspagerslidingtabstrip.PagerSlidingTabStrip;
  * Display a preview with header, actual logo and fake cells
  * Created by fgrott on 8/29/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageChangeListener {
 
     /**
@@ -59,13 +60,6 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
      * with viewpager_pagerTitleStrip you can set your own layout
      */
     private ViewGroup pagerTitleStripContainer;
-
-    /**
-     * the layout containing logo
-     * default : empty
-     * with viewpager_logo you can set your own layout
-     */
-    private ViewGroup logoContainer;
 
     /**
      * Contains all references to MatervialViewPager's header views
@@ -130,7 +124,12 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
 
         headerBackgroundContainer = (ViewGroup) findViewById(R.id.headerBackgroundContainer);
         pagerTitleStripContainer = (ViewGroup) findViewById(R.id.pagerTitleStripContainer);
-        logoContainer = (ViewGroup) findViewById(R.id.logoContainer);
+        /*
+      the layout containing logo
+      default : empty
+      with viewpager_logo you can set your own layout
+     */
+        ViewGroup logoContainer = (ViewGroup) findViewById(R.id.logoContainer);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -326,6 +325,7 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onPageSelected(int position) {
         if(position == lastPosition || listener == null)
@@ -338,6 +338,7 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
         int fadeDuration = 400;
         int color = headerDesign.getColor();
         if(headerDesign.getColorRes() != 0){
+            //TODO: getColor(int) is depreciated fix
             color = getContext().getResources().getColor(headerDesign.getColorRes());
         }
 
