@@ -25,8 +25,10 @@ import android.graphics.Rect;
 import android.os.Build;
 
 /**
+ * ChipsUtil class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class ChipsUtil {
 
     /**

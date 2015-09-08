@@ -21,6 +21,7 @@ import android.text.TextUtils;
 import com.grottworkshop.gwschips.RecipientEntry;
 
 /**
+ * SimpleRecipientChip class
  * Created by fgrott on 8/28/2015.
  */
 class SimpleRecipientChip implements BaseRecipientChip {

@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 
 
 /**
+ * SingleRecipientArrayAdapter class
  * Created by fgrott on 8/28/2015.
  */
 class SingleRecipientArrayAdapter extends ArrayAdapter<RecipientEntry> {

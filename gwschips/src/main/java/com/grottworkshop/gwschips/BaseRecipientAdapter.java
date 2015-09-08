@@ -17,6 +17,7 @@
 package com.grottworkshop.gwschips;
 
 import android.accounts.Account;
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -60,6 +61,7 @@ import java.util.Set;
  * Adapter for showing a recipient list.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class BaseRecipientAdapter extends BaseAdapter implements Filterable, AccountSpecifier {
     private static final String TAG = "BaseRecipientAdapter";
 
@@ -258,10 +260,10 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
                     // mExistingDestinations. Here we shouldn't use those member variables directly
                     // since this method is run outside the UI thread.
                     final LinkedHashMap<Long, List<RecipientEntry>> entryMap =
-                            new LinkedHashMap<Long, List<RecipientEntry>>();
+                            new LinkedHashMap<>();
                     final List<RecipientEntry> nonAggregatedEntries =
-                            new ArrayList<RecipientEntry>();
-                    final Set<String> existingDestinations = new HashSet<String>();
+                            new ArrayList<>();
+                    final Set<String> existingDestinations = new HashSet<>();
 
                     while (defaultDirectoryCursor.moveToNext()) {
                         // Note: At this point each entry doesn't contain any photo
@@ -387,7 +389,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
             results.count = 0;
 
             if (!TextUtils.isEmpty(constraint)) {
-                final ArrayList<TemporaryEntry> tempEntries = new ArrayList<TemporaryEntry>();
+                final ArrayList<TemporaryEntry> tempEntries = new ArrayList<>();
 
                 Cursor cursor = null;
                 try {
@@ -468,7 +470,6 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
 
     private final Context mContext;
     private final ContentResolver mContentResolver;
-    private final LayoutInflater mInflater;
     private Account mAccount;
     private final int mPreferredMaxResultCount;
     private DropdownChipLayouter mDropdownChipLayouter;
@@ -515,6 +516,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
      * - there are directories to be searched
      * - results from directories are slow to come
      */
+    @SuppressLint("HandlerLeak")
     private final class DelayedMessageHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
@@ -559,10 +561,10 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
     public BaseRecipientAdapter(Context context, int preferredMaxResultCount, int queryMode) {
         mContext = context;
         mContentResolver = context.getContentResolver();
-        mInflater = LayoutInflater.from(context);
+        LayoutInflater mInflater = LayoutInflater.from(context);
         mPreferredMaxResultCount = preferredMaxResultCount;
         if (mPhotoCacheMap == null) {
-            mPhotoCacheMap = new LruCache<Uri, byte[]>(PHOTO_CACHE_SIZE);
+            mPhotoCacheMap = new LruCache<>(PHOTO_CACHE_SIZE);
         }
         mQueryType = queryMode;
 
@@ -620,7 +622,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
     public static List<DirectorySearchParams> setupOtherDirectories(Context context,
                                                                     Cursor directoryCursor, Account account) {
         final PackageManager packageManager = context.getPackageManager();
-        final List<DirectorySearchParams> paramsList = new ArrayList<DirectorySearchParams>();
+        final List<DirectorySearchParams> paramsList = new ArrayList<>();
         DirectorySearchParams preferredDirectory = null;
         while (directoryCursor.moveToNext()) {
             final long id = directoryCursor.getLong(DirectoryListQuery.ID);
@@ -643,10 +645,6 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
                     final Resources resources =
                             packageManager.getResourcesForApplication(packageName);
                     params.directoryType = resources.getString(resourceId);
-                    if (params.directoryType == null) {
-                        Log.e(TAG, "Cannot resolve directory name: "
-                                + resourceId + "@" + packageName);
-                    }
                 } catch (NameNotFoundException e) {
                     Log.e(TAG, "Cannot resolve directory name: "
                             + resourceId + "@" + packageName, e);
@@ -722,7 +720,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
                     entry.contactId, entry.directoryId, entry.dataId, entry.thumbnailUriString,
                     true, entry.lookupKey));
         } else {
-            final List<RecipientEntry> entryList = new ArrayList<RecipientEntry>();
+            final List<RecipientEntry> entryList = new ArrayList<>();
             entryList.add(RecipientEntry.constructTopLevelEntry(
                     entry.displayName,
                     entry.displayNameSource,
@@ -741,7 +739,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
     private List<RecipientEntry> constructEntryList(
             LinkedHashMap<Long, List<RecipientEntry>> entryMap,
             List<RecipientEntry> nonAggregatedEntries) {
-        final List<RecipientEntry> entries = new ArrayList<RecipientEntry>();
+        final List<RecipientEntry> entries = new ArrayList<>();
         int validEntryCount = 0;
         for (Map.Entry<Long, List<RecipientEntry>> mapEntry : entryMap.entrySet()) {
             final List<RecipientEntry> entryList = mapEntry.getValue();
@@ -774,7 +772,7 @@ public class BaseRecipientAdapter extends BaseAdapter implements Filterable, Acc
 
 
     public interface EntriesUpdatedObserver {
-        public void onChanged(List<RecipientEntry> entries);
+        void onChanged(List<RecipientEntry> entries);
     }
 
     public void registerUpdateObserver(EntriesUpdatedObserver observer) {

@@ -29,6 +29,7 @@ import com.grottworkshop.gwschips.RecipientEntry;
  * particular recipient and renders a background asset to go with it.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class VisibleRecipientChip extends ImageSpan implements DrawableRecipientChip {
     private final SimpleRecipientChip mDelegate;
 

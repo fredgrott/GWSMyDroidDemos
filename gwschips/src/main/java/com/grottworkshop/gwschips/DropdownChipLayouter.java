@@ -21,6 +21,7 @@ import com.grottworkshop.gwschips.Queries.Query;
  * RecipientEditTextView.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class DropdownChipLayouter {
     /**
      * The type of adapter that is requesting a chip layout.

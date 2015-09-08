@@ -28,6 +28,7 @@ import android.text.util.Rfc822Tokenizer;
  * Represents one entry inside recipient auto-complete list.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class RecipientEntry {
 
     /* package */ static final int INVALID_CONTACT = -1;

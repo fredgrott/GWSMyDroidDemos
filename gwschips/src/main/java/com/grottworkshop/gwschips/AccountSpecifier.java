@@ -24,6 +24,7 @@ import android.accounts.Account;
  * a specific account.
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public interface AccountSpecifier {
     void setAccount(Account account);
 }
