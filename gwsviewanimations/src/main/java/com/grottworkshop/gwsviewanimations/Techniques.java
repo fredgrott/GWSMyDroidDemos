@@ -89,8 +89,10 @@ import com.grottworkshop.gwsviewanimations.zooming.ZoomOutRightAnimator;
 import com.grottworkshop.gwsviewanimations.zooming.ZoomOutUpAnimator;
 
 /**
+ * Techniques enum
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public enum Techniques {
 
     DropOut(DropOutAnimator.class),
@@ -172,7 +174,7 @@ public enum Techniques {
 
     private Class animatorClazz;
 
-    private Techniques(Class clazz) {
+    Techniques(Class clazz) {
         animatorClazz = clazz;
     }
 

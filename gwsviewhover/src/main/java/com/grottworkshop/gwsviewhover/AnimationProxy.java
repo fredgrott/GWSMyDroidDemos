@@ -8,8 +8,10 @@ import com.grottworkshop.gwsviewanimations.Techniques;
 import com.grottworkshop.gwsviewanimations.YoYo;
 
 /**
+ * AnimationProxy class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class AnimationProxy implements Runnable {
 
     private YoYo.AnimationComposer composer = null;
@@ -83,10 +85,7 @@ public class AnimationProxy implements Runnable {
 
     public boolean isDelaying(){
         long current = System.currentTimeMillis();
-        if(current - startTime <= delay)
-            return true;
-        else
-            return false;
+        return current - startTime <= delay;
     }
 
     @Override

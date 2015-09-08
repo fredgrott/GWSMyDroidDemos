@@ -5,8 +5,10 @@ import android.graphics.Canvas;
 import android.view.View;
 
 /**
+ * Util class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class Util {
 
     public static Bitmap getViewBitmap(View v) {

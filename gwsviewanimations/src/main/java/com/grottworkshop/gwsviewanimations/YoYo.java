@@ -33,8 +33,10 @@ import java.util.List;
 
 
 /**
+ * YoYo class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class YoYo {
 
     private static final long DURATION = BaseViewAnimator.DURATION;
@@ -62,7 +64,7 @@ public class YoYo {
 
     public static final class AnimationComposer {
 
-        private List<Animator.AnimatorListener> callbacks = new ArrayList<Animator.AnimatorListener>();
+        private List<Animator.AnimatorListener> callbacks = new ArrayList<>();
 
         private Techniques techniques;
         private long duration = DURATION;

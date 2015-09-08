@@ -32,6 +32,7 @@ import com.grottworkshop.gwseasing.Skill;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * DropOutAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class DropOutAnimator extends BaseViewAnimator {

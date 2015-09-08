@@ -31,8 +31,10 @@ import android.view.ViewGroup;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * SlideOutUpAnimator clasa
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class SlideOutUpAnimator extends BaseViewAnimator {
     @Override
     public void prepare(View target) {

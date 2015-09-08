@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * BounceInAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class BounceInAnimator extends BaseViewAnimator {

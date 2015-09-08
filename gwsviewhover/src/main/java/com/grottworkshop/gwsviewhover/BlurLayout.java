@@ -25,8 +25,10 @@ import java.util.Map;
 
 
 /**
+ * BlurLayout class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class BlurLayout extends RelativeLayout {
 
 
@@ -38,13 +40,14 @@ public class BlurLayout extends RelativeLayout {
 
     private static long DURATION = 500;
 
-    private ArrayList<Animator> mPlayingAnimators = new ArrayList<Animator>();
+    private ArrayList<Animator> mPlayingAnimators = new ArrayList<>();
 
-    private ArrayList<Animator> mAppearingAnimators = new ArrayList<Animator>();
-    private ArrayList<Animator> mDisappearingAnimators = new ArrayList<Animator>();
+    private ArrayList<Animator> mAppearingAnimators = new ArrayList<>();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    private ArrayList<Animator> mDisappearingAnimators = new ArrayList<>();
 
-    private ArrayList<AppearListener> mAppearListeners = new ArrayList<AppearListener>();
-    private ArrayList<DisappearListener> mDisappearListeners = new ArrayList<DisappearListener>();
+    private ArrayList<AppearListener> mAppearListeners = new ArrayList<>();
+    private ArrayList<DisappearListener> mDisappearListeners = new ArrayList<>();
 
     private boolean enableBackgroundZoom = false;
     private float mZoomRatio = 1.14f;
@@ -57,14 +60,14 @@ public class BlurLayout extends RelativeLayout {
     private Animator mHoverDisappearAnimator;
     private YoYo.AnimationComposer mHoverDisappearAnimationComposer;
 
-    private HashMap<View, ArrayList<AnimationProxy>> mChildAppearAnimators = new HashMap<View, ArrayList<AnimationProxy>>();
-    private HashMap<View, ArrayList<AnimationProxy>> mChildDisappearAnimators = new HashMap<View, ArrayList<AnimationProxy>>();
+    private HashMap<View, ArrayList<AnimationProxy>> mChildAppearAnimators = new HashMap<>();
+    private HashMap<View, ArrayList<AnimationProxy>> mChildDisappearAnimators = new HashMap<>();
 
     private long mBlurDuration = DURATION;
 
     public enum HOVER_STATUS {
         APPEARING, APPEARED, DISAPPEARING, DISAPPEARED
-    };
+    }
 
     private HOVER_STATUS mHoverStatus = HOVER_STATUS.DISAPPEARED;
 
@@ -96,12 +99,9 @@ public class BlurLayout extends RelativeLayout {
 
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
-            if(hover())
-                return true;
-            else
-                return super.onSingleTapConfirmed(e);
+            return hover() || super.onSingleTapConfirmed(e);
         }
-    };
+    }
 
     public void showHover(){
         hover();
@@ -109,7 +109,7 @@ public class BlurLayout extends RelativeLayout {
 
     /**
      * Let hover show.
-     * @return
+     * @return false or true
      */
     private boolean hover(){
         if(mHoverView == null)  return false;
@@ -127,6 +127,7 @@ public class BlurLayout extends RelativeLayout {
         addView(mHoverView, getFullParentSizeLayoutParams());
 
         mHoverView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onGlobalLayout() {
 
@@ -170,7 +171,7 @@ public class BlurLayout extends RelativeLayout {
 
     /**
      * get currently hover status.
-     * @return
+     * @return mHoverStatus
      */
     public HOVER_STATUS getHoverStatus(){
         return mHoverStatus;
@@ -189,7 +190,7 @@ public class BlurLayout extends RelativeLayout {
 
     /**
      * set background blur duration.
-     * @param duration
+     * @param duration the duration
      */
     public void setBlurDuration(long duration){
         if(duration > 100)
@@ -210,7 +211,7 @@ public class BlurLayout extends RelativeLayout {
 
     /**
      * bind a hover view with BlurLayout.
-     * @param hover
+     * @param hover the hover
      */
     public void setHoverView(final View hover){
         mHoverView = hover;
@@ -232,7 +233,7 @@ public class BlurLayout extends RelativeLayout {
 
     /**
      * Sets whether or not touching the BlurLayout will trigger the Hover View and blur effect
-     * @param enableTouchEvent
+     * @param enableTouchEvent the enableTouchEvent
      */
     public void enableTouchEvent(boolean enableTouchEvent) {
         this.enableTouchEvent = enableTouchEvent;
@@ -327,13 +328,13 @@ public class BlurLayout extends RelativeLayout {
     }
 
     public interface AppearListener {
-        public void onStart();
-        public void onEnd();
+        void onStart();
+        void onEnd();
     }
 
     public interface DisappearListener {
-        public void onStart();
-        public void onEnd();
+        void onStart();
+        void onEnd();
     }
 
     public void addAppearListener(AppearListener l){
@@ -348,6 +349,7 @@ public class BlurLayout extends RelativeLayout {
         mDisappearListeners.add(l);
     }
 
+    @SuppressWarnings("SuspiciousMethodCalls")
     public void removeDisappearListener(DisappearListener l){
         mDisappearingAnimators.remove(l);
     }
@@ -581,7 +583,7 @@ public class BlurLayout extends RelativeLayout {
         AnimationProxy executor = AnimationProxy.build(hoverView, resId, technique, duration, delay, invisibleWhenDelaying, interpolator, listeners);
 
         View child = executor.getTarget();
-        if(mChildDisappearAnimators.containsKey(child) == false)
+        if(!mChildDisappearAnimators.containsKey(child))
             mChildDisappearAnimators.put(child, new ArrayList<AnimationProxy>());
 
         executor.withListener(mGlobalListener);

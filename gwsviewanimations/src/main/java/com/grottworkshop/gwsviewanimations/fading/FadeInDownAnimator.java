@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * FadeInDownAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class FadeInDownAnimator extends BaseViewAnimator {

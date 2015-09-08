@@ -31,6 +31,7 @@ import android.view.ViewGroup;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * SlideInLeftAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class SlideInLeftAnimator extends BaseViewAnimator {

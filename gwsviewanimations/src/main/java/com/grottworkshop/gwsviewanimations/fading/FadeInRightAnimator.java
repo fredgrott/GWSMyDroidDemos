@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * FadeInRightAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class FadeInRightAnimator extends BaseViewAnimator {

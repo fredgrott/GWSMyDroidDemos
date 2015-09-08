@@ -8,8 +8,10 @@ import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 
 /**
+ * Blur class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class Blur {
 
     private static final int DEFAULT_BLUR_RADIUS = 10;

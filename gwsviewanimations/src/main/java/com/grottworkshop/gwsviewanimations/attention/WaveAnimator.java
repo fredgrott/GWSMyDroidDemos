@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * WaveAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class WaveAnimator extends BaseViewAnimator {

@@ -31,8 +31,10 @@ import android.view.animation.Interpolator;
 
 
 /**
+ * BaseViewAnimator class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public abstract class BaseViewAnimator {
 
     public static final long DURATION = 1000;
@@ -56,7 +58,7 @@ public abstract class BaseViewAnimator {
     /**
      * reset the view to default status
      *
-     * @param target
+     * @param target the target
      */
     public void reset(View target) {
         target.setAlpha(1);

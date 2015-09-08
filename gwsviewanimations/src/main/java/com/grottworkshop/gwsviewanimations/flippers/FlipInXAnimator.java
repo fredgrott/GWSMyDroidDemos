@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * FlipInXAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class FlipInXAnimator extends BaseViewAnimator {

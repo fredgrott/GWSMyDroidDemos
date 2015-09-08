@@ -30,6 +30,7 @@ import android.view.View;
 import com.grottworkshop.gwsviewanimations.BaseViewAnimator;
 
 /**
+ * RotateOutDownRightAnimator class
  * Created by fgrott on 8/28/2015.
  */
 public class RotateOutDownRightAnimator extends BaseViewAnimator {
