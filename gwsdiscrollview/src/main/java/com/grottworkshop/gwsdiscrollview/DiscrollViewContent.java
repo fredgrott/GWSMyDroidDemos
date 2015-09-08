@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 
 
 /**
+ * DiscrollViewContent class
  * Created by fgrott on 8/26/2015.
  */
 public class DiscrollViewContent extends LinearLayout {

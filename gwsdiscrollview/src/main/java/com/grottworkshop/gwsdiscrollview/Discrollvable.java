@@ -21,6 +21,7 @@ package com.grottworkshop.gwsdiscrollview;
  * Represents a View able to be discrollved.
  * Created by fgrott on 8/26/2015.
  */
+@SuppressWarnings("unused")
 public interface Discrollvable {
 
     /**

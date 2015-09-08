@@ -24,13 +24,14 @@ import android.widget.FrameLayout;
 
 
 /**
+ * DiscrollvableView class
  * Created by fgrott on 8/26/2015.
  */
 public class DiscrollvableView extends FrameLayout implements Discrollvable {
 
     private static final int TRANSLATION_FROM_TOP = 0x01;
     private static final int TRANSLATION_FROM_BOTTOM = 0x02;
-    private static final int TRANSLATION_FROM_LEFT = 0x04;;
+    private static final int TRANSLATION_FROM_LEFT = 0x04;
     private static final int TRANSLATION_FROM_RIGHT = 0x08;
 
     private static ArgbEvaluator sArgbEvaluator = new ArgbEvaluator();
@@ -174,9 +175,6 @@ public class DiscrollvableView extends FrameLayout implements Discrollvable {
     }
 
     private boolean isDiscrollveTranslationFrom(int translationMask) {
-        if(mDiscrollveTranslation == -1) {
-            return false;
-        }
-        return (mDiscrollveTranslation & translationMask) == translationMask;
+        return mDiscrollveTranslation != -1 && (mDiscrollveTranslation & translationMask) == translationMask;
     }
 }
