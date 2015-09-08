@@ -47,8 +47,10 @@ import android.widget.TextView;
 
 
 /**
+ * MaterialSpinner class
  * Created by fgrott on 9/1/2015.
  */
+@SuppressWarnings("unused")
 public class MaterialSpinner extends Spinner implements ValueAnimator.AnimatorUpdateListener {
 
     public static final int DEFAULT_ARROW_WIDTH_DP = 12;
@@ -163,11 +165,13 @@ public class MaterialSpinner extends Spinner implements ValueAnimator.AnimatorUp
 
     }
 
+    @SuppressWarnings("deprecation")
     private void initAttributes(Context context, AttributeSet attrs) {
 
         TypedArray a = context.obtainStyledAttributes(new int[]{R.attr.colorControlNormal, R.attr.colorAccent});
         int defaultBaseColor = a.getColor(0, 0);
         int defaultHighlightColor = a.getColor(1, 0);
+        //TODO: getColor(int) is depreciated fix
         int defaultErrorColor = context.getResources().getColor(R.color.error_color);
 
         a.recycle();
@@ -706,8 +710,7 @@ public class MaterialSpinner extends Spinner implements ValueAnimator.AnimatorUp
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 return 1;
             }
-            int viewTypeCount = mSpinnerAdapter.getViewTypeCount();
-            return viewTypeCount;
+            return mSpinnerAdapter.getViewTypeCount();
         }
 
         @Override
