@@ -4,6 +4,7 @@ import android.graphics.Point;
 import android.support.annotation.Nullable;
 
 /**
+ * RevealAnimator class
  * Created by fgrott on 8/28/2015.
  */
 interface RevealAnimator {

@@ -13,6 +13,7 @@ import android.view.ViewTreeObserver;
 import static com.grottworkshop.gwsreveal.ViewRevealAnimator.DBG;
 
 /**
+ * LollipopRevealAnimatorImpl class
  * Created by fgrott on 8/28/2015.
  */
 class LollipopRevealAnimatorImpl extends RevealAnimatorImpl {
@@ -93,7 +94,7 @@ class LollipopRevealAnimatorImpl extends RevealAnimatorImpl {
         }
 
         mAnimatorAnimating = true;
-        final boolean isReveal = !hideBeforeReveal ? (nextIndex > previousIndex ? true : false) : true;
+        final boolean isReveal = hideBeforeReveal || (nextIndex > previousIndex);
         final View nextView = parent.getChildAt(nextIndex);
         final View previousView = parent.getChildAt(previousIndex);
         final View targetView = isReveal ? nextView : previousView;
@@ -215,15 +216,8 @@ class LollipopRevealAnimatorImpl extends RevealAnimatorImpl {
 
     @Override
     public boolean shouldAnimate() {
-        if (mAnimatorAnimating) {
-            return false;
-        }
+        return !mAnimatorAnimating && !(!parent.mAnimateFirstTime && parent.mFirstTime);
 
-        if (!parent.mAnimateFirstTime && parent.mFirstTime) {
-            return false;
-        }
-
-        return true;
     }
 
 }

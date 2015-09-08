@@ -20,8 +20,10 @@ import android.widget.ViewAnimator;
 
 
 /**
+ * ViewRevealAnimator class
  * Created by fgrott on 8/28/2015.
  */
+@SuppressWarnings("unused")
 public class ViewRevealAnimator extends FrameLayout {
     public interface OnViewChangedListener {
         void onViewChanged(int previousIndex, int currentIndex);
@@ -162,7 +164,7 @@ public class ViewRevealAnimator extends FrameLayout {
     /**
      * Returns the index of the currently displayed child view.
      *
-     * @return
+     * @return mWhichChild
      */
     public int getDisplayedChild() {
         return mWhichChild;
@@ -295,7 +297,7 @@ public class ViewRevealAnimator extends FrameLayout {
     /**
      * Returns the current visible child
      *
-     * @return
+     * @return getChildAt
      */
     public View getCurrentView() {
         return getChildAt(mWhichChild);

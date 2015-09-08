@@ -10,6 +10,7 @@ import static com.grottworkshop.gwsreveal.ViewRevealAnimator.DBG;
 
 
 /**
+ * ICSRevealAnimatorImpl class
  * Created by fgrott on 8/28/2015.
  */
 public class ICSRevealAnimatorImpl extends RevealAnimatorImpl {
