@@ -53,12 +53,14 @@ public class BlurringView extends View {
         this(context, null);
     }
 
+    @SuppressWarnings("deprecation")
     public BlurringView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         final Resources res = getResources();
         final int defaultBlurRadius = res.getInteger(R.integer.default_blur_radius);
         final int defaultDownsampleFactor = res.getInteger(R.integer.default_downsample_factor);
+        //TODO: getColor(int) is depreciated
         final int defaultOverlayColor = res.getColor(R.color.default_overlay_color);
 
         initializeRenderScript(context);
