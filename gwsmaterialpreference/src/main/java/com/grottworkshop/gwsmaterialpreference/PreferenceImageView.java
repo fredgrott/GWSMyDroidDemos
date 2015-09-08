@@ -42,6 +42,7 @@ import static java.lang.Integer.MAX_VALUE;
  * Extension of ImageView that correctly applies maxWidth and maxHeight.
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class PreferenceImageView extends ImageView {
 
     private int maxWidth = MAX_VALUE;

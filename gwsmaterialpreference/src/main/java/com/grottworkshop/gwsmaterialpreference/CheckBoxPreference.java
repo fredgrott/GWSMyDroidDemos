@@ -33,8 +33,10 @@ import android.widget.CheckBox;
 import static android.support.v7.internal.VersionUtils.isAtLeastL;
 
 /**
+ * CheckBoxPreference class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class CheckBoxPreference extends TwoStatePreference {
 
     public CheckBoxPreference(Context context) {

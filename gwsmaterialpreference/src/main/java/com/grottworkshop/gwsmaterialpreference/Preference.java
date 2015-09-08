@@ -45,6 +45,7 @@ import static com.grottworkshop.gwsmaterialpreference.Typefaces.getRobotoRegular
 
 
 /**
+ * Preference class
  * Created by fgrott on 9/2/2015.
  */
 public class Preference extends android.preference.Preference {
@@ -104,6 +105,7 @@ public class Preference extends android.preference.Preference {
         return layout;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
@@ -121,6 +123,7 @@ public class Preference extends android.preference.Preference {
         summaryView.setTypeface(getRobotoRegular(getContext()));
 
         if (icon == null && iconResId > 0) {
+            //TODO: getDrawable is depreciated fix
             icon = getContext().getResources().getDrawable(iconResId);
         }
         imageView = (ImageView) view.findViewById(R.id.icon);

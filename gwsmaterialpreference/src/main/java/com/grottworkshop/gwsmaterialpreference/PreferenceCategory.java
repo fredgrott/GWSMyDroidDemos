@@ -43,8 +43,10 @@ import static com.grottworkshop.gwsmaterialpreference.Typefaces.getRobotoMedium;
 
 
 /**
+ * PreferenceCategory class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class PreferenceCategory extends android.preference.PreferenceCategory {
 
     private int accentColor;

@@ -31,6 +31,7 @@ import android.util.Log;
 import java.util.Hashtable;
 
 /**
+ * Typefaces class
  * Created by fgrott on 9/2/2015.
  */
 final class Typefaces {

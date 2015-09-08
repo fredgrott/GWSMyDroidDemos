@@ -35,8 +35,10 @@ import android.view.View;
 import static android.text.TextUtils.isEmpty;
 
 /**
+ * TwoStatePreference class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public abstract class TwoStatePreference extends Preference {
 
     private CharSequence summaryOn;

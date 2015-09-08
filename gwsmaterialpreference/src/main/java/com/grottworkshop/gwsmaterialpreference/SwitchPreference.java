@@ -31,8 +31,10 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
+ * SwitchPreference class
  * Created by fgrott on 9/2/2015.
  */
+@SuppressWarnings("unused")
 public class SwitchPreference extends TwoStatePreference {
 
     public SwitchPreference(Context context) {

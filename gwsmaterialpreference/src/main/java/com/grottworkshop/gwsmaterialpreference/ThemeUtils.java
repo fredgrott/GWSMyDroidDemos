@@ -35,6 +35,7 @@ import static android.os.Build.VERSION_CODES.LOLLIPOP;
 
 
 /**
+ * ThemeUtils class
  * Created by fgrott on 9/2/2015.
  */
 final class ThemeUtils {
