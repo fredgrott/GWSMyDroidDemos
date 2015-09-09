@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.text.InputType;
 
 /**
+ * NumberFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class NumberFragment extends TextFragment {
@@ -40,8 +41,7 @@ public class NumberFragment extends TextFragment {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             mEditTextInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         } else {
-            mEditTextInput.setInputType(InputType.TYPE_CLASS_NUMBER
-                    | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+            mEditTextInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         }
     }
 

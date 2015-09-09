@@ -32,8 +32,10 @@ import com.grottworkshop.gwswizardpager.R;
 import com.grottworkshop.gwswizardpager.model.CustomerInfoPage;
 
 /**
+ * CustomerInfoFragment class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class CustomerInfoFragment extends Fragment {
     private static final String ARG_KEY = "key";
 
@@ -78,6 +80,8 @@ public class CustomerInfoFragment extends Fragment {
         return rootView;
     }
 
+    //TODO: in app.Fragment onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -136,6 +140,7 @@ public class CustomerInfoFragment extends Fragment {
         });
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);
@@ -146,6 +151,7 @@ public class CustomerInfoFragment extends Fragment {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
                     Context.INPUT_METHOD_SERVICE);
             if (!menuVisible) {
+                //TODO: getView().getWindowToken() may produce null exception do I need to account for this?
                 imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
             }
         }

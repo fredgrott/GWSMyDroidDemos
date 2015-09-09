@@ -24,8 +24,10 @@ import com.grottworkshop.gwswizardpager.ui.TextFragment;
 import java.util.ArrayList;
 
 /**
+ * TextPage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class TextPage extends Page {
 
     public TextPage(ModelCallbacks callbacks, String title) {

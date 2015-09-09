@@ -21,8 +21,10 @@ import android.app.Fragment;
 import com.grottworkshop.gwswizardpager.ui.GeoFragment;
 
 /**
+ * GeoPage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class GeoPage extends TextPage {
 
     public GeoPage(ModelCallbacks callbacks, String title) {

@@ -25,6 +25,7 @@ import java.util.ArrayList;
  * Represents a single page in the wizard.
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public abstract class Page implements PageTreeNode {
     /**
      * The key into {@link #getData()} used for wizards with simple (single) values.

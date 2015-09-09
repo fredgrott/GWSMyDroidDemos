@@ -28,6 +28,7 @@ import java.util.ArrayList;
  * A page asking for a text field.
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class SingleTextFieldPage extends Page {
     protected String mDesc = "";
 

@@ -40,6 +40,7 @@ import com.grottworkshop.gwswizardpager.R;
 import com.grottworkshop.gwswizardpager.model.Page;
 
 /**
+ * ImageFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class ImageFragment extends Fragment {
@@ -172,6 +173,8 @@ public class ImageFragment extends Fragment {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

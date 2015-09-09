@@ -29,10 +29,11 @@ import java.util.List;
  * To create an actual wizard model, extend this class and implement {@link #onNewRootPageList()}.
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public abstract class AbstractWizardModel implements ModelCallbacks {
     protected Context mContext;
 
-    private List<ModelCallbacks> mListeners = new ArrayList<ModelCallbacks>();
+    private List<ModelCallbacks> mListeners = new ArrayList<>();
     private PageList mRootPageList;
 
     public AbstractWizardModel(Context context) {
@@ -90,7 +91,7 @@ public abstract class AbstractWizardModel implements ModelCallbacks {
      * user's choices.
      */
     public List<Page> getCurrentPageSequence() {
-        ArrayList<Page> flattened = new ArrayList<Page>();
+        ArrayList<Page> flattened = new ArrayList<>();
         mRootPageList.flattenCurrentPageSequence(flattened);
         return flattened;
     }

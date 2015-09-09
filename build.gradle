@@ -13,6 +13,10 @@ buildscript {
         classpath 'de.hannesstruss:godot:0.2'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
         classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.0.3'
+        // in app modules
+        // apply plugin: 'com.neenbedankt.android-apt'
+        // need version 1.6 once butterknife is to 7.0.2 stable
+       // classpath 'com.neenbedankt.gralde.plugins:android-apt:1.5.1'
 
 
 

@@ -17,6 +17,7 @@ import com.grottworkshop.gwswizardpager.model.Page;
 import com.grottworkshop.gwswizardpager.model.SingleTextFieldPage;
 
 /**
+ * SingleTextFieldFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class SingleTextFieldFragment extends Fragment {
@@ -61,6 +62,8 @@ public class SingleTextFieldFragment extends Fragment {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -98,6 +101,7 @@ public class SingleTextFieldFragment extends Fragment {
         });
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);
@@ -108,6 +112,7 @@ public class SingleTextFieldFragment extends Fragment {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
                     Context.INPUT_METHOD_SERVICE);
             if (!menuVisible) {
+                //TODO: getView().getWindowToken() may produce null exception
                 imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
             }
         }

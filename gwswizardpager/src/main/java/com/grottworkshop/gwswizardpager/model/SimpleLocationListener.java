@@ -19,8 +19,10 @@ package com.grottworkshop.gwswizardpager.model;
 import android.location.Location;
 
 /**
+ * SimpleLocationListener interface
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public interface SimpleLocationListener {
-    public void onLocationChanged(Location location);
+    void onLocationChanged(Location location);
 }

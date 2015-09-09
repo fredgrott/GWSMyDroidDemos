@@ -31,6 +31,7 @@ import com.grottworkshop.gwswizardpager.model.Page;
 import com.grottworkshop.gwswizardpager.model.SingleFixedBooleanPage;
 
 /**
+ * SingleBooleanFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class SingleBooleanFragment extends Fragment {
@@ -76,6 +77,8 @@ public class SingleBooleanFragment extends Fragment {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

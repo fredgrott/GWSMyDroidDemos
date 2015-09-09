@@ -19,6 +19,7 @@ package com.grottworkshop.gwswizardpager.ui;
 import com.grottworkshop.gwswizardpager.model.Page;
 
 /**
+ * PageFragmentCallbacks interface
  * Created by fgrott on 8/30/2015.
  */
 public interface PageFragmentCallbacks {

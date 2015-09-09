@@ -20,6 +20,7 @@ package com.grottworkshop.gwswizardpager.model;
  * Represents a single line item on the final review page.
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class ReviewItem {
     public static final int DEFAULT_WEIGHT = 0;
 

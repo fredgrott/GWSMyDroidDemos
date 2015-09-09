@@ -21,8 +21,10 @@ import android.app.Fragment;
 import com.grottworkshop.gwswizardpager.ui.NumberFragment;
 
 /**
+ * NumberPage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class NumberPage extends TextPage {
 
     public NumberPage(ModelCallbacks callbacks, String title) {

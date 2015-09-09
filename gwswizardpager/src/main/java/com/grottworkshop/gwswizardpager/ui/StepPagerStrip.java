@@ -31,8 +31,10 @@ import com.grottworkshop.gwswizardpager.R;
 
 
 /**
+ * StepPagerStrip class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class StepPagerStrip extends View {
     private static final int[] ATTRS = new int[]{
             android.R.attr.gravity
@@ -64,6 +66,7 @@ public class StepPagerStrip extends View {
         this(context, attrs, 0);
     }
 
+    @SuppressWarnings("deprecation")
     public StepPagerStrip(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
@@ -77,15 +80,19 @@ public class StepPagerStrip extends View {
         mTabSpacing = res.getDimensionPixelSize(R.dimen.step_pager_tab_spacing);
 
         mPrevTabPaint = new Paint();
+        //TODO: getColor depreciated
         mPrevTabPaint.setColor(res.getColor(R.color.step_pager_previous_tab_color));
 
         mSelectedTabPaint = new Paint();
+        //TODO: getColor depreciated
         mSelectedTabPaint.setColor(res.getColor(R.color.step_pager_selected_tab_color));
 
         mSelectedLastTabPaint = new Paint();
+        //TODO: getColor depreciated
         mSelectedLastTabPaint.setColor(res.getColor(R.color.step_pager_selected_last_tab_color));
 
         mNextTabPaint = new Paint();
+        //TODO: getColor depreciated
         mNextTabPaint.setColor(res.getColor(R.color.step_pager_next_tab_color));
     }
 
@@ -259,7 +266,7 @@ public class StepPagerStrip extends View {
         // TODO: Set content description appropriately
     }
 
-    public static interface OnPageSelectedListener {
+    public interface OnPageSelectedListener {
         void onPageStripSelected(int position);
     }
 

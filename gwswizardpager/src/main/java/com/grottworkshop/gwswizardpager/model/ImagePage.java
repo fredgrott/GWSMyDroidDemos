@@ -21,8 +21,10 @@ import android.app.Fragment;
 import com.grottworkshop.gwswizardpager.ui.ImageFragment;
 
 /**
+ * ImagePage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class ImagePage extends TextPage {
 
     public ImagePage(ModelCallbacks callbacks, String title) {

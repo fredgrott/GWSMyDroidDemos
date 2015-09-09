@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * MultipleChoiceFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class MultipleChoiceFragment extends ListFragment {
@@ -69,7 +70,7 @@ public class MultipleChoiceFragment extends ListFragment {
         mPage = mCallbacks.onGetPage(mKey);
 
         MultipleFixedChoicePage fixedChoicePage = (MultipleFixedChoicePage) mPage;
-        mChoices = new ArrayList<String>();
+        mChoices = new ArrayList<>();
         for (int i = 0; i < fixedChoicePage.getOptionCount(); i++) {
             mChoices.add(fixedChoicePage.getOptionAt(i));
         }
@@ -82,7 +83,7 @@ public class MultipleChoiceFragment extends ListFragment {
         ((TextView) rootView.findViewById(android.R.id.title)).setText(mPage.getTitle());
 
         final ListView listView = (ListView) rootView.findViewById(android.R.id.list);
-        setListAdapter(new ArrayAdapter<String>(getActivity(),
+        setListAdapter(new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_multiple_choice,
                 android.R.id.text1,
                 mChoices));
@@ -98,7 +99,7 @@ public class MultipleChoiceFragment extends ListFragment {
                     return;
                 }
 
-                Set<String> selectedSet = new HashSet<String>(selectedItems);
+                Set<String> selectedSet = new HashSet<>(selectedItems);
 
                 for (int i = 0; i < mChoices.size(); i++) {
                     if (selectedSet.contains(mChoices.get(i))) {
@@ -110,7 +111,8 @@ public class MultipleChoiceFragment extends ListFragment {
 
         return rootView;
     }
-
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -131,7 +133,7 @@ public class MultipleChoiceFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         SparseBooleanArray checkedPositions = getListView().getCheckedItemPositions();
-        ArrayList<String> selections = new ArrayList<String>();
+        ArrayList<String> selections = new ArrayList<>();
         for (int i = 0; i < checkedPositions.size(); i++) {
             if (checkedPositions.valueAt(i)) {
                 selections.add(getListAdapter().getItem(checkedPositions.keyAt(i)).toString());

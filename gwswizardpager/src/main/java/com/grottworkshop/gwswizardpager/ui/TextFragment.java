@@ -18,6 +18,7 @@ import com.grottworkshop.gwswizardpager.R;
 import com.grottworkshop.gwswizardpager.model.Page;
 
 /**
+ * TextFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class TextFragment extends Fragment {
@@ -60,6 +61,8 @@ public class TextFragment extends Fragment {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -109,6 +112,7 @@ public class TextFragment extends Fragment {
         mEditTextInput.setInputType(InputType.TYPE_CLASS_TEXT);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);
@@ -120,6 +124,7 @@ public class TextFragment extends Fragment {
             InputMethodManager imm = (InputMethodManager) getActivity()
                     .getSystemService(Context.INPUT_METHOD_SERVICE);
             if (!menuVisible) {
+                //TODO: getView().getWindowToken(0 may produce null exception
                 imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
             }
         }

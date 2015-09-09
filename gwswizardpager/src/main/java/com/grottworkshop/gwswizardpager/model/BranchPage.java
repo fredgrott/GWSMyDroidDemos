@@ -25,10 +25,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * BranchPage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class BranchPage extends SingleFixedChoicePage {
-    private List<Branch> mBranches = new ArrayList<Branch>();
+    private List<Branch> mBranches = new ArrayList<>();
 
     public BranchPage(ModelCallbacks callbacks, String title) {
         super(callbacks, title);

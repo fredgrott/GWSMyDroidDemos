@@ -23,8 +23,10 @@ import com.grottworkshop.gwswizardpager.ui.SingleBooleanFragment;
 import java.util.ArrayList;
 
 /**
+ * SingleFixedBooleanPage class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class SingleFixedBooleanPage extends Page {
     protected String mDesc = "";
     protected String mLabel = null;

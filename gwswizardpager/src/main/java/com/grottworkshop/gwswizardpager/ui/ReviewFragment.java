@@ -16,6 +16,7 @@
  */
 package com.grottworkshop.gwswizardpager.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
@@ -39,8 +40,10 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * ReviewFragment class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class ReviewFragment extends ListFragment implements ModelCallbacks {
     private Callbacks mCallbacks;
     private AbstractWizardModel mWizardModel;
@@ -57,6 +60,7 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
         mReviewAdapter = new ReviewAdapter();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,6 +68,7 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
 
         TextView titleView = (TextView) rootView.findViewById(android.R.id.title);
         titleView.setText(R.string.review);
+        //TODO: getColor depreciated
         titleView.setTextColor(getResources().getColor(R.color.review_green));
 
         ListView listView = (ListView) rootView.findViewById(android.R.id.list);
@@ -72,6 +77,8 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -102,7 +109,7 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
 
     @Override
     public void onPageDataChanged(Page changedPage) {
-        ArrayList<ReviewItem> reviewItems = new ArrayList<ReviewItem>();
+        ArrayList<ReviewItem> reviewItems = new ArrayList<>();
         for (Page page : mWizardModel.getCurrentPageSequence()) {
             page.getReviewItems(reviewItems);
         }
@@ -163,7 +170,8 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
         @Override
         public View getView(int position, View view, ViewGroup container) {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
-            View rootView = inflater.inflate(R.layout.list_item_review, container, false);
+            //TODO: ViewHolder pattern use recycled view as 2nd parameter
+            @SuppressLint("ViewHolder") View rootView = inflater.inflate(R.layout.list_item_review, container, false);
 
             ReviewItem reviewItem = mCurrentReviewItems.get(position);
             String value = reviewItem.getDisplayValue();

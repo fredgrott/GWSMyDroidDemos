@@ -38,8 +38,10 @@ import com.grottworkshop.gwscirclereveal.animation.SupportAnimator;
 import com.grottworkshop.gwscirclereveal.animation.ViewAnimationUtils;
 
 /**
+ * RevealLinearLayout class
  * Created by fgrott on 8/30/2015.
  */
+@SuppressWarnings("unused")
 public class RevealLinearLayout extends LinearLayout implements RevealAnimator{
 
     private Path mRevealPath;

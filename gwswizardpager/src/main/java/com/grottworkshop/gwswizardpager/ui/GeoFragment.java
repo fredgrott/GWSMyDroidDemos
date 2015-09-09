@@ -39,6 +39,7 @@ import java.util.List;
 
 
 /**
+ * GeoFragment class
  * Created by fgrott on 8/30/2015.
  */
 public class GeoFragment extends Fragment implements SimpleLocationListener {
@@ -111,6 +112,8 @@ public class GeoFragment extends Fragment implements SimpleLocationListener {
         return rootView;
     }
 
+    //TODO: onAttach depreciated
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -173,7 +176,7 @@ public class GeoFragment extends Fragment implements SimpleLocationListener {
                 progressBar.setVisibility(View.VISIBLE);
             }
 
-            ;
+
 
             @Override
             protected String doInBackground(Void... params) {
@@ -209,11 +212,11 @@ public class GeoFragment extends Fragment implements SimpleLocationListener {
     }
 
     public interface LocationUpdatesHandler {
-        public void setLocationListener(SimpleLocationListener locationListener);
+        void setLocationListener(SimpleLocationListener locationListener);
 
-        public void startLocationUpdates();
+        void startLocationUpdates();
 
-        public void stopLocationUpdates();
+        void stopLocationUpdates();
     }
 
 }
