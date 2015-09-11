@@ -16,7 +16,8 @@ buildscript {
         // in app modules
         // apply plugin: 'com.neenbedankt.android-apt'
         // need version 1.6 once butterknife is to 7.0.2 stable
-       // classpath 'com.neenbedankt.gralde.plugins:android-apt:1.5.1'
+       classpath 'com.neenbedankt.gradle.plugins:android-apt:1.6'
+        //classpath 'com.genymotion:plugin:1.0'
 
 
 
@@ -43,12 +44,14 @@ ext {
     //than globalConfiguration.getAt("androidCompileSdkVersion")
     androidCompileSdkVersion = 23
     androidBuildToolsVersion = '23.0.0'
+    //androidBuildToolsVersion = '23.0.1'
     androidMinSdkVersion = 15
     androidTargetSdkVersion = 23
 
 
 
-    androidSupportVersion = '23.0.0'
+    androidSupportVersion = '23.0.1'
+
 
     androidSupportDependencies = [
 
@@ -92,7 +95,9 @@ ext {
     hamcrestIntegrationVersion = '1.3'
     hamcrestLibraryVersion = '1.3'
 
-    assertjVersion = '1.0.0'
+    assertjVersion = '1.1.0'
+
+
 
     jacocoVersion = '0.7.4.201502262128'
 
@@ -118,8 +123,9 @@ ext {
             assertjSupportFour: "com.squareup.assertj:assertj-android-support-v4:$assertjVersion",
             assertjPlayServices: "com.squareup.assertj:assertj-android-play-services:$assertjVersion",
             assertjAppCompat:"com.squareup.assertj:assertj-android-appcompat-v7:$assertjVersion",
+            assertjDesign:"com.squareup.assertj:assertj-android-design:$assertjVersion",
             assertjMediarouter:"com.squareup.assertj:assertj-android-mediarouter-v7:$assertjVersion",
-            assertjGridlayout:"com.squareup.assertj:assertj-android-gridlayoout-v7:$assertjVersion",
+            assertjGridlayout:"com.squareup.assertj:assertj-android-gridlayout-v7:$assertjVersion",
             assertjCardview:"com.squareup.assertj:assertj-android-cardview-v7:$assertjVersion",
             assertjRecyclerview:"com.squareup.assertj:assertj-android-recyclerview-v7:$assertjVersion",
             assertjPalette:"com.squareup.assertj:assertj-android-palette-v7:$assertjVersion",
@@ -137,12 +143,14 @@ ext {
 
     leakCanaryVersion = '1.3.1'
     timberVersion = '3.1.0'
+    ottoVersion = '1.3.8'
 
     appDependencies = [
             leakcanaryAndroidDC: "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
             leakcanaryAndroidNOOPRC: "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion",
             timber:"com.jakewharton.timber:timber:$timberVersion",
-            timberLint:"com.jakewharton.timber:timber-lint:$timberVersion"
+            timberLint:"com.jakewharton.timber:timber-lint:$timberVersion",
+            otto:"com.squareup:otto:$ottoVersion"
 
     ]
 }

@@ -112,8 +112,15 @@ dependencies {
     releaseCompile rootProject.ext.appDependencies.leakcanaryAndroidNOOPRC
     compile rootProject.ext.appDependencies.timber
     compile rootProject.ext.appDependencies.timberLint
+    compile rootProject.ext.appDependencies.otto
     androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoContrib
     androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoCore
     androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoRunner
     androidTestCompile rootProject.ext.instrumentedTestDependencies.spoonClient
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAndroid){
+        exclude group: 'com.android.support'
+    }
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAppCompat){
+        exclude group: 'com.android.support'
+    }
 }
