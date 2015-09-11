@@ -121,4 +121,11 @@ dependencies {
     androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoRunner
     androidTestCompile rootProject.ext.instrumentedTestDependencies.spoonClient
     compile rootProject.ext.regularDependencies.butterknife
+    compile rootProject.ext.appDependencies.otto
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAndroid){
+        exclude group: 'com.android.support'
+    }
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAppCompat){
+        exclude group: 'com.android.support'
+    }
 }
