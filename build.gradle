@@ -43,14 +43,14 @@ ext {
     //def globalConfiguration = rootProject.extensions.getByName("ext")
     //than globalConfiguration.getAt("androidCompileSdkVersion")
     androidCompileSdkVersion = 23
-    androidBuildToolsVersion = '23.0.0'
-    //androidBuildToolsVersion = '23.0.1'
+    androidBuildToolsVersion = '23.0.1'
+
     androidMinSdkVersion = 15
     androidTargetSdkVersion = 23
 
 
 
-    androidSupportVersion = '23.0.1'
+    androidSupportVersion = '23.0.0'
 
 
     androidSupportDependencies = [

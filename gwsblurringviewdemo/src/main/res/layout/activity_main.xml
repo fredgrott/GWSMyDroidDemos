@@ -25,7 +25,7 @@
                 android:layout_height="200dp"
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p0"/>
+                android:src="@mipmap/p0"/>
 
             <ImageView
                 android:id="@+id/image1"
@@ -34,7 +34,7 @@
                 android:layout_above="@id/image0"
                 android:layout_alignLeft="@id/image0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p1"/>
+                android:src="@mipmap/p1"/>
 
             <ImageView
                 android:id="@+id/image2"
@@ -43,7 +43,7 @@
                 android:layout_alignLeft="@id/image0"
                 android:layout_below="@id/image0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p2"/>
+                android:src="@mipmap/p2"/>
 
             <ImageView
                 android:id="@+id/image3"
@@ -52,7 +52,7 @@
                 android:layout_alignTop="@id/image0"
                 android:layout_toLeftOf="@id/image0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p3"/>
+                android:src="@mipmap/p3"/>
 
             <ImageView
                 android:id="@+id/image4"
@@ -61,7 +61,7 @@
                 android:layout_alignTop="@id/image0"
                 android:layout_toRightOf="@id/image0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p4"/>
+                android:src="@mipmap/p4"/>
 
             <ImageView
                 android:id="@+id/image5"
@@ -70,7 +70,7 @@
                 android:layout_alignLeft="@id/image3"
                 android:layout_alignTop="@id/image1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p5"/>
+                android:src="@mipmap/p5"/>
 
             <ImageView
                 android:id="@+id/image6"
@@ -79,7 +79,7 @@
                 android:layout_alignBottom="@id/image2"
                 android:layout_alignLeft="@id/image3"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p6"/>
+                android:src="@mipmap/p6"/>
 
             <ImageView
                 android:id="@+id/image7"
@@ -88,7 +88,7 @@
                 android:layout_alignRight="@id/image4"
                 android:layout_alignTop="@id/image1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p7"/>
+                android:src="@mipmap/p7"/>
 
             <ImageView
                 android:id="@+id/image8"
@@ -97,13 +97,13 @@
                 android:layout_alignRight="@id/image4"
                 android:layout_alignTop="@id/image2"
                 android:scaleType="centerCrop"
-                android:src="@drawable/p8"/>
+                android:src="@mipmap/p8"/>
 
         </RelativeLayout>
     </FrameLayout>
 
     <!-- Here, we customize the blurring view with values different from the defaults. -->
-    <com.fivehundredpx.android.blur.BlurringView
+    <com.grottworkshop.gwsblurringview.BlurringView
         android:id="@+id/blurring_view"
         android:layout_width="360dp"
         android:layout_height="360dp"
