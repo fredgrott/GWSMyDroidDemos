@@ -1,8 +1,8 @@
 package com.grottworkshop.gwskenburnsviewdemo;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -10,7 +10,7 @@ import android.widget.ListView;
 /**
  * Created by fgrott on 9/1/2015.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ListActivity {
 
     private static final int POS_SINGLE_IMG = 0;
     private static final int POS_MULTI_IMG = 1;
@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.main_options, android.R.layout.simple_list_item_1);
-        //need to set ListAdapter
-        //setListAdapter(adapter);
+        setListAdapter(adapter);
+
     }
 
 
