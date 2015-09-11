@@ -130,5 +130,6 @@ dependencies {
         exclude group:'com.android.support'
     }
     compile rootProject.ext.appDependencies.otto
+    compile rootProject.ext.regularDependencies.butterknife
 
 }

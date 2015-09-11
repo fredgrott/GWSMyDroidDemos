@@ -1,9 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorAccent">#294BCC</item>
     </style>
+
 
     <declare-styleable name="FloatingActionButton">
         <attr name="actionIcon" format="reference" />
