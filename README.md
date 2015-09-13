@@ -1,3 +1,4 @@
+![GWSBlurringViewDemo](/readme_images/gwsblurringviewdemo_screenshot440x308.png)
 GWSMyDroidDemos
 ===============
 
