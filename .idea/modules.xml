@@ -42,6 +42,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsreimage/gwsreimage.iml" filepath="$PROJECT_DIR$/gwsreimage/gwsreimage.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreveal/gwsreveal.iml" filepath="$PROJECT_DIR$/gwsreveal/gwsreveal.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsrippledecoview/gwsrippledecoview.iml" filepath="$PROJECT_DIR$/gwsrippledecoview/gwsrippledecoview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsrippledecoviewdemo/gwsrippledecoviewdemo.iml" filepath="$PROJECT_DIR$/gwsrippledecoviewdemo/gwsrippledecoviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsscenetransitions/gwsscenetransitions.iml" filepath="$PROJECT_DIR$/gwsscenetransitions/gwsscenetransitions.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwssecuremeprefs/gwssecuremeprefs.iml" filepath="$PROJECT_DIR$/gwssecuremeprefs/gwssecuremeprefs.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwssecurepref/gwssecurepref.iml" filepath="$PROJECT_DIR$/gwssecurepref/gwssecurepref.iml" />
