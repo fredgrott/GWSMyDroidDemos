@@ -53,6 +53,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsstickyheadersrecyclerview/gwsstickyheadersrecyclerview.iml" filepath="$PROJECT_DIR$/gwsstickyheadersrecyclerview/gwsstickyheadersrecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsstickylistheaders/gwsstickylistheaders.iml" filepath="$PROJECT_DIR$/gwsstickylistheaders/gwsstickylistheaders.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" filepath="$PROJECT_DIR$/gwssvgprogressview/gwssvgprogressview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwssvgprogressviewdemo/gwssvgprogressviewdemo.iml" filepath="$PROJECT_DIR$/gwssvgprogressviewdemo/gwssvgprogressviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwstwowayview/gwstwowayview.iml" filepath="$PROJECT_DIR$/gwstwowayview/gwstwowayview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsutil/gwsutil.iml" filepath="$PROJECT_DIR$/gwsutil/gwsutil.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsviewanimations/gwsviewanimations.iml" filepath="$PROJECT_DIR$/gwsviewanimations/gwsviewanimations.iml" />
