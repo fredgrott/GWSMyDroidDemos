@@ -50,7 +50,7 @@ ext {
 
 
 
-    androidSupportVersion = '23.0.0'
+    androidSupportVersion = '23.0.1'
 
 
     androidSupportDependencies = [
