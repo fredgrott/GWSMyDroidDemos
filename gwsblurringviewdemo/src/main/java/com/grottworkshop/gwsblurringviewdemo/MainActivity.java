@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
     private BlurringView mBlurringView;
 
     private int[] mImageIds = {
-            R.drawable.p0, R.drawable.p1, R.drawable.p2, R.drawable.p3, R.drawable.p4,
-            R.drawable.p5, R.drawable.p6, R.drawable.p7, R.drawable.p8, R.drawable.p9
+            R.mipmap.p0, R.mipmap.p1, R.mipmap.p2, R.mipmap.p3, R.mipmap.p4,
+            R.mipmap.p5, R.mipmap.p6, R.mipmap.p7, R.mipmap.p8, R.mipmap.p9
     };
 
     private ImageView[] mImageViews = new ImageView[9];

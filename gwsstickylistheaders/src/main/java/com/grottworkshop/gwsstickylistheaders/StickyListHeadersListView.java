@@ -143,7 +143,11 @@ public class StickyListHeadersListView extends FrameLayout {
         mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
 
         // Initialize the wrapped list
-        mList = new WrapperViewList(context);
+        try {
+            mList = new WrapperViewList(context);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
         // null out divider, dividers are handled by adapter so they look good with headers
         mDivider = mList.getDivider();

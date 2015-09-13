@@ -41,6 +41,7 @@ public class KerningSpan {
      */
     public static Spannable applyKerning(CharSequence src, float kerning, int start, int end)
     {
+        String nonBreakingSpace = null;
         if (src == null) return null;
         final int srcLength = src.length();
         if (srcLength < 2) return src instanceof Spannable
@@ -49,7 +50,9 @@ public class KerningSpan {
         if (start < 0)
         if (end > srcLength)
 
-        final String nonBreakingSpace = "\u00A0";
+
+            nonBreakingSpace = "\u00A0";
+
         final SpannableStringBuilder builder = src instanceof SpannableStringBuilder
                 ? (SpannableStringBuilder)src
                 : new SpannableStringBuilder(src);
