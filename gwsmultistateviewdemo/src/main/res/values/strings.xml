@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GWSMultiStateViewDemo</string>
+    <string name="action_rotate_state">Next State</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
