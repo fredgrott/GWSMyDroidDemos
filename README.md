@@ -6,6 +6,11 @@ This code repo serves two purposes. One, to soft fork some libraries I use that 
 Two, to provide one place to put my UI control demos and application demos. In this readme you will
 see links to the videos of the demos and in the application demos case, sometimes apk file links.
 
+If too impatient for the page with videos in the middle you can view my YouTube channel where I
+post videos of Android UI and Application demos:
+
+[My YouTube Channel](https://www.youtube.com/c/FredGrott?gvnc=1)
+
 Best Practices
 ==============
 
