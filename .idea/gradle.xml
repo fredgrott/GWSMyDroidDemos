@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\myandroid\140BETA2\android-studio\gradle\gradle-2.4" />
+        <option name="gradleHome" value="D:\myandroid\140BETA4\android-studio\gradle\gradle-2.4" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -42,6 +42,7 @@
             <option value="$PROJECT_DIR$/gwsmaterialprogressbardemo" />
             <option value="$PROJECT_DIR$/gwsmaterialrangebar" />
             <option value="$PROJECT_DIR$/gwsmaterialrangebardemo" />
+            <option value="$PROJECT_DIR$/gwsmaterialripplelayout" />
             <option value="$PROJECT_DIR$/gwsmaterialspinner" />
             <option value="$PROJECT_DIR$/gwsmaterialspinnerdemo" />
             <option value="$PROJECT_DIR$/gwsmaterialviewpagerreg" />
@@ -62,6 +63,7 @@
             <option value="$PROJECT_DIR$/gwsspringindicator" />
             <option value="$PROJECT_DIR$/gwsstickyheadersrecyclerview" />
             <option value="$PROJECT_DIR$/gwsstickylistheaders" />
+            <option value="$PROJECT_DIR$/gwsstrictmode" />
             <option value="$PROJECT_DIR$/gwssvgprogressview" />
             <option value="$PROJECT_DIR$/gwssvgprogressviewdemo" />
             <option value="$PROJECT_DIR$/gwstwowayview" />
