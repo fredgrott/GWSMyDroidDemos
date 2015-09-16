@@ -84,4 +84,5 @@ dependencies {
         exclude group: 'com.android.support'
     }
     compile project(":gwscirclereveal")
+    compile project(":gwsarcanimations")
 }
