@@ -46,6 +46,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" filepath="$PROJECT_DIR$/gwsmultistateview/gwsmultistateview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmultistateviewdemo/gwsmultistateviewdemo.iml" filepath="$PROJECT_DIR$/gwsmultistateviewdemo/gwsmultistateviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" filepath="$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsottoutils/gwsottoutils.iml" filepath="$PROJECT_DIR$/gwsottoutils/gwsottoutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" filepath="$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreimage/gwsreimage.iml" filepath="$PROJECT_DIR$/gwsreimage/gwsreimage.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreveal/gwsreveal.iml" filepath="$PROJECT_DIR$/gwsreveal/gwsreveal.iml" />

@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+apply plugin: 'de.hannesstruss.godot'
+
+android {
+    compileSdkVersion rootProject.ext.getAt("androidCompileSdkVersion")
+    buildToolsVersion rootProject.ext.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
+        targetSdkVersion rootProject.ext.getAt("androidMinSdkVersion")
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress 'txt'
+        ignoreAssetsPattern "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
+    testOptions {
+        //puts instrumented test results in reports/androidTests
+        //unit tests are in reports/tests
+        reportDir = "$rootProject.ext.ourReportsDir/androidTests"
+        unitTests.all {
+            testLogging {
+                events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+            }
+        }
+    }
+
+    jacoco {
+        version = rootProject.ext.getAt("jacocoVersion")
+    }
+
+    buildTypes {
+
+        debug{
+            debuggable true
+            minifyEnabled false
+            testCoverageEnabled true
+
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//noinspection GroovyAssignabilityCheck
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:22.2.0'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile rootProject.ext.tddJunitDependencies.junit
+    testCompile rootProject.ext.tddJunitDependencies.mockito
+    compile rootProject.ext.androidSupportDependencies.appCompat
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoContrib
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoCore
+    androidTestCompile rootProject.ext.instrumentedTestDependencies.espressoRunner
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAndroid){
+        exclude group: 'com.android.support'
+    }
+    androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAppCompat){
+        exclude group: 'com.android.support'
+    }
+    compile rootProject.ext.appDependencies.otto
+}
