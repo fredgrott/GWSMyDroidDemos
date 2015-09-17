@@ -12,23 +12,23 @@ import java.util.Set;
  * Usage
  *
  * <code>
- *     private final ScopedBus scoepdBus = new ScopedBus()
+ *     private final ScopedBus scopedBus = new ScopedBus();
  *     protected ScopedBus getBus(){
  *         return scopedBus;
  *     }
  *
  *     @Override public void onStart(){
  *         super.onStart():
- *         bus.start();
+ *         scopeBus.start();
  *     }
  *
  *     @Override public void onPause() {
  *              super.onPause();
- *              bus.paused();
+ *              scopeBus.paused();
  *      }
  *    @Override public void onResume() {
  *              super.onResume();
- *              bus.resumed();
+ *              scopeBus.resumed();
  *      }
  * </code>
  *
@@ -70,7 +70,7 @@ public class ScopedBus {
     }
 
 
-    void paused() {
+    public void paused() {
         active = false;
         for (Object obj : objects) {
             bus.unregister(obj);
@@ -78,21 +78,21 @@ public class ScopedBus {
     }
 
 
-    void resumed() {
+    public void resumed() {
         active = true;
         for (Object obj : objects) {
             bus.register(obj);
         }
     }
 
-    void start() {
+    public void start() {
         active = true;
         for (Object obj: objects){
             bus.register(obj);
         }
     }
 
-    void stop(){
+    public void stop(){
         active = false;
         for (Object obj: objects){
             bus.unregister(obj);
