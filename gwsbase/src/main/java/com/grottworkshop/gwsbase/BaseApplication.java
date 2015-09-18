@@ -18,8 +18,11 @@ package com.grottworkshop.gwsbase;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.Log;
 
+import com.grottworkshop.gwsbase.bus.ApplicationOnConfigurationChangedEvent;
+import com.grottworkshop.gwsbase.bus.ApplicationOnLowMemoryEvent;
 import com.grottworkshop.gwsottoutils.ApplicationBus;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -28,12 +31,13 @@ import timber.log.Timber;
 
 /**
  * BaseApplication class, extend to use
+ * Requires the internet permission fo debug builds as we are using ViewServer.
  * Created by fgrott on 9/17/2015.
  */
 @SuppressWarnings("unused")
 public class BaseApplication extends Application {
 
-    public boolean myDebugMode = true;
+    public static boolean myDebugMode = true;
 
     private RefWatcher refWatcher;
 
@@ -106,6 +110,31 @@ public class BaseApplication extends Application {
         applicationBus.stop();
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        applicationBus.post(new ApplicationOnConfigurationChangedEvent());
+        Timber.tag("BaseApplication");
+        Timber.d("configuration changed, posted event to bus");
+        initOnConfigurationChangedBody();
+    }
+
+    @Override
+    public void onLowMemory(){
+        super.onLowMemory();
+        applicationBus.post(new ApplicationOnLowMemoryEvent());
+        Timber.tag("BaseApplication");
+        Timber.d("onLowMemory");
+        initOnLowMemoryBody();
+    }
+
+    /**
+     * initOnLowMemoryBody method container
+     */
+    public void initOnLowMemoryBody(){
+
+    }
+
     /**
      * BaseCrashReportingTree sets up our specialized
      * timber log tree for app crash reporting integrated
@@ -154,6 +183,14 @@ public class BaseApplication extends Application {
      * Some of us use leakcanary instead to detect leaks.
      */
     public void initStrictMode(){
+
+    }
+
+    /**
+     * initOnConfigurationChangedBody method container so that 3rd party devs can
+     * put some special configuration changed handling.
+     */
+    public void initOnConfigurationChangedBody(){
 
     }
 
