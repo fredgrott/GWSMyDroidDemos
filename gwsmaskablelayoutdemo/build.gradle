@@ -18,6 +18,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    //noinspection GroovyMissingReturnStatement
     packagingOptions {
         exclude 'LICENSE.txt'
     }
@@ -75,10 +76,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
         }
     }
 }
 
+//noinspection GroovyMissingReturnStatement
 spoon {
 
     debug = true
