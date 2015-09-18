@@ -18,6 +18,7 @@ package com.grottworkshop.gwsbase;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import com.grottworkshop.gwsottoutils.ApplicationBus;
 import com.squareup.leakcanary.LeakCanary;
@@ -78,16 +79,20 @@ public class BaseApplication extends Application {
         applicationBus.start();
         //our mem leak watcher, install it
         refWatcher = LeakCanary.install(this);
+        //init the cache
+        initCache();
+        //init the typehelper
+        initTypeHelper();
 
 
         if(myDebugMode){
             //install our timber debug log
             Timber.plant(new Timber.DebugTree());
+            //strictmode setup
+            initStrictMode();
 
         }else{
-            //our crash report for app stuff here
-            //timber no longer uses Timber.HollowTree
-            //need to know replacement
+            Timber.plant(new BaseCrashReportingTree());
         }
     }
 
@@ -106,9 +111,50 @@ public class BaseApplication extends Application {
      * timber log tree for app crash reporting integrated
      * with the crash report lib we use
      */
-    private static class BaseCrashReportingTree {
+    private static class BaseCrashReportingTree extends Timber.Tree {
+        @Override protected void log(int priority, String tag, String message, Throwable t) {
+            if (priority == Log.VERBOSE || priority == Log.DEBUG) {
+                return;
+            }
+
+            BaseCrashLibrary.log(priority, tag, message);
+
+            if (t != null) {
+                if (priority == Log.ERROR) {
+                    BaseCrashLibrary.logError(t);
+                } else if (priority == Log.WARN) {
+                    BaseCrashLibrary.logWarning(t);
+                }
+            }
+        }
+    }
+
+
+
+
+    /**
+     * initCache overridden method so that 3rd party dev can set their app cache in
+     * their extended BaseApplication class by overriding this one.
+     */
+    public void initCache(){
 
     }
 
+    /**
+     * API 15 to about API still have leak problems when loading type via assets
+     * so we have this method to override to allow the 3rd party dev to initialize
+     * the typehelper class they are using.
+     */
+    public void initTypeHelper(){
+
+    }
+
+    /**
+     * Watch prior to L devices, strict mode incorrectly counts instances on device orientations.
+     * Some of us use leakcanary instead to detect leaks.
+     */
+    public void initStrictMode(){
+
+    }
 
 }
