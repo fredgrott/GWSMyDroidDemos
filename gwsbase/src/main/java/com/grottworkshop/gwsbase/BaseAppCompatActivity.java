@@ -38,7 +38,8 @@ import static com.grottworkshop.gwsbase.BaseApplication.getBus;
 import static com.grottworkshop.gwsbase.BaseApplication.myDebugMode;
 
 /**
- * BaseAppCompatActivity class
+ * BaseAppCompatActivity class with system lifecycle methods in order at the top of the class and the
+ * user initiated misc lifecycle methods at bottom of the class.
  * Created by fgrott on 9/18/2015.
  */
 public class BaseAppCompatActivity extends AppCompatActivity {

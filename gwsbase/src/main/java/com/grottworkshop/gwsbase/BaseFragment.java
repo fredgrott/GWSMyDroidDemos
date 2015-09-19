@@ -51,7 +51,8 @@ import com.squareup.leakcanary.RefWatcher;
 import timber.log.Timber;
 
 /**
- * BaseFragment
+ * BaseFragment with system lifecycle methods in order at the top of the class and the
+ * user initiated misc lifecycle methods at bottom of the class.
  * Created by fgrott on 9/17/2015.
  */
 @SuppressWarnings("unused")
