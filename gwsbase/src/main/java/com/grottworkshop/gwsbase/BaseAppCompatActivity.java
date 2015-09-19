@@ -2,12 +2,17 @@ package com.grottworkshop.gwsbase;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnConfigurationChangedEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnContentChangedEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnCreateEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnDestroyEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnLowMemoryEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnRestartEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnResumeEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnStateNotSavedEvent;
 import com.grottworkshop.gwsviewserver.ViewServer;
 
 import timber.log.Timber;
@@ -18,10 +23,13 @@ import timber.log.Timber;
  */
 public class BaseAppCompatActivity extends AppCompatActivity {
 
+    public String TAG = "BaseAppCompatActivity";
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        Timber.tag("BaseAppCompatActivity");
+        Timber.tag(TAG);
+        BaseApplication.getBus().post(new AppCompatActivityOnCreateEvent());
         //vewserver call on debug builds
         if(BaseApplication.myDebugMode){
             ViewServer.get(this).addWindow(this);
@@ -36,7 +44,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     public void onDestroy(){
         super.onDestroy();
         //unregister the view hierarchy with the view server
-        Timber.tag("BaseAppCompatActivity");
+        Timber.tag(TAG);
         if(BaseApplication.myDebugMode){
             ViewServer.get(this).removeWindow(this);
             Timber.d("unregister view hierarchy with view server");
@@ -49,7 +57,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        Timber.tag("BaseAppCompatActivity");
+        Timber.tag(TAG);
         //register focus with view server
         if(BaseApplication.myDebugMode){
             ViewServer.get(this).setFocusedWindow(this);
@@ -64,7 +72,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         BaseApplication.getBus().post(new AppCompatActivityOnConfigurationChangedEvent());
-        Timber.tag("AppCompatActivity onConfigurationChanged");
+        Timber.tag(TAG);
         Timber.d("onConfigurationChanged");
         initOnConfigurationChangedBody();
 
@@ -74,11 +82,75 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         BaseApplication.getBus().post(new AppCompatActivityOnRestartEvent());
-        Timber.tag("AppCompatActivity");
+        Timber.tag(TAG);
         Timber.d("onRestart");
         initOnRestartBody();
     }
 
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        BaseApplication.getBus().post(new AppCompatActivityOnLowMemoryEvent());
+        Timber.tag(TAG);
+        Timber.d("onLowMemory");
+        initOnLowMemoryBody();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        BaseApplication.getBus().post(new AppCompatActivityOnCreateEvent());
+        Timber.tag(TAG);
+        Timber.d("onCreate");
+        initOnCreateBodyTwo();
+    }
+
+    @Override
+    public void onContentChanged(){
+        super.onContentChanged();
+        BaseApplication.getBus().post(new AppCompatActivityOnContentChangedEvent());
+        Timber.tag(TAG);
+        Timber.d("onContentChanged");
+        initOnContentChangedBody();
+
+    }
+
+
+    @Override
+    public void onStateNotSaved(){
+        super.onStateNotSaved();
+        BaseApplication.getBus().post(new AppCompatActivityOnStateNotSavedEvent());
+        Timber.tag(TAG);
+        Timber.d("onStateNotSaved");
+        initOnStateNotSavedBody();
+    }
+
+    /**
+     * initOnStateNotSavedBody method container
+     */
+    public void initOnStateNotSavedBody(){
+
+    }
+
+    /**
+     * initOnContentChangedBody method container
+     */
+    public void initOnContentChangedBody(){
+
+    }
+
+    /**
+     * initOnCreateBodyTow method container
+     */
+    public void initOnCreateBodyTwo(){
+
+    }
+
+
+    /**
+     * initOnLowMemoryBody method container
+     */
+    public void initOnLowMemoryBody(){}
 
 
     /**

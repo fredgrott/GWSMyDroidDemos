@@ -135,7 +135,7 @@ public class BaseFragmentNestedActivityResult extends Fragment {
      * initOnLowMemoryBody method container
      */
     public void initOnLowMemoryBody(){
-        
+
     }
 
     private Object mActivityResultSubscriber = new Object() {
