@@ -79,6 +79,16 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onContentChanged(){
+        super.onContentChanged();
+        getBus().post(new AppCompatActivityOnContentChangedEvent());
+        Timber.tag(TAG);
+        Timber.d("onContentChanged");
+        initOnContentChangedBody();
+
+    }
+
+    @Override
     public void onStart(){
         super.onStart();
         getBus().post(new AppCompatActivityOnStartEvent());
@@ -248,15 +258,6 @@ public class BaseAppCompatActivity extends AppCompatActivity {
 
     //other mis lifecycle methods
 
-    @Override
-    public void onContentChanged(){
-        super.onContentChanged();
-        getBus().post(new AppCompatActivityOnContentChangedEvent());
-        Timber.tag(TAG);
-        Timber.d("onContentChanged");
-        initOnContentChangedBody();
-
-    }
 
 
 
