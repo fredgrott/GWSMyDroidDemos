@@ -217,6 +217,8 @@ public class BaseFragmentNestedActivityResult extends Fragment {
 
     //misc user lifecycle initiated methods
 
+
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);

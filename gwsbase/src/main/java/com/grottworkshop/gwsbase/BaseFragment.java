@@ -22,22 +22,30 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.grottworkshop.gwsbase.bus.FragmentOnActivityCreatedEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnAttachEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnConfigurationChangedEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnContextItemSelectedEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnCreateContextMenuEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnCreateEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnCreateOptionsMenuEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnCreateViewEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnDestroyEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnDestroyOptionsMenuEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnDestroyViewEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnDetachEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnHiddenChangedEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnLowMemoryEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnOptionsItemSelectedEvent;
+import com.grottworkshop.gwsbase.bus.FragmentOnOptionsMenuClosedEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnPauseEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnPrepareOptionsMenuEvent;
 import com.grottworkshop.gwsbase.bus.FragmentOnResumeEvent;
@@ -220,6 +228,60 @@ public class BaseFragment extends Fragment {
 
 
     @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        BaseApplication.getBus().post(new FragmentOnContextItemSelectedEvent());
+        Timber.tag(TAG);
+        Timber.d("onContextItemSelected");
+        initOnContextItemSelectedBody();
+        return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        BaseApplication.getBus().post(new FragmentOnCreateContextMenuEvent());
+        Timber.tag(TAG);
+        Timber.d("onCreateContextMenu");
+        initOnCreateContextMenuBody();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        BaseApplication.getBus().post(new FragmentOnHiddenChangedEvent());
+        Timber.tag(TAG);
+        Timber.d("onHiddenChanged");
+        initOnHiddenChangedBody();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        BaseApplication.getBus().post(new FragmentOnOptionsItemSelectedEvent());
+        Timber.tag(TAG);
+        Timber.d("onOptionsItemSelected");
+        initOnOptionsItemSelectedBody();
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onOptionsMenuClosed(Menu menu) {
+        super.onOptionsMenuClosed(menu);
+        BaseApplication.getBus().post(new FragmentOnOptionsMenuClosedEvent());
+        Timber.tag(TAG);
+        Timber.d("onOptionsMenuClosed");
+        initOnOptionsMenuClosedBody();
+    }
+
+    @Override
+    public void onDestroyOptionsMenu() {
+        super.onDestroyOptionsMenu();
+        BaseApplication.getBus().post(new FragmentOnDestroyOptionsMenuEvent());
+        Timber.tag(TAG);
+        Timber.d("onDestroyOptionsMenu");
+        initOnDestroyOptionsMenuBody();
+    }
+
+    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         BaseApplication.getBus().post(new FragmentOnConfigurationChangedEvent());
@@ -235,6 +297,51 @@ public class BaseFragment extends Fragment {
         Timber.tag(TAG);
         Timber.d("onLowMemory");
         initOnLowMemoryBody();
+    }
+
+    /**
+     * initOnDestroyOptionsMenuBody method container
+     */
+    public void initOnDestroyOptionsMenuBody(){
+
+    }
+
+
+
+    /**
+     * initOnOptionsMenuClosedBody method container
+     */
+    public void initOnOptionsMenuClosedBody(){
+
+    }
+
+    /**
+     * initOnOptionsItemSelectedBody method container
+     */
+    public void initOnOptionsItemSelectedBody(){
+
+    }
+
+    /**
+     * initOnHiddenChangedBody method container
+     */
+    public void initOnHiddenChangedBody(){
+
+    }
+
+
+    /**
+     * initOnCreateContextMenuBody method container
+     */
+    public void initOnCreateContextMenuBody(){
+
+    }
+
+    /**
+     * initOnContextItemSelectedBody method container
+     */
+    public void initOnContextItemSelectedBody(){
+
     }
 
 

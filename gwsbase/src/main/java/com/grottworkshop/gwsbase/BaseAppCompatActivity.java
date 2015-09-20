@@ -21,7 +21,10 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ActionMode;
 import android.view.Menu;
 
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnActivityResultEvent;
@@ -31,8 +34,11 @@ import com.grottworkshop.gwsbase.bus.AppCompatActivityOnConfigurationChangedEven
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnContentChangedEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnCreateEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnCreateOptionsMenuEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnCreateSupportNavigateUpTaskStackEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnDestroyEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnLowMemoryEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnMenuOpenedEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnPanelClosedEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnPauseEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnPostCreateEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnPostResumeEvent;
@@ -44,8 +50,12 @@ import com.grottworkshop.gwsbase.bus.AppCompatActivityOnSaveInstanceStateEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnStartEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnStateNotSavedEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnStopEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnSupportActionModeFinishedEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnSupportActionModeStartedEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnSupportNavigateUpEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnUserInteractionEvent;
 import com.grottworkshop.gwsbase.bus.AppCompatActivityOnUserLeaveHintEvent;
+import com.grottworkshop.gwsbase.bus.AppCompatActivityOnWindowStartingSupportActionModeEvent;
 import com.grottworkshop.gwsviewserver.ViewServer;
 
 import timber.log.Timber;
@@ -276,9 +286,69 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     //other mis lifecycle methods
 
 
+    @Override
+    public void onPanelClosed(int featureId, Menu menu) {
+        super.onPanelClosed(featureId, menu);
+        getBus().post(new AppCompatActivityOnPanelClosedEvent());
+        Timber.tag(TAG);
+        Timber.d("onPanelClosed");
+        initOnPanelClosedBody();
+    }
 
+    @Override
+    public void onCreateSupportNavigateUpTaskStack(TaskStackBuilder builder) {
+        super.onCreateSupportNavigateUpTaskStack(builder);
+        getBus().post(new AppCompatActivityOnCreateSupportNavigateUpTaskStackEvent());
+        Timber.tag(TAG);
+        Timber.d("onCreateSupportNavigateUpTaskStack");
+        initOnCreateSupportNavigateUpTaskStackBody();
+    }
 
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        getBus().post(new AppCompatActivityOnMenuOpenedEvent());
+        Timber.tag(TAG);
+        Timber.d("onMenuOpened");
+        initOnMenuOpenedBody();
+        return super.onMenuOpened(featureId, menu);
+    }
 
+    @Override
+    public void onSupportActionModeFinished(ActionMode mode) {
+        super.onSupportActionModeFinished(mode);
+        getBus().post(new AppCompatActivityOnSupportActionModeFinishedEvent());
+        Timber.tag(TAG);
+        Timber.d("onSupportActionModelFinished");
+        initOnSupportActionModeFinishedBody();
+    }
+
+    @Override
+    public void onSupportActionModeStarted(ActionMode mode) {
+        super.onSupportActionModeStarted(mode);
+        getBus().post(new AppCompatActivityOnSupportActionModeStartedEvent());
+        Timber.tag(TAG);
+        Timber.d("onSupportActionModeStarted");
+        initOnSupportActionModeStartedBody();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        getBus().post(new AppCompatActivityOnSupportNavigateUpEvent());
+        Timber.tag(TAG);
+        Timber.d("onSupportNavigateUp");
+        initOnSupportNavigateUpBody();
+        return super.onSupportNavigateUp();
+    }
+
+    @Nullable
+    @Override
+    public ActionMode onWindowStartingSupportActionMode(ActionMode.Callback callback) {
+        getBus().post(new AppCompatActivityOnWindowStartingSupportActionModeEvent());
+        Timber.tag(TAG);
+        Timber.d("onWindowStartingSupportActionMode");
+        initOnWindowStartingSupportActionModeBody();
+        return super.onWindowStartingSupportActionMode(callback);
+    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -314,6 +384,58 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         Timber.d("onStateNotSaved");
         initOnStateNotSavedBody();
     }
+
+    /**
+     * initOnWindowStartingSupportActionModeBody method container
+     */
+    public void initOnWindowStartingSupportActionModeBody(){}
+
+
+    /**
+     * initOnSupportNavigateUpBody method container
+     */
+    public void initOnSupportNavigateUpBody(){
+
+    }
+
+    /**
+     * initOnSupportActionModeStartedBody method container
+     */
+    public void initOnSupportActionModeStartedBody(){
+
+    }
+
+
+    /**
+     * initOnSupportActionModeFinishedBody method container
+     */
+    public void initOnSupportActionModeFinishedBody(){
+
+    }
+
+    /**
+     * initOnMenuOpenedBody method container
+     */
+    public void initOnMenuOpenedBody(){
+
+    }
+
+    /**
+     * initOnCreateSupportNavigateUpTaskStackBody method container
+     */
+    public void initOnCreateSupportNavigateUpTaskStackBody(){
+
+    }
+
+    /**
+     * initOnPanelClosedBody method container
+     */
+    public void initOnPanelClosedBody(){
+
+    }
+
+
+
 
     /**
      * initOnStopBoyd method container
