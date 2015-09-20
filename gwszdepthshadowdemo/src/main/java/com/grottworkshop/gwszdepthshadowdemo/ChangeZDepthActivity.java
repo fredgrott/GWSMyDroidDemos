@@ -19,21 +19,23 @@ public class ChangeZDepthActivity extends AppCompatActivity {
 
 
 
-    Toolbar mToolbar =(Toolbar) findViewById(R.id.toolBar);
+    Toolbar mToolbar;
 
 
-    ZDepthShadowLayout mZDepthShadowLayoutToolbar =(ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_toolBar);
+    ZDepthShadowLayout mZDepthShadowLayoutToolbar;
 
-
-    ZDepthShadowLayout mZDepthShadowLayoutRect = (ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_rect);
-
-
-    ZDepthShadowLayout mZDepthShadowLayoutOval = (ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_oval);
+    ZDepthShadowLayout mZDepthShadowLayoutRect;
+    ZDepthShadowLayout mZDepthShadowLayoutOval;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_zdepth);
+        mToolbar =(Toolbar) findViewById(R.id.toolBar);
+        mZDepthShadowLayoutToolbar =(ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_toolBar);
+        mZDepthShadowLayoutRect = (ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_rect);
+        mZDepthShadowLayoutOval = (ZDepthShadowLayout) findViewById(R.id.zDepthShadowLayout_oval);
+
         ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);

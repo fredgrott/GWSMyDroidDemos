@@ -38,7 +38,9 @@
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialdrawer/gwsmaterialdrawer.iml" filepath="$PROJECT_DIR$/gwsmaterialdrawer/gwsmaterialdrawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialedit/gwsmaterialedit.iml" filepath="$PROJECT_DIR$/gwsmaterialedit/gwsmaterialedit.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialfabsheet/gwsmaterialfabsheet.iml" filepath="$PROJECT_DIR$/gwsmaterialfabsheet/gwsmaterialfabsheet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmaterialfabsheetdemo/gwsmaterialfabsheetdemo.iml" filepath="$PROJECT_DIR$/gwsmaterialfabsheetdemo/gwsmaterialfabsheetdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialmenu/gwsmaterialmenu.iml" filepath="$PROJECT_DIR$/gwsmaterialmenu/gwsmaterialmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsmaterialmenudemo/gwsmaterialmenudemo.iml" filepath="$PROJECT_DIR$/gwsmaterialmenudemo/gwsmaterialmenudemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialpreference/gwsmaterialpreference.iml" filepath="$PROJECT_DIR$/gwsmaterialpreference/gwsmaterialpreference.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbar/gwsmaterialprogressbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" filepath="$PROJECT_DIR$/gwsmaterialprogressbardemo/gwsmaterialprogressbardemo.iml" />

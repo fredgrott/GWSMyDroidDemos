@@ -16,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    ListView mListView =(ListView) findViewById(R.id.listView);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView mListView =(ListView) findViewById(R.id.listView);
         ButterKnife.bind(this);
 
         mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
