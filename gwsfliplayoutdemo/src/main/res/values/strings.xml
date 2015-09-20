@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GWSFlipLayoutDemo</string>
+    <string name="front">Front</string>
+    <string name="back">Back</string>
+
+</resources>
