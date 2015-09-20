@@ -19,7 +19,7 @@
             android:background="@color/indigo500"
             android:textColor="@color/white"/>
 
-    <com.appyvet.rangebar.RangeBar
+    <com.grottworkshop.gwsmaterialrangebar.RangeBar
             xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:id="@+id/rangebar1"
             android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                             android:textAllCaps="true"/>
 
                 </LinearLayout>
-                ♥
+
 
                 <TextView
                         android:id="@+id/enableRange"
