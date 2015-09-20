@@ -1,7 +1,8 @@
 package com.grottworkshop.gwsfrag;
 
-import android.app.Fragment;
+
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 
 import com.grottworkshop.gwsfrag.bus.ActivityResultBus;
 import com.grottworkshop.gwsfrag.bus.ActivityResultEvent;

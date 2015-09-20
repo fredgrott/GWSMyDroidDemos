@@ -17,7 +17,8 @@
 
 package com.grottworkshop.gwswizardpager.model;
 
-import android.app.Fragment;
+
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
 import com.grottworkshop.gwswizardpager.ui.SingleTextFieldFragment;

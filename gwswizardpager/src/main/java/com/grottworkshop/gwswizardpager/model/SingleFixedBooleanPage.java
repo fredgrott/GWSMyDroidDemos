@@ -16,7 +16,8 @@
  */
 package com.grottworkshop.gwswizardpager.model;
 
-import android.app.Fragment;
+
+import android.support.v4.app.Fragment;
 
 import com.grottworkshop.gwswizardpager.ui.SingleBooleanFragment;
 
