@@ -46,6 +46,16 @@ public class BaseApplication extends Application {
                return applicationBus;
     }
 
+    private static Application sApplication;
+
+    public static Application getApplication() {
+        return sApplication;
+    }
+
+    public static Context getContext() {
+        return getApplication().getApplicationContext();
+    }
+
     /**
      * setDebugMode sets the debug mode, in extended app class we do:
      *

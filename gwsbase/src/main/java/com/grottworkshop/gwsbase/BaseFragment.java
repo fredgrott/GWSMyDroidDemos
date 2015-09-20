@@ -53,6 +53,8 @@ import timber.log.Timber;
 /**
  * BaseFragment with system lifecycle methods in order at the top of the class and the
  * user initiated misc lifecycle methods at bottom of the class.
+ *
+ * Be careful as onActivityCreated may not be called if fragments are created in a viewpager.
  * Created by fgrott on 9/17/2015.
  */
 @SuppressWarnings("unused")

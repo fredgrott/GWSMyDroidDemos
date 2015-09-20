@@ -39,6 +39,8 @@ import timber.log.Timber;
 /**
  * BaseFragmentNestedActivityResult class with system lifecycle methods in order at the top of the class and the
  * user initiated misc lifecycle methods at bottom of the class.
+ *
+ * Be careful as onActivityCreated may not be called if fragments are created in a viewpager.
  * Created by fgrott on 9/17/2015.
  */
 @SuppressWarnings("unused")
@@ -100,7 +102,7 @@ public class BaseFragmentNestedActivityResult extends Fragment {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
         BaseApplication.getBus().register(mActivityResultSubscriber);
         BaseApplication.getBus().post(new FragmentOnStartEvent());
@@ -158,7 +160,7 @@ public class BaseFragmentNestedActivityResult extends Fragment {
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
         BaseApplication.getBus().unregister(mActivityResultSubscriber);
         BaseApplication.getBus().post(new FragmentOnStopEvent());
