@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.grottworkshop.gwsmaterialprogressbar.IndeterminateProgressDrawable;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -23,6 +25,7 @@ public class AboutActivity extends AppCompatActivity {
     @Bind(R.id.about_github)
     TextView githubText;
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
