@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsactiondemo/gwsactiondemo.iml" filepath="$PROJECT_DIR$/gwsactiondemo/gwsactiondemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsarcanimations/gwsarcanimations.iml" filepath="$PROJECT_DIR$/gwsarcanimations/gwsarcanimations.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsbase/gwsbase.iml" filepath="$PROJECT_DIR$/gwsbase/gwsbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsbetterrelativelayout/gwsbetterrelativelayout.iml" filepath="$PROJECT_DIR$/gwsbetterrelativelayout/gwsbetterrelativelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsblurringview/gwsblurringview.iml" filepath="$PROJECT_DIR$/gwsblurringview/gwsblurringview.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsblurringviewdemo/gwsblurringviewdemo.iml" filepath="$PROJECT_DIR$/gwsblurringviewdemo/gwsblurringviewdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwscamera/gwscamera.iml" filepath="$PROJECT_DIR$/gwscamera/gwscamera.iml" />
