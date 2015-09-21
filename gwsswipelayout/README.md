@@ -1,0 +1,6 @@
+
+
+Credits
+=======
+
+[daimajia AndroidSwipeLayout]()
