@@ -62,6 +62,7 @@
       <module fileurl="file://$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" filepath="$PROJECT_DIR$/gwsobservablescroll/gwsobservablescroll.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsottoutils/gwsottoutils.iml" filepath="$PROJECT_DIR$/gwsottoutils/gwsottoutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" filepath="$PROJECT_DIR$/gwspagerslidingtabstrip/gwspagerslidingtabstrip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwsprocessbutton/gwsprocessbutton.iml" filepath="$PROJECT_DIR$/gwsprocessbutton/gwsprocessbutton.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreimage/gwsreimage.iml" filepath="$PROJECT_DIR$/gwsreimage/gwsreimage.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsreveal/gwsreveal.iml" filepath="$PROJECT_DIR$/gwsreveal/gwsreveal.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwsrevealdemo/gwsrevealdemo.iml" filepath="$PROJECT_DIR$/gwsrevealdemo/gwsrevealdemo.iml" />
