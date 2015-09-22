@@ -72,6 +72,8 @@ public class BaseAppCompatActivity extends AppCompatActivity {
 
     public String TAG = "BaseAppCompatActivity";
 
+    Bundle myOutState;
+
     //main lifecycle methods in order of lifecycle
 
     @Override
@@ -246,7 +248,8 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         getBus().post(new AppCompatActivityOnSaveInstanceStateEvent());
         Timber.tag(TAG);
         Timber.d("onSaveInstanceState");
-        initOnSaveInstanceStateBody();
+        myOutState = outState;
+        initOnSaveInstanceStateBody(myOutState);
     }
 
     @Override
@@ -453,7 +456,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     /**
      * initOnSaveInstanceStateBody method container
      */
-    public void initOnSaveInstanceStateBody(){}
+    public void initOnSaveInstanceStateBody(Bundle myOutState){}
 
 
 
