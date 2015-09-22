@@ -73,6 +73,8 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     public String TAG = "BaseAppCompatActivity";
 
     Bundle myOutState;
+    Bundle mySaved;
+    PersistableBundle myPersisttableBundle;
 
     //main lifecycle methods in order of lifecycle
 
@@ -150,7 +152,8 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         getBus().post(new AppCompatActivityOnRestoreInstanceStateEvent());
         Timber.tag(TAG);
         Timber.d("onRestoreInstanceSte");
-        initOnRestoreInstanceStateBody();
+        mySaved = savedInstanceState;
+        initOnRestoreInstanceStateBody(mySaved);
     }
 
     @Override
@@ -258,7 +261,9 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         getBus().post(new AppCompatActivityOnSaveInstanceStateEvent());
         Timber.tag(TAG);
         Timber.d("onSaveInstanceState");
-        initOnSaveInstanceStateBodyTwo();
+        myOutState = outState;
+        myPersisttableBundle = outPersistentState;
+        initOnSaveInstanceStateBodyTwo(myOutState, myPersisttableBundle);
     }
 
 
@@ -450,7 +455,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     /**
      * initOnSaveInstanceStateBodyTwo method container
      */
-    public void initOnSaveInstanceStateBodyTwo(){}
+    public void initOnSaveInstanceStateBodyTwo(Bundle myOutState, PersistableBundle myPersisttableBundle){}
 
 
     /**
@@ -524,7 +529,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     /**
      * initOnRestoreInstanceStateBody method container
      */
-    public void initOnRestoreInstanceStateBody(){
+    public void initOnRestoreInstanceStateBody(Bundle mySaved){
 
     }
 

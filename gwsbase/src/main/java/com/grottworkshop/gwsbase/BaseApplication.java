@@ -98,6 +98,7 @@ public class BaseApplication extends Application {
         //init the typehelper
         initTypeHelper();
 
+        initGlobalSingletons();
 
         if(myDebugMode){
             //install our timber debug log
@@ -169,6 +170,9 @@ public class BaseApplication extends Application {
     }
 
 
+    public void initGlobalSingletons(){
+
+    }
 
 
     /**

@@ -21,44 +21,65 @@ import android.os.Bundle;
 import java.util.List;
 
 /**
- * BaseState class
+ * BaseSavingState class
  *
  * Usage:
  *
- * In each extended BaseAppCompatActivity
+ * In each extended BaseAppCompatActivity and BaseFragmentExtended
  *
  * <code>
  *     public void initOnSaveInstanceStateBody(myOutState){
- *         BaseSaveableExtendedClass.saveinstancestate(myOutState);
+ *         BaseSavingStateProviderExtendedClass.getInstance().saveinstancestate(myOutState);
+ *     }
+ *     public void initOnRestoreInstanceStateBody(mySaved){
+ *         BaseSavingStateProviderExtendedClass.getInstance().restoreinstancestate(mySaved);
  *     }
  *
+ *
  * </code>
+ *
+ * When app is killed  and restarted it will not restart at the launched activity listed
+ * in manifest but start at the last Fragment/Activity user had focus on. Thus, we need to
+ * make sure state is saved before that event, hence this solution.
  *
  * Created by fgrott on 9/19/2015.
  */
 @SuppressWarnings("unused")
-public class BaseState implements BaseSaveable {
+public abstract class BaseSavingState implements BaseSaveable {
 
-    //TODO: need this class as a singleton I think
+
 
     public List<? extends BaseSaveable> componentsToSave;
+
+    private BaseSavingState mInstance;
+
 
     /**
      * Format, ie how to ove-ride
      *
      * <code>
      *
-     *     public BaseState(ObjectOne objectOne, ObjectTwo){
+     *     public MyExtendedBaseSavingState(ObjectOne objectOne, ObjectTwo){
      *         componentsToSave = (Arrays.asList(
      *                objectyOne,
      *                objectTwo));
      *     }
      *
+     *
+     *
      * </code>
+     *
+     * Make sure to use your extended BaseSavingStateProvider.getInstance to
+     * grab a singleton in initGlobalSingletons() of your extended appclass
+     * see javadoc of BaseSavingStateProvider
+     *
      */
-    public BaseState(){
+    public  BaseSavingState(){
 
     }
+
+
+
 
 
     @Override
