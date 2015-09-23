@@ -45,7 +45,7 @@ import java.util.HashMap;
  *
  * <code>
  *     Bundle b = new Bundle();
- *    InstanceStateManager.saveInstanceState(this, b);
+ *    InstanceStateManager.saveInstanceState(ourClass, b);
  *
  * </code>
  *
@@ -53,11 +53,17 @@ import java.util.HashMap;
  *
  * <code>
  *     Bundle b = new Bundle();
- *     InstanceStateManager.restoreInstanceState(this, b);
+ *     InstanceStateManager.restoreInstanceState(ourClass, b);
  *
  * </code>
  *
- *
+ * You need one call per each class that has instance state fields. Since any extended
+ * view already has a mechanism to have the states saved. We could probably wrap this
+ * up in a SavingState class.  As long as never include any activity or fragment as
+ * a class with instance state fields we could instead of the extra proxy class
+ * to designate it through calling a singleton instead use the fact the application
+ * class is already a singleton and thus have its creation called in the extended
+ * application class.
  *
  *
  * Created by fgrott on 9/23/2015.
