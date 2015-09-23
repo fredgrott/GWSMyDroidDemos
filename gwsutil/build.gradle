@@ -114,4 +114,6 @@ dependencies {
     androidTestCompile(rootProject.ext.instrumentedTestDependencies.assertjAppCompat){
         exclude group: 'com.android.support'
     }
+    provided 'com.google.code.gson:gson:2.3.1'
+
 }
