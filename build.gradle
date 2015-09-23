@@ -35,6 +35,16 @@ allprojects {
     }
 }
 
+// for jdk8 to avoid the R.java errors
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
+
 ext {
 
     //Configure stuff
