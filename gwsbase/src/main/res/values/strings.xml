@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GWSBase</string>
+    <string name="ok">OK</string>
+<string name="about_text">\nA random assortment of graphics and media hacks.\n\n
+        [This is a perpetual work in progress.]\n\n
+        Copyright 2015-2016 Fred Grott(GrottWorkShop).  All rights reserved.</string>
+
 </resources>
