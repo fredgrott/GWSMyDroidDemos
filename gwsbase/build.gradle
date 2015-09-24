@@ -119,4 +119,5 @@ dependencies {
     debugCompile rootProject.ext.appDependencies.leakcanaryAndroidDC
     releaseCompile rootProject.ext.appDependencies.leakcanaryAndroidNOOPRC
     compile project(":gwsviewserver")
+    compile project(":gwsutil")
 }

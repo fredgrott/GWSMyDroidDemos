@@ -45,6 +45,7 @@ import java.util.List;
  * Created by fgrott on 9/19/2015.
  */
 @SuppressWarnings("unused")
+@Deprecated
 public abstract class BaseSavingState implements BaseSaveable {
 
 

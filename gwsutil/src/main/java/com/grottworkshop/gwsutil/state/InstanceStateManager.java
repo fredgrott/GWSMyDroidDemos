@@ -52,8 +52,8 @@ import java.util.HashMap;
  * In onRestoreInstanceState method
  *
  * <code>
- *     Bundle b = new Bundle();
- *     InstanceStateManager.restoreInstanceState(ourClass, b);
+ *
+ *     InstanceStateManager.restoreInstanceState(ourClass, savedInstanceState);
  *
  * </code>
  *

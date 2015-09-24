@@ -32,5 +32,6 @@ package com.grottworkshop.gwsbase;
  * Created by fgrott on 9/22/2015.
  */
 @SuppressWarnings("unused")
+@Deprecated
 public final class BaseSavingStateProvider {
 }
